@@ -64,8 +64,7 @@ export function resetRouter(menuPos) {
       component: () => import('../views/layout' + menuPos),
       meta: {
         title: element.name,
-        icon: element.icon,
-        childIcon: element.childIcon
+        icon: element.icon
       },
       children: []
     }

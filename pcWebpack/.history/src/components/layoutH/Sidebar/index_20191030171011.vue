@@ -31,8 +31,8 @@
                 <router-link :to="item.path + '/' + li.path" :key="item.path + '/' + li.path">
                   <el-menu-item :index="li.path" :key="li.path">
                     <template slot="title" v-if="li.meta">
-                      <i :class="item.meta && item.meta.childIcon"></i>
-                      <span class="d-tit aui-margin-l-10" slot="title">{{li.meta.title}}</span>
+                      <i :class="item.meta.childIcon"></i>
+                      <span class="d-tit" slot="title">{{li.meta.title}}</span>
                     </template>
                   </el-menu-item>
                 </router-link>

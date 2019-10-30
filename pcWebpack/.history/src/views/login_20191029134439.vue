@@ -109,8 +109,9 @@ export default {
         this.warningText = "请输入密码";
         return;
       }
-
-      resetRouter(this.$store.state.app.menuPos);
+      
+      // //测试代码
+      // resetRouter(this.$store.state.app.menuPos);
 
       //登录
       //that.$router.push('main');

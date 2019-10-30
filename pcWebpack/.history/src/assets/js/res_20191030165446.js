@@ -357,18 +357,17 @@ const jsRes = {
 	menuList:[{
 		dir: 'base',
 		name: '基础',
-		icon: 'el-icon-edit',
-		childIcon: 'el-icon-star-off',
+		icon: 'iconfont icon-notice',
 		list: [{
 				name: '表单',
-				href: 'form',
+				href: 'form'
 			},
 			{
 				name: '弹出框',
 				href: 'dialog'
 			},
 			{
-				name: '表格',
+				name: '弹出框',
 				href: 'table'
 			},
 		]

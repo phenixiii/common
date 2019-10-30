@@ -65,7 +65,7 @@ export function resetRouter(menuPos) {
       meta: {
         title: element.name,
         icon: element.icon,
-        childIcon: element.childIcon
+        childrenIcon: element.icon
       },
       children: []
     }

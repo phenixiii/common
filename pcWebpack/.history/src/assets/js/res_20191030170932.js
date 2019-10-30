@@ -358,7 +358,7 @@ const jsRes = {
 		dir: 'base',
 		name: '基础',
 		icon: 'el-icon-edit',
-		childIcon: 'el-icon-star-off',
+		childIcon: 'el-icon-star-off'
 		list: [{
 				name: '表单',
 				href: 'form',

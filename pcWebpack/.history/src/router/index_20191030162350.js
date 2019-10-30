@@ -19,7 +19,7 @@ const routePath = [{
     component: () => import('@/views/404'),
   },
   // 404 page must be placed at the end !!!
-  //{ path: '*', redirect: '/404'}
+  { path: '*', redirect: '/404'}
 ];
 
 const createRouter = (path) => new Router({
@@ -64,8 +64,7 @@ export function resetRouter(menuPos) {
       component: () => import('../views/layout' + menuPos),
       meta: {
         title: element.name,
-        icon: element.icon,
-        childIcon: element.childIcon
+        icon: element.icon
       },
       children: []
     }
