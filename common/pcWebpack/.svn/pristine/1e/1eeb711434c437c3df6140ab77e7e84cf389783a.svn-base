@@ -1,0 +1,10 @@
+const state = {
+    showSettings: false,
+    fixedHeader: false,
+    sidebarLogo: false
+  }
+
+  export default {
+    namespaced: true,
+    state,
+  }

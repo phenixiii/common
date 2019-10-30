@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=11" />-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<link rel="stylesheet" href="../../css/styles.min.css" />
+		<style>
+			html,
+			body {
+				/*background-color: #FFFFFF;*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="aui-bar aui-bar-nav" id="aui-header">
+			<a class="aui-pull-left" tapmode onclick="closeWin()">
+				<span class="aui-iconfont aui-icon-left c-text-default"></span>返回
+			</a>
+			<div class="aui-title">
+				密码修改
+			</div>
+			<a class="aui-btn aui-pull-right"></a>
+		</header>
+
+		<div id="div-body" v-cloak class="aui-flex-row aui-flex-middle aui-padded-15">
+
+			<div class="aui-flex-row aui-margin-b-15 aui-border c-radius aui-padded-l-5 aui-padded-r-5">
+				<ul class="aui-list aui-form-list aui-list-noborder aui-padded-b-10">
+					<li class="aui-list-item">
+						<div class="aui-list-item-inner aui-padded-5">
+							<div class="aui-list-item-label-icon">
+								<i class="aui-iconfont aui-icon-lock"></i>
+							</div>
+							<div class="aui-list-item-input">
+								<input type="password" placeholder="旧密码" v-model.trim="info.OldPassword" autocomplete="off">
+							</div>
+						</div>
+					</li>
+
+					<li class="aui-list-item">
+						<div class="aui-list-item-inner aui-padded-5">
+							<div class="aui-list-item-label-icon">
+								<i class="aui-iconfont aui-icon-lock"></i>
+							</div>
+							<div class="aui-list-item-input">
+								<input type="password" placeholder="新密码" v-model.trim="info.NewPassword" autocomplete="off">
+							</div>
+						</div>
+					</li>
+
+					<li v-show="!checkPassword()" class="aui-list-item cur-min-height aui-bg-default" style="border:0;">
+						<div class="aui-list-item-inner aui-padded-l-10 c-bg-danger aui-text-danger aui-font-size-14 cur-min-height">
+							<span><i class="aui-iconfont aui-icon-info c-text-bold aui-padded-r-5"></i>{{errMsg.LogPassword}}</span>
+						</div>
+					</li>
+
+					<li class="aui-list-item">
+						<div class="aui-list-item-inner aui-padded-5">
+							<div class="aui-list-item-label-icon">
+								<i class="aui-iconfont aui-icon-lock"></i>
+							</div>
+							<div class="aui-list-item-input">
+								<input type="password" placeholder="确认密码" v-model.trim="info.ConfirmPassword" autocomplete="off">
+							</div>
+						</div>
+					</li>
+
+					<li v-show="!checkConfirmPassword()" class="aui-list-item cur-min-height aui-bg-default" style="border:0;">
+						<div class="aui-list-item-inner aui-padded-l-10 c-bg-danger aui-text-danger aui-font-size-14 cur-min-height">
+							<span><i class="aui-iconfont aui-icon-info c-text-bold aui-padded-r-5"></i>{{errMsg.ConfirmLogPassword}}</span>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+
+			<div :class="checkBtn() ? 'aui-btn-info':'aui-btn-default aui-btn-outlined'" class=" aui-margin-b-15 aui-btn aui-btn-block" v-on:click="apply(info)">
+				提交
+			</div>
+
+			<!--<div class="aui-padded-10">
+				<div v-show="info.page == 2" style="display: none;" class="aui-text-danger aui-text-center">初始支付密码为登录密码!</div>
+			</div>-->
+		</div>
+
+	</body>
+
+</html>
+
+<script type="text/javascript" src="../../script/CryptoJS/core-min.js"></script>
+<script type="text/javascript" src="../../script/CryptoJS/cipher-core-min.js"></script>
+<script type="text/javascript" src="../../script/CryptoJS/aes-min.js"></script>
+<script type="text/javascript" src="../../script/CryptoJS/md5-min.js"></script>
+
+<script type="text/javascript" src="../../script/common.min.js"></script>
+<script type="text/javascript" src="../../script/aui.min.js"></script>
+<script type="text/javascript" src="../../script/plugins.min.js"></script>
+<script>
+	var user = jsTools.Storage.getVal(jsTools.Res.userInfo);
+
+	var vm = new Vue({
+		el: '#div-body',
+		data: {
+			info: {
+				SMIID: user.SMIID,
+				OldPassword: '',
+				NewPassword: null,
+				ConfirmPassword: null,
+			},
+			errMsg: {
+				LogPassword: '', //,
+				PayPassword: '',
+				ConfirmLogPassword: '', //,
+				ConfirmPayPassword: '',
+			},
+		},
+		filters: {
+
+		},
+		methods: {
+
+			checkPassword: function() {
+				var info = this.info;
+				var ret = info.NewPassword;
+				var retOld = info.OldPassword;
+				if(ret == retOld) {
+					this.errMsg.LogPassword = '新密码与旧密码一致!';
+					return false;
+				}else {
+					this.errMsg.LogPassword = '';
+					return true;
+				}
+			},
+			checkConfirmPassword: function() {
+				var ret = this.info;
+				if(ret.NewPassword == ret.ConfirmPassword) {
+					this.errMsg.ConfirmLogPassword = '';
+					return true;
+				} else {
+					this.errMsg.ConfirmLogPassword = '两次登录密码不一致!';
+					return false;
+				}
+			},
+
+
+			checkBtn: function() {
+				var ret = this.info;
+				for(var i in ret) {
+					if(ret[i] == '' || ret[i] == null) {
+						return false;
+					}
+				}
+				ret = this.errMsg;
+				for(var i in ret) {
+					if(ret[i] != '') {
+						return false;
+					}
+				}
+				return true;
+			},
+
+			apply: function(info) {
+				if(!this.checkBtn()) return;
+
+				//登录密码修改
+
+				var user = phAjax.userNumber;
+				phAjax.changePassword(user, info.OldPassword, info.NewPassword, function(xmlHttpRequest) {
+					if(xmlHttpRequest.status === 200) {
+						jsTools.toast("登录密码修改成功！", 2000, 'success');
+						jsTools.Storage.removeVal(jsTools.Res.userNumber);
+						jsTools.Storage.removeVal('P-UN');
+						jsTools.Storage.removeVal('P-K');
+						jsTools.sendEvent('MAIN_CHANGE_PANEL');
+						setTimeout(function() {
+							jsTools.Win.close();
+						}, 2000);
+
+					} else {
+						jsTools.toast("密码修改失败！status: " + xmlHttpRequest.statusText, 2000, 'fail');
+					}
+				}, function(xmlHttpRequest) {
+					//console.log("密码修改失败！status: " + xmlHttpRequest.statusText + ", response: " + xmlHttpRequest.responseText, 2000, 'fail');
+					if(xmlHttpRequest.status == '401') {
+						jsTools.toast("旧密码输入错误！", 2000, 'fail');
+					} else
+						jsTools.toast("密码修改失败！status: " + xmlHttpRequest.statusText + ", response: " + xmlHttpRequest.responseText, 2000, 'fail');
+				});
+
+			}
+		},
+		mounted: function() {
+
+		}
+	});
+
+	jsTools.initPage(function() {
+		jsTools.Win.init();
+	});
+
+	function closeWin() {
+		jsTools.Win.close();
+	}
+</script>

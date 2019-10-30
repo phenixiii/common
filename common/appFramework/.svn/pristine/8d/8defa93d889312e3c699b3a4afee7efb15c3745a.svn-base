@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title></title>
+		<link rel="stylesheet" href="../../css/styles.min.css" />
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body class="c-bg-white">
+
+		<header class="aui-bar aui-bar-nav c-fixed" id="aui-header">
+			<a class="aui-pull-left" onclick="closeWin()"><i class="aui-iconfont aui-icon-left c-text-default"></i>返回</a>
+			<div class="aui-title">
+				用户信息
+			</div>
+			<a class="aui-btn aui-pull-right"></a>
+		</header>
+
+		<div class="aui-bar aui-bar-nav">
+			&nbsp;
+		</div>
+
+		<!--<div class="aui-flex-row aui-flex-center aui-margin-15">
+			<div class="c-logo aui-margin-15" style="height: 2.4rem;width: 8rem;"></div>
+		</div>-->
+		<div id="vueUser" v-cloak class="aui-font-size-14 c-bg-white aui-margin-t-5 aui-margin-b-5 aui-margin-l-15 aui-margin-r-15">
+			<div class="aui-flex-col aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b aui-border-b">
+				<div class="aui-flex-item-4">名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</div>
+				<div class="aui-flex-item-8 aui-text-right aui-text-gray">{{info.NickName}}</div>
+			</div>
+
+			<div class="aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b">
+				<div class="aui-flex-item-4 ">审核状态</div>
+				<div class="aui-flex-item-8 aui-text-right aui-text-white">
+					<span class="aui-padded-l-5 aui-padded-r-5 aui-font-size-14" :class="info.MenmberStatus == 1 ? 'aui-bg-primary':'aui-bg-danger'" style="border-radius: 3px;">{{info.MenmberStatusCaption}}</span>
+				</div>
+			</div>
+
+			<div v-if="!isAdmin" class="aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b">
+				<div class="aui-flex-item-10">支付时免登陆</div>
+				<div class="aui-flex-item-2 aui-text-right aui-text-gray">{{info.PayNotNeedLogFlagCaption}}</div>
+			</div>
+
+			<div v-if="!isAdmin" class="aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b">
+				<div class="aui-flex-item-8">余额支付验密模式</div>
+				<div class="aui-flex-item-4 aui-text-right aui-text-gray">{{info.PayPasswordModeCaption}}</div>
+			</div>
+
+			<div class="aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b">
+				<div class="aui-flex-item-4 ">会员类型</div>
+				<div class="aui-flex-item-8 aui-text-right aui-text-gray">{{info.MenmberKindCaption}}</div>
+			</div>
+			<div v-for="item in info.MenmberAccounts" class="aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b">
+				<div class="aui-flex-item-4 ">{{item.CustPropertyCaption}}</div>
+				<div class="aui-flex-item-8 aui-text-right aui-text-warning">{{item.AvaliableBalance}} 元</div>
+			</div>
+
+			<div v-if="!isAdmin" class="aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b">
+				<div class="aui-flex-item-4 ">手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机</div>
+				<div class="aui-flex-item-8 aui-text-right aui-text-gray">
+					{{info.TelC}}
+					<span class="aui-text-info aui-font-size-14 aui-padded-l-10 c-text-bold" @click="editTelOrEmail(0)">
+						<i class="aui-iconfont aui-icon-edit"></i>
+					</span>
+				</div>
+
+			</div>
+			<div v-if="!isAdmin" class="aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b">
+				<div class="aui-flex-item-4 ">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</div>
+				<div class="aui-flex-item-8 aui-text-right aui-text-gray">
+					{{info.EmailC}}
+					<span class="aui-text-info aui-font-size-14 aui-padded-l-10 c-text-bold" @click="editTelOrEmail(1)">
+						<i class="aui-iconfont aui-icon-edit"></i>
+					</span>
+				</div>
+			</div>
+
+			<div v-show="info.MenmberKind == 1 || info.MenmberKind == 0" class="aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b">
+				<div v-if="info.MenmberKind == 1" class="aui-flex-item-4 ">身份证号</div>
+				<div v-else-if="info.MenmberKind == 0" class="aui-flex-item-4 ">税&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号</div>
+				<div class="aui-flex-item-8 aui-text-right aui-text-gray">{{info.TaxIDNoC}}</div>
+			</div>
+
+			<div v-show="info.MenmberKind == 0">
+				<div class="aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b">
+					<div class="aui-flex-item-4 ">法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;人</div>
+					<div class="aui-flex-item-8 aui-text-right aui-text-gray">{{info.Legal}}</div>
+				</div>
+				<div class="aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b">
+					<div class="aui-flex-item-4 ">工商注册号</div>
+					<div class="aui-flex-item-8 aui-text-right aui-text-gray">{{info.BusinessLicense}}</div>
+				</div>
+				<div class="aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b">
+					<div class="aui-flex-item-4 ">组织机构代码</div>
+					<div class="aui-flex-item-8 aui-text-right aui-text-gray">{{info.OrgNo}}</div>
+				</div>
+				<div class="aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b">
+					<div class="aui-flex-item-4 ">注册资金</div>
+					<div class="aui-flex-item-8 aui-text-right aui-text-gray">{{info.RegisteredCaptial}}</div>
+				</div>
+			</div>
+
+			<div class="aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b">
+				<div class="aui-flex-item-4 ">注册时间</div>
+				<div class="aui-flex-item-8 aui-text-right aui-text-gray">{{info.RegisterTime}}</div>
+			</div>
+
+			<div v-if="!isAdmin" class="aui-flex-col aui-padded-t-15 aui-padded-b-15 c-bg-white">
+				<div class="aui-flex-item-4 ">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址</div>
+				<div class="aui-flex-item-8 aui-text-right aui-text-gray">{{info.AddressC}}</div>
+			</div>
+
+			<!--<div class="aui-flex-col aui-padded-t-13 aui-padded-b-13 aui-border-b">
+				<div class="aui-flex-item-4 ">审核时间</div>
+				<div class="aui-flex-item-8 aui-text-right aui-text-gray">{{info.VerifyTime}}</div>
+			</div>-->
+
+			
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/common.min.js"></script>
+	<script type="text/javascript" src="../../script/aui.min.js"></script>
+	<script type="text/javascript" src="../../script/plugins.min.js"></script>
+
+	<script type="text/javascript" src="../../script/CryptoJS/core-min.js"></script>
+	<script type="text/javascript" src="../../script/CryptoJS/cipher-core-min.js"></script>
+	<script type="text/javascript" src="../../script/CryptoJS/aes-min.js"></script>
+	<script type="text/javascript" src="../../script/CryptoJS/md5-min.js"></script>
+
+	<script type="text/javascript">
+		var vm = new Vue({
+			el: '#vueUser',
+			data: {
+				info: {},
+			},
+			computed: {
+				isAdmin: function() {
+					if(this.info != null && (this.info.MenmberKind == 9 || this.info.MenmberKind == 99)) {
+						return true;
+					} else
+						return false;
+				},
+			},
+
+			methods: {
+				editTelOrEmail: function(fg) {
+					var msg = '';
+					if(fg == 0) {
+						msg = '您是否要修改注册手机号？';
+					} else if(fg == 1) {
+						msg = '您是否要修改注册邮箱？';
+					}
+
+					jsTools.dialog.confirm(msg, function() {
+						var dat = {
+							serviceName: jsTools.Server.ApplyEditByEmailService,
+							data: {
+								Parameter: {
+									SMIID: vm.info.SMIID,
+									EditType: fg,
+								}
+							}
+						};
+
+						jsTools.ajax(dat, function(result) {
+							jsTools.toast(result, 2000, 'success');
+						});
+					});
+				},
+				logout: function() {
+					jsTools.dialog.confirm('是否要退出登录？', function(ret) {
+						phAjax.logOff(function() {
+							window.location.href="../main.html";
+						});
+					})
+				}
+			}
+		});
+
+		var userInfo = jsTools.Storage.getVal(jsTools.Res.userInfo);
+
+		jsTools.initPage(function() {
+			jsTools.Win.init();
+			vm.info = userInfo;
+
+		});
+
+		function closeWin() {
+			jsTools.Win.close();
+		}
+
+		function checkUpdate() {
+
+		}
+	</script>
+
+</html>

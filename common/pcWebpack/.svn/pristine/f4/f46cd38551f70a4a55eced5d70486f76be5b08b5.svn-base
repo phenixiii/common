@@ -1,0 +1,67 @@
+import Vue from 'vue'
+import Router from 'vue-router'
+import jsRes from '@/assets/js/res.js'
+import Layout from '../views/layout'
+
+Vue.use(Router)
+
+let routePath = [
+  {
+    path: '/',
+    name: 'login',
+    component: () => import('@/views/login'),
+  },
+  {
+    path: '/layout',
+    name: 'layout',
+    component: Layout,
+  },
+  // {
+  //   path: '/notice',
+  //   name: 'notice',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'noticeInfo',
+  //       name: 'noticeInfo',
+  //       component: () => import('@/views/mods/notice/noticeInfo'),
+  //     }
+  //   ]
+  // },
+  // {
+
+  {
+    path: '/404',
+    component: () => import('@/views/404'),
+    hidden: true
+  },
+  // 404 page must be placed at the end !!!
+  { path: '*', redirect: '/404', hidden: true }
+];
+
+let menus = jsRes.adminMenuList;
+
+menus.forEach(element => {
+  let item = {
+    path : '/' + element.dir,
+    name : element.dir,
+    component: Layout,
+    children : []
+  }
+
+  element.list.forEach(li =>{
+    item.children.push({
+      path:li.href,
+      name:li.href,
+      component: () => import('@/views/mods/' + element.dir + '/' + li.href),
+      meta:{title: element.name + '-' + li.name}
+    })
+  })
+
+  routePath.push(item);  
+});
+
+export default new Router({
+  scrollBehavior: () => ({ y: 0 }),
+  routes: routePath
+})

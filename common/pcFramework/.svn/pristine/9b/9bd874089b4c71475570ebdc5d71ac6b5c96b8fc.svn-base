@@ -1,0 +1,139 @@
+<div id="div-userManager">
+	<!-- 背景图-->
+	<div class="d-onlineBody-l"></div>
+	<div class="d-onlineBody-r"></div>
+	<!-- 查询 -->
+	<div class="d-search-wrap ">
+		<el-row type="flex" align="middle" justify="space-between" class="d-margin-t-10 d-margin-b-10">
+			<el-col>
+				<el-form :inline="true" class="demo-form-inline">
+					<el-row type="flex" align="middle">
+						<el-col :span="12">
+							<el-col class="d-margin-r-25">
+								<el-form-item label="工号、姓名、邮箱：">
+									<el-input style="width: 140%;" v-model="parameters.No" placeholder="请输入工号、姓名、邮箱"></el-input>
+								</el-form-item>
+								<el-button class="d-margin-r-5" type="primary" icon="el-icon-search" @click="query()" style="float: right;">查询</el-button>
+							</el-col>
+						</el-col>
+						<el-col :span="2" :offset="9">
+							<el-button type="danger" icon="el-icon-plus" @click="AddUser()">新增用户</el-button>
+						</el-col>
+					</el-row>
+				</el-form>
+			</el-col>
+		</el-row>
+	</div>
+	<div class="d-margin-t-15 ">
+
+	</div>
+	<!--数据-->
+	<div id="tbdata" class="d-padded-t-20 d-boxStab" v-loading="loading" element-loading-text="正在查询数据" element-loading-spinner="el-icon-loading" element-loading-background="rgba(0, 0, 0, 0.8)">
+		<div class="d-pub-table">
+			<el-table :data="tableData" style="width: 100%" ref="singleTable" highlight-current-row>
+				<el-table-column fixed type="index" header-align="center" align="center" label="序号" width="60">
+				</el-table-column>
+				<el-table-column label="工号" width="120" header-align="center" align="center">
+					<span slot-scope="scope">{{scope.row.userNumber}}</span>
+				</el-table-column>
+				<el-table-column label="姓名" header-align="center" align="center" width="130">
+					<span slot-scope="scope">{{scope.row.userName}}</span>
+				</el-table-column>
+				<el-table-column label="角色" width="100" header-align="center" align="center">
+					<span slot-scope="scope">{{scope.row.userRole}}</span>
+				</el-table-column>
+				<el-table-column label="联系电话" width="130" header-align="center" align="center">
+					<span slot-scope="scope">{{scope.row.userTel}}</span>
+				</el-table-column>
+				<el-table-column label="邮箱" width="150" header-align="center" align="center">
+					<span slot-scope="scope">{{scope.row.userEmail}}</span>
+				</el-table-column>
+				<el-table-column label="操作" header-align="center" align="center">
+					<template slot-scope="scope">
+						<el-button type="text" size="mini" style="color: #2790e7;" @click="EditUser(scope.row)">编辑</el-button>
+						<el-button type="text" size="mini" style="color:#D85D07;" @click="DeleteUser(scope.row)">删除</el-button>
+					</template>
+				</el-table-column>
+
+				<el-table-column type="expand">
+					<template slot-scope="props">
+						<el-form label-position="left" inline class="demo-table-expand">
+							<div class="d-list-horline">
+								<el-row class="d-item">
+									<el-col :span="10">
+										<span class="d-label">备注</span>{{ props.row.remark}}
+									</el-col>
+									<el-col :span="10" :offset="2">
+										<span class="d-label">备注</span>{{ props.row.remark}}
+									</el-col>
+								</el-row>
+							</div>
+						</el-form>
+					</template>
+				</el-table-column>
+
+			</el-table>
+		</div>
+
+		<!--分页-->
+		<el-row type="flex" align="middle" justify="center" class="d-padded-20">
+			<el-col :span="8">
+				<div class="d-text-left d-height-30 d-margin-t-15" style="height: 32px!important;">
+					第{{currentPage}}/{{pageNumbers}}页
+					<span class="d-text-notice d-margin-l-15">全部用户：{{total}} 个</span>
+				</div>
+			</el-col>
+			<el-col :span="16" :offset="4">
+				<div class="d-text-right">
+					<el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="currentPage" :page-size="pageSize" layout="prev, pager, next, jumper" :total="total">
+					</el-pagination>
+				</div>
+			</el-col>
+		</el-row>
+	</div>
+
+	<!-- 编辑数据 -->
+	<el-dialog title="编辑用户信息" width="50%" :visible.sync="isDialogShow" center :append-to-body="true">
+		<div class="d-formWhite">
+			<el-form label-width="11rem" :model="userInfo" status-icon class="demo-ruleForm">
+				<el-row>
+					<el-col :span="18" :offset="2">
+						<el-form-item label="姓名：">
+							<el-input v-model="userInfo.userName" disabled="true" placeholder=" " autocomplete="off"></el-input>
+						</el-form-item>
+					</el-col>
+				</el-row>
+				<el-row>
+					<el-col :span="18" :offset="2">
+						<el-form-item label="角色：" prop="ContactTel">
+							<el-select class="d-width-100" v-model="userInfo.userRole" placeholder="选择">
+								<el-option v-for="item in roleList" :key="item.Key" :label="item.Caption" :value="item.Key">
+								</el-option>
+							</el-select>
+						</el-form-item>
+				</el-row>
+
+				<el-row>
+					<el-col :span="18" :offset="2">
+						<el-form-item label="联系电话：" prop="userTel">
+							<el-input v-model="userInfo.userTel" placeholder="手机号码或带区号的固定电话  " maxlength="15" autocomplete="off"></el-input>
+						</el-form-item>
+					</el-col>
+				</el-row>
+				<el-row>
+					<el-col :span="18" :offset="2">
+						<el-form-item label="邮箱：" prop="userEmail">
+							<el-input v-model="userInfo.userEmail" placeholder="手机号码或带区号的固定电话  " maxlength="15" autocomplete="off"></el-input>
+						</el-form-item>
+					</el-col>
+				</el-row>
+			</el-form>
+		</div>
+		<div slot="footer" class="dialog-footer">
+			<el-button type="primary" @click="Save()">保 存</el-button>
+			<el-button @click="Cancel()">取 消</el-button>
+		</div>
+	</el-dialog>
+</div>
+
+<script type="text/javascript" src="../Js/biz/userManage.js"></script>

@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title></title>
+		<link rel="stylesheet" href="../../css/styles.min.css" />
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+
+		<header class="aui-bar aui-bar-nav" id="aui-header">
+			<a class="aui-pull-left" onclick="closeWin()"><i class="aui-iconfont aui-icon-left c-text-default"></i>返回</a>
+			<div class="aui-title">
+				商户信息
+			</div>
+			<a class="aui-btn aui-pull-right"></a>
+		</header>
+		<div id="div-body" v-cloak class="aui-font-size-14">
+			<div class="aui-flex-col aui-padded-10 aui-border-b c-bg-white">
+				<div class="aui-flex-item-3 aui-border-r">商户号</div>
+				<div class="aui-flex-item-9 aui-text-right c-user-select">{{item.SBSID}}</div>
+			</div>
+
+			<div class="aui-flex-col aui-padded-10 aui-border-b c-bg-white">
+				<div class="aui-flex-item-3 aui-border-r">商户名称</div>
+				<div class="aui-flex-item-9 aui-text-right c-user-select">{{item.BusinessName}}</div>
+			</div>
+
+			<div class="aui-flex-col aui-padded-10 aui-border-b c-bg-white">
+				<div class="aui-flex-item-3 aui-border-r">会员号</div>
+				<div class="aui-flex-item-9 aui-text-right c-user-select">{{item.MenmberNo}}</div>
+			</div>
+			<div class="aui-flex-col aui-padded-10 aui-border-b c-bg-white">
+				<div class="aui-flex-item-3 aui-border-r">签名Key</div>
+				<div class="aui-flex-item-9 aui-text-right c-user-select aui-content">
+					{{item.SignKey}}
+				</div>
+			</div>
+			
+			<div class="aui-flex-col aui-padded-10 aui-border-b c-bg-white">
+				<div class="aui-flex-item-3 aui-border-r">通知URL</div>
+				<div class="aui-flex-item-9 aui-text-right c-user-select">{{item.NotifyUrl}}</div>
+			</div>
+			
+			<div class="aui-flex-col aui-padded-10 aui-border-b c-bg-white">
+				<div class="aui-flex-item-3 aui-border-r">支付模式</div>
+				<div class="aui-flex-item-9 aui-text-right">
+					<input type="radio" class="aui-radio aui-margin-r-5" name="ZFM" value="0" v-model.trim="item.AssureModel" />非担保支付
+					<input type="radio" class="aui-radio aui-margin-r-5" name="ZFM" value="1" v-model.trim="item.AssureModel" />担保支付
+				</div>
+			</div>
+			<div class="aui-flex-col aui-padded-l-10 aui-padded-r-10 aui-padded-t-5 aui-padded-b-5 aui-flex-middle aui-border-b c-bg-white">
+				<div class="aui-flex-item-3 aui-border-r">担保期限</div>
+				<div class="aui-flex-item-9 aui-text-right">
+					<input class="aui-input aui-text-right" type="number" min="0" v-model.trim="item.LimitPayDays" />
+				</div>
+			</div>
+			
+			<div class="aui-flex-col aui-padded-10 aui-border-b c-bg-white">
+				<div class="aui-flex-item-3 aui-border-r">微信支付</div>
+				<div class="aui-flex-item-9 aui-text-right">
+					<input class="aui-switch" type="checkbox" v-model.trim="item.AllowWebchat" />
+				</div>
+			</div>
+			<div class="aui-flex-col aui-padded-10 aui-border-b c-bg-white">
+				<div class="aui-flex-item-3 aui-border-r">代理支付</div>
+				<div class="aui-flex-item-9 aui-text-right">
+					<input class="aui-switch" type="checkbox" v-model.trim="item.AllowAgentPay" />
+				</div>
+			</div>
+			<div class="aui-flex-col aui-padded-10 aui-border-b c-bg-white">
+				<div class="aui-flex-item-3 aui-border-r">网关支付</div>
+				<div class="aui-flex-item-9 aui-text-right">
+					<input class="aui-switch" type="checkbox" v-model.trim="item.AllowGateway" />
+				</div>
+			</div>
+			<div class="aui-flex-col aui-padded-10 aui-border-b c-bg-white">
+				<div class="aui-flex-item-3 aui-border-r">网银支付</div>
+				<div class="aui-flex-item-9 aui-text-right">
+					<input class="aui-switch" type="checkbox" v-model.trim="item.AllowUnionPay" />
+				</div>
+			</div>
+			
+			<div class="aui-flex-col aui-padded-10 aui-border-b c-bg-white">
+				<div class="aui-flex-item-3 aui-border-r">备注</div>
+				<div class="aui-flex-item-9">
+					<textarea class="aui-content" v-model.trim="item.Remark"></textarea>
+					
+				</div>
+			</div>
+			
+			<div class="aui-flex-col aui-padded-10 aui-border-b c-bg-white">
+				<div class="aui-btn aui-btn-block aui-btn-info" @click="apply(item)">提交</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../script/common.min.js"></script>
+	<script type="text/javascript" src="../../script/aui.min.js"></script>
+	<script type="text/javascript" src="../../script/plugins.min.js"></script>
+
+	<script type="text/javascript" src="../../script/CryptoJS/core-min.js"></script>
+	<script type="text/javascript" src="../../script/CryptoJS/cipher-core-min.js"></script>
+	<script type="text/javascript" src="../../script/CryptoJS/aes-min.js"></script>
+	<script type="text/javascript" src="../../script/CryptoJS/md5-min.js"></script>
+
+	<script type="text/javascript">
+		var user = jsTools.Storage.getVal(jsTools.Res.userInfo);
+
+		var vm = new Vue({
+			el: "#div-body",
+			data: {
+				info: {
+					BusinessSystemQuerys: []
+				},
+				item : {}
+			},
+			mounted: function() {
+				
+			},
+			methods: {
+				apply: function(item) {
+					
+					var dat = {
+						title:"正在处理...",
+						serviceName: jsTools.Server.EditBusinessSystemService,
+						data: {
+							Parameter: item
+						}
+					};
+					
+					jsTools.ajax(dat, function(result) {
+						jsTools.toast('系统信息编辑成功！',2000,'success');
+					});
+				}
+			}
+		});
+
+		function setVM(li) {
+			vm.info = li;
+			vm.item = li.BusinessSystemQuerys[0];
+		}
+
+		function GetBusinessSystem(callback) {
+			var dat = {
+				serviceName: jsTools.Server.BusinessSystemQueryService,
+				data: {
+					Parameter: {
+						MulCriteria: user.MenmberNo
+					}
+				}
+			};
+
+			jsTools.ajax(dat, function(result) {
+				
+				if(typeof callback == 'function')
+					callback(result);
+			});
+		}
+
+		jsTools.initPage(function() {
+			jsTools.Win.init();
+			GetBusinessSystem(setVM);
+		});
+
+		function closeWin() {
+			jsTools.Win.close();
+		}
+
+		
+	</script>
+
+</html>

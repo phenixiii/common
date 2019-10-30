@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/styles.min.css" />
+
+	</head>
+
+	<body class="c-bg-white">
+		<header class="aui-bar aui-bar-nav" id="aui-header">
+			<a class="aui-pull-left" tapmode onclick="closeWin()"> 
+				<span class="aui-iconfont aui-icon-left c-text-default"></span>返回 
+			</a>
+			<div class="aui-title">
+				关于我们
+			</div>
+		</header>
+
+		<section class="aui-content aui-padded-15">
+			<div class="aui-flex-row aui-padded-15 aui-flex-middle aui-flex-center">
+				<br />
+				<div class="aui-flex-col aui-flex-middle aui-flex-center aui-padded-15 ">
+					<div class="aui-margin-b-10"><img src="../../image/logo/logo_SIPG_CEN.png"  /></div>
+				</div>
+				<br /><br />
+				<div class="aui-flex-row aui-flex-middle aui-flex-center">
+					<div class="aui-margin-t-15 aui-margin-b-10">
+						<img src="../../image/logo/logo_eharbor.png" style="height: 2.25rem;" />
+					</div>
+					<div class="aui-text-center aui-font-size-20 c-text-bold aui-padded-10">后台管理系统</div>
+					<p id="version" class="aui-font-size-20">
+						版本号：
+					</p>
+				</div>	
+				
+
+			</div>
+		</section>
+
+		<footer class="aui-bar aui-bar-tab " onclick="openConfig()">
+			<p class="aui-font-size-14 c-text-bold">
+				上海海勃物流软件有限公司
+			</p>
+			<p class="aui-font-size-12">
+				CopyRight@2019
+			</p>
+			<br />
+
+		</footer>
+	</body>
+	<script type="text/javascript" src="../../script/common.min.js"></script>
+	<script type="text/javascript" src="../../script/aui.min.js"></script>
+	<script type="text/javascript" src="../../script/plugins.min.js"></script>
+	<script type="text/javascript">
+
+		jsTools.initPage(function() {
+			jsTools.Win.init('aui-header');
+			$('#version').text('V '+ jsTools.Res.VERSION);
+		});
+
+		function closeWin() {
+			jsTools.Win.close();
+		}
+			
+		function openConfig(){
+			jsTools.openConfig();
+		}
+	</script>
+
+</html>

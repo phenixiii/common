@@ -1,0 +1,39 @@
+<div>
+	<div id="app1" style="padding: 30px;">
+		<el-table :data="model.menus" border max-height="400">
+			<el-table-column prop="id" label="id" type="selection" fixed></el-table-column>
+			<el-table-tree-column fixed :expand-all="true" child-key="children" file-icon="icon icon-file" folder-icon="icon icon-folder" prop="label" label="title" :show-overflow-tooltip="true" width="320" :indent-size="20">
+				<template slot-scope="scope">
+					<span @click="text(scope)">{{scope.row.label}} -- {{scope.row.id}}</span>
+				</template>
+					<el-table-column prop="descriptionD1" label="描述1" width="180"></el-table-column>
+					<el-table-column prop="descriptionD2" label="描述2" width="180"></el-table-column>
+					<el-table-column prop="descriptionD3" label="描述3" width="180"></el-table-column>
+			</el-table-tree-column>
+			<el-table-column prop="description" label="Description" width="180"></el-table-column>
+			<el-table-column prop="aa" label="aa" width="180"></el-table-column>
+		</el-table>
+
+	</div>
+	<script type="text/javascript" src="../Res/data.js"></script>
+
+	<script type="text/javascript">
+		new Vue({
+			el: "#app1",
+
+			data: {
+				showCode: false,
+				html: '',
+				model: {
+					menus: trees
+				}
+			},
+
+			methods: {
+				text(scope) {
+					console.info(scope)
+				}
+			}
+		})
+	</script>
+</div>

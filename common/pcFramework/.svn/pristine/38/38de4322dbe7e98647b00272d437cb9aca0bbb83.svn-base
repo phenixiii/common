@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <article>
+        设备监控
+        <section id="titleSearch">
+                <div class="navSearch">
+                    <el-row v-if="title">
+                        <el-col :span="4">
+                            <h3 style="line-height: 42px;">作业路人员监控---互动码头</h3>
+                        </el-col>
+                    </el-row>
+                    <el-row v-if="!title">
+                        <el-col :span="4" v-if="type !=3">
+                            <h3 style="line-height: 42px;">作业路人员监控---互动码头</h3>
+                        </el-col>
+                        <el-col :span="20" v-if="type != 3">
+                            <el-form :inline="true" :model="formSearch" style="float: right;">
+                                <el-form-item :label="item.label" v-for="(item, index) in formSearch" :key="index">
+                                    <el-input v-model.trime="item.value" style="width:120px"></el-input>
+                                </el-form-item>
+                                <el-form-item label="开始时间" v-show="type == 2">
+                                    <el-date-picker
+                                        v-model="startTime"
+                                        type="date"
+                                        placeholder="选择开始日期"
+                                    >
+                                    </el-date-picker>
+                                </el-form-item>
+                                <el-form-item label="结束时间" v-show="type == 2">
+                                        <el-date-picker
+                                            v-model="endTime"
+                                            type="date"
+                                            placeholder="选择结束时间"
+                                        >
+                                        </el-date-picker>
+                                    </el-form-item>
+                                <el-form-item>
+                                        <el-button type="primary" @click="onSearch">查询</el-button>
+                                </el-form-item>
+                            </el-form>
+                        </el-col>
+                        <el-col v-if="type == 3">
+                            <h3 style="margin-bottom: 10px;">查询条件</h3>
+                        </el-col>
+                        <el-col :span="24" v-if="type == 3">
+                                <el-form :inline="true" :model="formSearch">
+                                    <el-form-item :label="item.label" v-for="(item, index) in formSearch" :key="index">
+                                        <el-input  v-model.trime="item.value"></el-input>
+                                    </el-form-item> 
+                                    <el-form-item label="开始时间" 
+                                    v-show="!printType">
+                                        <el-date-picker
+                                            v-model="startTime"
+                                            type="date"
+                                            placeholder="选择开始日期"
+                                        >
+                                        </el-date-picker>
+                                    </el-form-item>
+                                    <el-form-item label="结束时间" 
+                                    v-show="!printType">
+                                            <el-date-picker
+                                                v-model="endTime"
+                                                type="date"
+                                                placeholder="选择结束时间"
+                                            >
+                                            </el-date-picker>
+                                        </el-form-item>
+                                    <el-form-item>
+                                            <el-button type="primary" @click="onSearch" v-show="!printType">查询</el-button>
+                                            <el-button type="primary" @click="onExport" v-show="!printType">导出</el-button>
+                                            <el-button type="primary" @click="onView" v-show="printType">预览</el-button>
+                                            <el-button type="primary" @click="onPrint" v-show="printType">打印</el-button>
+                                    </el-form-item>
+                                </el-form>
+                        </el-col>
+                    </el-row>
+                </div>
+        </section>
+    </article>
+    <script>
+            (function(){
+                new Vue({
+                    el:'#titleSearch',
+                    data: function(){
+                        return {
+                            startTime: null,
+                            endTime: null
+                        }
+                    },
+                    props:{
+                        type:{ //一共3种类型，1是标题加两个搜索，2是无标题搜索加时间，3是多条件搜索
+                            type: Number,
+                            default: 1
+                        },
+                        printType:{
+                            type: Boolean,
+                            default: false
+                        },
+                        title: {//是否只显示标题
+                            type: Boolean,
+                            default: false
+                        },
+                        formSearch:{//搜索内容
+                            type: Object,
+                            default: {
+                                department: {
+                                    label: '部门',
+                                    value: null
+                                },
+                                bridge: {
+                                    label: '吊桥号',
+                                    value: null
+                                }, 
+                            }
+                        }
+                    },
+                    methods: {
+                        onSearch: function(){
+                            this.$emmit('search', this.formSearch)
+                        },
+                        onExport: function(){
+
+                        },
+                        onView: function(){
+
+                        },
+                        onPrint: function(){
+
+                        }
+                    },
+                })
+            })()
+    </script>
+</body>
+</html>

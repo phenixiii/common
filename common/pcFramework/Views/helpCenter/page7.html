@@ -1,0 +1,393 @@
+<div id="div-page7">
+	<!-- 查询 -->
+	<div class="d-serach-panel">
+		<el-row class="d-search-row">
+			<el-col :span="5">
+				<el-row>
+					<el-col :span="8" class="d-search-label">
+						计划状态：
+					</el-col>
+					<el-col :span="16">
+						<el-select v-model="serachPrams.A" placeholder="计划状态">
+							<el-option label="计划中" value="0"></el-option>
+							<el-option label="已完成" value="1"></el-option>
+							<el-option label="已入库" value="2"></el-option>
+						</el-select>
+					</el-col>
+				</el-row>
+			</el-col>
+
+			<el-col :span="6">
+				<el-row>
+					<el-col :span="8" class="d-search-label">
+						货主：
+					</el-col>
+					<el-col :span="16">
+						<el-select v-model="serachPrams.B" placeholder="请选择">
+							<el-option v-for="x in shipper" :key="x.value" :label="x.caption" :value="x.value"> </el-option>
+						</el-select>
+					</el-col>
+				</el-row>
+			</el-col>
+
+			<el-col :span="6">
+				<el-row>
+					<el-col :span="8" class="d-search-label">
+						目标货主：
+					</el-col>
+					<el-col :span="16">
+						<el-select v-model="serachPrams.C" placeholder="请选择">
+							<el-option v-for="x in shipper" :key="x.value" :label="x.caption" :value="x.value"> </el-option>
+						</el-select>
+					</el-col>
+				</el-row>
+			</el-col>
+
+			<el-col :span="5">
+				<el-row>
+					<el-col :span="8" class="d-search-label">
+						计划号：
+					</el-col>
+					<el-col :span="16">
+						<el-input v-model="serachPrams.D" placeholder="计划号"></el-input>
+					</el-col>
+				</el-row>
+			</el-col>
+
+			<el-col :span="2" class="d-padded-l-30 d-z-index-999">
+				<el-button type="primary" @click="query">查询</el-button>
+				<a id="Searchmore" class="el-icon-minus d-font-size-16 d-cursor-pointer d-text-right" @click="openSearchmore()"></a>
+			</el-col>
+		</el-row>
+
+		<el-row v-if="isOpenSearchMore" class="d-search-row">
+			<el-col :span="5">
+				<el-row>
+					<el-col :span="8" class="d-search-label">
+						品名：
+					</el-col>
+					<el-col :span="16">
+						<el-select v-model="serachPrams.E" placeholder="品名">
+							<el-option v-for="x in productName" :key="x.value" :label="x.caption" :value="x.value"> </el-option>
+						</el-select>
+					</el-col>
+				</el-row>
+			</el-col>
+
+			<el-col :span="6">
+				<el-row>
+					<el-col :span="8" class="d-search-label">
+						实际完成时间：
+					</el-col>
+					<el-col :span="16">
+						<el-date-picker v-model="serachPrams.F" align="right" type="date" placeholder="选择日期" :picker-options="pickerOptions">
+						</el-date-picker>
+					</el-col>
+				</el-row>
+			</el-col>
+			<el-col :span="6">
+				<el-row>
+					<el-col :span="8" class="d-search-label">
+						至：
+					</el-col>
+					<el-col :span="16">
+						<el-date-picker v-model="serachPrams.G" align="right" type="date" placeholder="选择日期" :picker-options="pickerOptions">
+						</el-date-picker>
+					</el-col>
+				</el-row>
+			</el-col>
+
+			<el-col :span="5">
+				<el-row>
+					<el-col :span="8" class="d-search-label">
+						提单号：
+					</el-col>
+					<el-col :span="16">
+						<el-input v-model="serachPrams.H" placeholder="提单号"></el-input>
+					</el-col>
+				</el-row>
+			</el-col>
+
+		</el-row>
+
+		<el-row v-if="isOpenSearchMore" class="d-search-row">
+			<el-col :span="5">
+				<el-row>
+					<el-col :span="8" class="d-search-label">
+						熔炼号：
+					</el-col>
+					<el-col :span="16">
+						<el-input v-model="serachPrams.I" placeholder="熔炼号"></el-input>
+					</el-col>
+				</el-row>
+			</el-col>
+
+			<el-col :span="6">
+				<el-row>
+					<el-col :span="8" class="d-search-label">
+						新卡号：
+					</el-col>
+					<el-col :span="16">
+						<el-input v-model="serachPrams.J" placeholder="新卡号"></el-input>
+					</el-col>
+				</el-row>
+			</el-col>
+			<el-col :span="6">
+				<el-row>
+					<el-col :span="8" class="d-search-label">
+						任务单号：
+					</el-col>
+					<el-col :span="16">
+						<el-input v-model="serachPrams.K" placeholder="任务单号"></el-input>
+					</el-col>
+				</el-row>
+			</el-col>
+
+			<el-col :span="5">
+				<el-row>
+					<el-col :span="8" class="d-search-label">
+						客户分组：
+					</el-col>
+					<el-col :span="16">
+						<el-select v-model="serachPrams.L" placeholder="请选择">
+							<el-option v-for="x in shipper" :key="x.value" :label="x.caption" :value="x.value"> </el-option>
+						</el-select>
+					</el-col>
+				</el-row>
+			</el-col>
+
+		</el-row>
+
+	</div>
+
+	<div class="d-margin-t-15 ">
+		<!--过户计划信息-->
+		<el-card v-if="tableData!=null" :class="changePanelWidth()" class="d-pub-table d-height-100" v-loading="loading" element-loading-text="正在加载数据" element-loading-spinner="el-icon-loading" element-loading-background="rgba(0, 0, 0, 0.8)">
+			<div v-if="showPlanList" slot="header" class="clearfix">
+				<span class="d-text-red">过户计划信息</span>
+				<el-button style="float: right; padding: 3px 0" type="text" class=" d-cursor-pointer" @click="clearFilter(1)">清除所有过滤器</el-button>
+			</div>
+			<div v-if="showPlanList" class="el-card__body d-padded-0">
+				<el-table class="d-padded-0" ref="multipleTable" :data="tableData.dataList" tooltip-effect="dark" :height="firstLevelHeight" fit style="width: 100%" mini show-summary=true stripe=true highlight-current-row @row-click="selectPlanRow" @selection-change="selectPlan">
+					<!--<el-table-column label="选择" type="selection" align="center" width="50"> </el-table-column>-->
+					<el-table-column label="序号" type="index" align="center" width="50"> </el-table-column>
+					<el-table-column label="Go" fixed align="center" width="80">
+						<span slot-scope="scope">
+								<a class="el-icon-plus d-font-size-14 d-cursor-pointer " @click="GoDetail(scope.row)"></a>
+							</span>
+					</el-table-column>
+					<el-table-column label="计划号" prop="planNo" min-width="150" sortable column-key="planNo" filter-placement :filters="tableData.searchpalnNo" :filter-method="columnSearch" header-align="center" align="center"></el-table-column>
+					<el-table-column label="货主" prop="shipper" min-width="180" sortable column-key="shipper" filter-placement :filters="tableData.searchshipper" :filter-method="columnSearch" header-align="center" align="center"></el-table-column>
+					<el-table-column label="目标货主" prop="targetShipper" min-width="180" sortable column-key="targetShipper" filter-placement :filters="tableData.searchtargetShipper" :filter-method="columnSearch" header-align="center" align="center"></el-table-column>
+					<el-table-column label="品名" prop="productName" min-width="100" sortable column-key="productName" filter-placement :filters="tableData.searchproductName" :filter-method="columnSearch" header-align="center" align="center"></el-table-column>
+					<el-table-column label="多品牌挑货" min-width="100" header-align="center" align="center">
+						<span slot-scope="scope"><el-checkbox v-model="scope.row.morebrandName"></el-checkbox></span>
+					</el-table-column>
+					<el-table-column label="计划数量" prop="planNumber" min-width="100" sortable column-key="planNumber" filter-placement header-align="center" align="center"></el-table-column>
+					<el-table-column label="计划重量" prop="planWeight" min-width="100" sortable column-key="planWeight" filter-placement header-align="center" align="center"></el-table-column>
+					<el-table-column label="实际件数" prop="actualNumber" min-width="100" sortable column-key="actualNumber" filter-placement header-align="center" align="center"></el-table-column>
+					<el-table-column label="实际重量" prop="actualWeight" min-width="100" sortable column-key="actualWeight" filter-placement header-align="center" align="center"></el-table-column>
+					<el-table-column label="提单号" prop="billNo" min-width="150" sortable column-key="billNo" filter-placement :filters="tableData.searchbillNo" :filter-method="columnSearch" header-align="center" align="center"></el-table-column>
+					<el-table-column label="计划状态" prop="planState" min-width="100" header-align="center" align="center"></el-table-column>
+					<el-table-column label="实际开始时间" prop="actualStartDate" sortable column-key="actualStartDate" filter-placement :filters="tableData.searchactualStartDate" :filter-method="columnSearch" min-width="150" header-align="center" align="center"></el-table-column>
+					<el-table-column label="实际结束时间" prop="actualEndDate" min-width="150" sortable column-key="actualEndDate" filter-placement :filters="tableData.searchactualEndDate" :filter-method="columnSearch" header-align="center" align="center"></el-table-column>
+					<el-table-column label="录入人" prop="inputer" min-width="100" header-align="center" align="center"></el-table-column>
+					<el-table-column label="录入时间" prop="inputDate" min-width="150" header-align="center" align="center"></el-table-column>
+				</el-table>
+			</div>
+			<div v-if="currentPlan!=null&&showPlanInfo" slot="header" class="clearfix">
+				<span class="d-text-red">过户计划详情</span>
+				<el-button style="float: right; padding: 3px 0;color:#E6A23C;!important" type="text" class=" d-cursor-pointer " @click="backPlanList()">返回计划列表</el-button>
+			</div>
+			<div id="planInfo" v-if="currentPlan!=null&&showPlanInfo" style="height: 500px; width: 95%;" class="d-sawtooth-bd d-margin-l-15">
+				<el-row class="d-el-row ">
+					<el-col :span="8" class="d-search-label">
+						计划号：
+					</el-col>
+					<el-col :span="16">
+						{{currentPlan.planNo}}
+					</el-col>
+				</el-row>
+				<el-row class="d-el-row">
+					<el-col :span="8" class="d-search-label">
+						货主：
+					</el-col>
+					<el-col :span="16">
+						{{currentPlan.shipper}}
+					</el-col>
+				</el-row>
+				<el-row class="d-el-row">
+					<el-col :span="8" class="d-search-label">
+						目标货主：
+					</el-col>
+					<el-col :span="16">
+						{{currentPlan.targetShipper}}
+					</el-col>
+				</el-row>
+				<el-row class="d-el-row">
+					<el-col :span="8" class="d-search-label">
+						品名：
+					</el-col>
+					<el-col :span="16">
+						{{currentPlan.productName}}
+					</el-col>
+				</el-row>
+				<el-row class="d-el-row">
+					<el-col :span="8" class="d-search-label">
+						多品牌挑货：
+					</el-col>
+					<el-col :span="16">
+						{{currentPlan.morebrandName==true?"是":"否"}}
+					</el-col>
+				</el-row>
+				<el-row class="d-el-row">
+					<el-col :span="8" class="d-search-label">
+						计划数量：
+					</el-col>
+					<el-col :span="16">
+						{{currentPlan.planNumber}}
+					</el-col>
+				</el-row>
+				<el-row class="d-el-row">
+					<el-col :span="8" class="d-search-label">
+						计划重量：
+					</el-col>
+					<el-col :span="16">
+						{{currentPlan.planWeight}}
+					</el-col>
+				</el-row>
+				<el-row class="d-el-row">
+					<el-col :span="8" class="d-search-label">
+						实际件数：
+					</el-col>
+					<el-col :span="16">
+						{{currentPlan.actualNumber}}
+					</el-col>
+				</el-row>
+				<el-row class="d-el-row">
+					<el-col :span="8" class="d-search-label">
+						提单号：
+					</el-col>
+					<el-col :span="16">
+						{{currentPlan.billNo}}
+					</el-col>
+				</el-row>
+				<el-row class="d-el-row">
+					<el-col :span="8" class="d-search-label">
+						计划状态：
+					</el-col>
+					<el-col :span="16">
+						{{currentPlan.planState}}
+					</el-col>
+				</el-row>
+				<el-row class="d-el-row">
+					<el-col :span="8" class="d-search-label">
+						实际开始时间：
+					</el-col>
+					<el-col :span="16">
+						{{currentPlan.actualStartDate}}
+					</el-col>
+				</el-row>
+				<el-row class="d-el-row">
+					<el-col :span="8" class="d-search-label">
+						实际结束时间：
+					</el-col>
+					<el-col :span="16">
+						{{currentPlan.actualEndDate}}
+					</el-col>
+				</el-row>
+				<el-row class="d-el-row">
+					<el-col :span="8" class="d-search-label">
+						录入人：
+					</el-col>
+					<el-col :span="16">
+						{{currentPlan.inputer}}
+					</el-col>
+				</el-row>
+				<el-row class="d-el-row">
+					<el-col :span="8" class="d-search-label">
+						录入时间：
+					</el-col>
+					<el-col :span="16">
+						{{currentPlan.inputDate}}
+					</el-col>
+				</el-row>
+			</div>
+		</el-card>
+
+		<!--过户明细/提单-->
+		<el-card class="d-pub-table d-margin-t-10 " v-if="detailPlan.length>0&&planBillDetail.length>0">
+			<div slot="header" class="clearfix">
+				<span class="d-text-green">过户明细</span>
+				<el-button style="float: right; padding: 3px 0" type="text" class=" d-cursor-pointer " @click="clearFilter(2)">清除所有过滤器</el-button>
+				<el-button style="float: right; padding: 3px 0;color:#E6A23C;!important" type="text" class=" d-cursor-pointer d-margin-r-30 d-text-green" @click="backPlanDetailList()">返回过户明细信息列表</el-button>
+			</div>
+			<el-tabs type="border-card">
+				<el-tab-pane label="过户明细">
+					<el-table v-if="detailPlan.length>0" ref="multipleDeailTable" :data="detailPlan" :max-height="secondLevelHeight" tooltip-effect="dark" fit style="width: 100%" mini show-summary=true stripe=true highlight-current-row @row-click="selectPlanDetailRow" @selection-change="selectDetail">
+						<!--<el-table-column label="选择" type="selection" align="center" width="50"> </el-table-column>-->
+						<el-table-column label="序号" type="index" align="center" width="50"> </el-table-column>
+						<el-table-column label="子计划号" prop="detailPlanNo" min-width="150" sortable column-key="detailPlanNo" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="过户计划号" prop="planNo" min-width="150" sortable column-key="planNo" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="挑货仓库" prop="warehouse" min-width="180" sortable column-key="warehouse" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="多品牌" min-width="100" header-align="center" align="center">
+							<span slot-scope="scope"><el-checkbox v-model="scope.row.morebrandName"></el-checkbox></span>
+						</el-table-column>
+						<el-table-column label="品名" prop="productbrandName" min-width="100" sortable column-key="productbrandName" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="卡号" prop="cardNo" min-width="180" sortable column-key="cardNo" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="计划数量" prop="planNumber" min-width="100" sortable column-key="planNumber" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="计划重量" prop="planWeight" min-width="100" sortable column-key="planWeight" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="云计划件数" prop="planCloudNumber" min-width="120" sortable column-key="planCloudNumber" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="云计划重量" prop="actualWeight" min-width="120" sortable column-key="actualWeight" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="挑货件数" prop="pickCount" min-width="100" sortable column-key="pickCount" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="提单号" prop="billNo" min-width="150" header-align="center" align="center"></el-table-column>
+					</el-table>
+				</el-tab-pane>
+				<el-tab-pane label="提单">
+					<el-table v-if="planBillDetail.length>0" ref="multipBillleTable" id="myTable" :data="planBillDetail" :max-height="secondLevelHeight" tooltip-effect="dark" fit style="width: 100%" mini show-summary=true stripe=true highlight-current-row @selection-change="selectPlan">
+						<el-table-column label="选择" type="selection" align="center" width="50"> </el-table-column>
+						<el-table-column label="序号" type="index" align="center" width="50"> </el-table-column>
+						<el-table-column label="提单号" prop="billNo" min-width="150" sortable column-key="billNo" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="过户计划号" prop="planNo" min-width="150" sortable column-key="planNo" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="计划数量" prop="planNumber" min-width="100" sortable column-key="planNumber" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="计划重量" prop="planWeight" min-width="100" sortable column-key="planWeight" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="实际件数" prop="actualNumber" min-width="100" sortable column-key="actualNumber" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="实际重量" prop="actualWeight" min-width="100" sortable column-key="actualWeight" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="计划状态" prop="planState" min-width="100" header-align="center" align="center"></el-table-column>
+						<el-table-column label="计划开始时间" prop="planStartDate" sortable column-key="actualStartDate" filter-placement min-width="150" header-align="center" align="center"></el-table-column>
+						<el-table-column label="计划结束时间" prop="planEndDate" min-width="150" sortable column-key="actualEndDate" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="实际开始时间" prop="actualStartDate" sortable column-key="actualStartDate" filter-placement min-width="150" header-align="center" align="center"></el-table-column>
+						<el-table-column label="实际结束时间" prop="actualEndDate" min-width="150" sortable column-key="actualEndDate" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="录入人" prop="inputer" min-width="100" header-align="center" align="center"></el-table-column>
+						<el-table-column label="录入时间" prop="inputDate" min-width="150" header-align="center" align="center"></el-table-column>
+					</el-table>
+				</el-tab-pane>
+
+				<el-card class="d-pub-table d-margin-t-10" v-if="goodsDetail.length>0">
+					<div slot="header" class="clearfix">
+						<span class="d-text-lightBule">过户货物</span>
+						<el-button style="float: right; padding: 3px 0" type="text" class=" d-cursor-pointer" @click="clearFilter(3)">清除所有过滤器</el-button>
+					</div>
+					<el-table ref="multipleGoodsTable" :data="goodsDetail" style="width: 100%" :height="thirdLevelHeight" mini show-summary=true stripe=true highlight-current-row>
+						<el-table-column label="选择" type="selection" align="center" width="50"> </el-table-column>
+						<el-table-column label="序号" type="index" align="center" width="50"> </el-table-column>
+						<el-table-column label="计划号" prop="planNo" min-width="180" sortable column-key="planNo" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="子计划号" prop="planDetNo" min-width="180" sortable column-key="planDetNo" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="品牌" prop="brandName" min-width="150" sortable column-key="brandName" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="质保书编号" prop="warrantyNo" min-width="180" sortable column-key="warrantyNo" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="卡号" prop="cardNo" min-width="180" sortable column-key="cardNo" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="车皮/箱号" prop="boxNo" min-width="180" sortable column-key="boxNo" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="原期货舱单号" prop="primaryNo" min-width="180" sortable column-key="primaryNo" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="数量" prop="count" min-width="100" sortable column-key="count" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="重量" prop="weight" min-width="100" sortable column-key="weight" filter-placement header-align="center" align="center"></el-table-column>
+						<el-table-column label="货位" prop="locationNo" min-width="100" header-align="locationNo" align="center"></el-table-column>
+					</el-table>
+				</el-card>
+
+			</el-tabs>
+		</el-card>
+
+	</div>
+</div>
+
+<script type="text/javascript" src="../Js/biz/page7.js"></script>

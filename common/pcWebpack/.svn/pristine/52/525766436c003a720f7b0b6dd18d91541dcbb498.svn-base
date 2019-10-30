@@ -1,0 +1,1636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log>
+<logentry
+   revision="194">
+<author>huangc</author>
+<date>2019-10-12T02:20:05.812500Z</date>
+<paths>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="195">
+<author>huangc</author>
+<date>2019-10-12T02:23:56.515625Z</date>
+<paths>
+<path
+   action="M"
+   prop-mods="true"
+   text-mods="false"
+   kind="dir">/pcWebpack</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/.babelrc</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/.editorconfig</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/.gitignore</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/.postcssrc.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/README.md</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/build</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/build/build.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/build/check-versions.js</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/build/logo.png</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/build/utils.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/build/vue-loader.conf.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/build/webpack.base.conf.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/build/webpack.dev.conf.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/build/webpack.prod.conf.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/config</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/config/dev.env.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/config/index.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/config/prod.env.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/index.html</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/package-lock.json</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/package.json</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/App.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src/assets</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src/assets/404_images</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/src/assets/404_images/404.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/src/assets/404_images/404_cloud.png</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src/assets/js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/assets/js/enum.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src/components</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/components/cMaqtext.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/components/cPaging.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/components/cWarning.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/components/cWeather.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/main.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/permission.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src/router</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/router/index.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src/scss</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/scss/blue.scss</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/scss/transition.scss</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src/utils</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src/views</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/views/404.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/views/layout.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/views/login.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src/views/mods</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src/views/mods/notice</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/views/mods/notice/noticeInfo.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/views/mods/notice/noticeSetting.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src/views/mods/setting</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/views/mods/setting/changePassword.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/views/mods/setting/restrainSetting.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/views/mods/setting/warnReason.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/views/mods/setting/weatherSetting.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src/views/mods/warning</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/views/mods/warning/warningMonitorning.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/views/mods/warning/warninglist.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/.gitkeep</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/Images</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/beiangov.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/bg_undercom_green.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/favicon.ico</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/icon_hotline_md.png</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/Images/login</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/login/bg_light_login.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/login/bg_login.jpg</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/login/logo_login.png</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/Images/logo</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/logo/logo_inner_blue.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/logo/logo_login.png</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/Images/pub</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/pub/bg_btn_grid.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/pub/bg_light.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/pub/bg_main_fir.jpg</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/pub/bg_main_grey.jpg</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/pub/bg_map_wrap.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/pub/bg_num_symble.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/pub/bg_number.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/pub/bg_pub_levelOne.jpg</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/pub/bg_recline.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/pub/bg_technoLine.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/pub/bg_warnArrow.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/pub/bg_warnArrow_white.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/pub/img_null.jpg</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/Images/sub</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/bg_earlyWar_blue.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/bg_earlyWar_orange.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/bg_earlyWar_red.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/bg_sawtooth_bottom.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/bg_sawtooth_left.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/bg_sawtooth_right.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/bg_undercom_dark1.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/bg_undercom_green.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/bg_undercom_warning1.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/bg_undercom_warning2.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/brige_danger_light.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/brige_green_dark.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/brige_green_light.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/img_ship_blue_l.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/img_ship_blue_r.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/img_ship_l.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/img_ship_l_light.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/img_ship_orange_l.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/img_ship_orange_r.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/img_ship_s.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/img_ship_s_light.png</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/sub/line.png</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/Images/temp</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/Images/temp/temp_berth map.png</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/css</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/css/styles.min.css</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/font-digital</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/font-digital/digital-7.eot</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/font-digital/digital-7.svg</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/font-digital/digital-7.ttf</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/font-digital/digital-7.woff</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/js/CryptoJS</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/CryptoJS/aes-min.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/CryptoJS/cipher-core-min.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/CryptoJS/core-min.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/CryptoJS/md5-min.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/js/alertify</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/alertify/alertify.min.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/js/alertify/css</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/alertify/css/alertify.min.css</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/js/alertify/css/themes</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/alertify/css/themes/bootstrap.min.css</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/alertify/css/themes/default.min.css</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/alertify/css/themes/semantic.min.css</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/component.min.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/echarts.min.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/js/element</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/element/element.min.css</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/js/element/fonts</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/element/fonts/element-icons.ttf</path>
+<path
+   action="A"
+   prop-mods="true"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/element/fonts/element-icons.woff</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/jquery.min.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/linq.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/plugins.min.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/static/js/scroll</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/scroll/digitalScroll.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/scroll/scroll.js</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="196">
+<author>huangc</author>
+<date>2019-10-12T02:25:32.515625Z</date>
+<paths>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/index.html</path>
+</paths>
+<msg>测试</msg>
+</logentry>
+<logentry
+   revision="197">
+<author>huangc</author>
+<date>2019-10-12T02:33:49.906250Z</date>
+<paths>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/README.md</path>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/package.json</path>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/main.js</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="198">
+<author>huangc</author>
+<date>2019-10-12T02:34:12.125000Z</date>
+<paths>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src/styles</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/styles/blue.scss</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/styles/transition.scss</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="199">
+<author>huangc</author>
+<date>2019-10-12T02:35:47.484375Z</date>
+<paths>
+<path
+   action="D"
+   prop-mods="false"
+   text-mods="false"
+   kind="dir">/pcWebpack/src/scss</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="200">
+<author>huangc</author>
+<date>2019-10-12T02:41:39.218750Z</date>
+<paths>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/README.md</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="201">
+<author>huangc</author>
+<date>2019-10-12T02:46:46.390625Z</date>
+<paths>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/README.md</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="202">
+<author>huangc</author>
+<date>2019-10-12T02:47:30.437500Z</date>
+<paths>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/README.md</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="203">
+<author>huangc</author>
+<date>2019-10-12T03:24:41.890625Z</date>
+<paths>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/build/webpack.prod.conf.js</path>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/index.html</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="204">
+<author>huangc</author>
+<date>2019-10-12T03:26:58.812500Z</date>
+<paths>
+<path
+   action="M"
+   prop-mods="true"
+   text-mods="false"
+   kind="dir">/pcWebpack</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="205">
+<author>huangc</author>
+<date>2019-10-12T04:18:53.890625Z</date>
+<paths>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/plugins.min.js</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="206">
+<author>huangc</author>
+<date>2019-10-12T04:20:51.156250Z</date>
+<paths>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/assets/js/res.js</path>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/main.js</path>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/router/index.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/component.js</path>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/component.min.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/linq.min.js</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/plugins.js</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="207">
+<author>huangc</author>
+<date>2019-10-12T04:22:50.296875Z</date>
+<paths>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/element/element.css</path>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/js/element/element.min.css</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="208">
+<author>huangc</author>
+<date>2019-10-12T04:56:06.765625Z</date>
+<paths>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/css/styles.min.css</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="209">
+<author>huangc</author>
+<date>2019-10-12T04:57:13.109375Z</date>
+<paths>
+<path
+   action="M"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/src/views/layout.vue</path>
+<path
+   action="A"
+   prop-mods="false"
+   text-mods="true"
+   kind="file">/pcWebpack/static/css/styles.css</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="210">
+<author>huangc</author>
+<date>2019-10-12T07:01:28.437500Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/index.html</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="211">
+<author>huangc</author>
+<date>2019-10-12T07:03:14.718750Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/views/layout.vue</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/mods/monitoring</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/mods/monitoring/portsMonitorning.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="true">/pcWebpack/static/css/iconfont.eot</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/static/css/iconfont.svg</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="true">/pcWebpack/static/css/iconfont.ttf</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="true">/pcWebpack/static/css/iconfont.woff</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="true">/pcWebpack/static/css/iconfont.woff2</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="A"
+   prop-mods="false">/pcWebpack/static/js/jquery</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/static/js/jquery/jquery-divResize.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/static/js/jquery/jquery.min.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/static/js/scroll/countUp.js</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="212">
+<author>huangc</author>
+<date>2019-10-12T07:03:30.312500Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/cClockRow.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/cNumber.vue</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="213">
+<author>huangc</author>
+<date>2019-10-12T07:34:18.281250Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/views/layout.vue</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="214">
+<author>huangc</author>
+<date>2019-10-12T07:34:46.546875Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/views/mods/monitoring/portsMonitorning.vue</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="215">
+<author>huangc</author>
+<date>2019-10-12T07:39:09.328125Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/README.md</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="216">
+<author>huangc</author>
+<date>2019-10-12T07:40:03.687500Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/README.md</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="217">
+<author>huangc</author>
+<date>2019-10-12T08:09:01.187500Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/README.md</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/permission.js</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="218">
+<author>huangc</author>
+<date>2019-10-14T08:52:03.031250Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/README.md</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/package-lock.json</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/package.json</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/Breadcrumb</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/Breadcrumb/index.vue</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/Hamburger</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/Hamburger/index.vue</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/layoutV</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/layoutV/AppMain.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/layoutV/Navbar.vue</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/layoutV/Sidebar</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/layoutV/Sidebar/FixiOSBug.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/layoutV/Sidebar/Item.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/layoutV/Sidebar/Link.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/layoutV/Sidebar/Logo.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/layoutV/Sidebar/SidebarItem.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/layoutV/Sidebar/index.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/layoutV/index.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/main.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/permission.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/router/index.js</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="A"
+   prop-mods="false">/pcWebpack/src/store</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/store/getters.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/store/index.js</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="A"
+   prop-mods="false">/pcWebpack/src/store/modules</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/store/modules/app.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/store/modules/settings.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/store/modules/user.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/styles/element-ui.scss</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/styles/index.scss</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/styles/mixin.scss</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/styles/sidebar.scss</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/styles/variables.scss</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/utils/ResizeHandler.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/utils/index.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/utils/validate.js</path>
+<path
+   text-mods="false"
+   kind="file"
+   action="D"
+   prop-mods="false">/pcWebpack/src/views/layout.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/layoutH.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/layoutV.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/views/login.vue</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="D"
+   prop-mods="false">/pcWebpack/src/views/mods</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/wllh</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/wllh/monitoring</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/wllh/monitoring/portsMonitorning.vue</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/wllh/notice</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/wllh/notice/noticeInfo.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/wllh/notice/noticeSetting.vue</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/wllh/setting</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/wllh/setting/changePassword.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/wllh/setting/restrainSetting.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/wllh/setting/warnReason.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/wllh/setting/weatherSetting.vue</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/wllh/warning</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/wllh/warning/warningMonitorning.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/views/wllh/warning/warninglist.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/static/js/plugins.min.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/static/js.min.js</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="219">
+<author>huangc</author>
+<date>2019-10-15T07:45:14.734375Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/components/layoutV/AppMain.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/main.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/router/index.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/views/layoutV.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/views/wllh/monitoring/portsMonitorning.vue</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="220">
+<author>huangc</author>
+<date>2019-10-15T07:47:35.265625Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/components/layoutV/Sidebar/Logo.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/components/layoutV/Sidebar/SidebarItem.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/components/layoutV/index.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/store/getters.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/store/index.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/store/modules/app.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/store/modules/settings.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/views/layoutH.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/views/login.vue</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="221">
+<author>huangc</author>
+<date>2019-10-15T08:01:50.140625Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/README.md</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/components/layoutV/Sidebar/FixiOSBug.js</path>
+<path
+   text-mods="false"
+   kind="dir"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/layoutV/TagsView</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/layoutV/TagsView/ScrollPane.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/components/layoutV/TagsView/index.vue</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="A"
+   prop-mods="false">/pcWebpack/src/store/modules/tagsView.js</path>
+<path
+   text-mods="false"
+   kind="file"
+   action="D"
+   prop-mods="false">/pcWebpack/src/store/modules/user.js</path>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/utils/index.js</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="222">
+<author>huangc</author>
+<date>2019-10-15T08:11:26.593750Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/README.md</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="225">
+<author>huangc</author>
+<date>2019-10-17T01:15:15.859375Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/README.md</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="226">
+<author>huangc</author>
+<date>2019-10-17T06:03:30.030273Z</date>
+<paths>
+<path
+   text-mods="true"
+   kind="file"
+   action="M"
+   prop-mods="false">/pcWebpack/src/router/index.js</path>
+</paths>
+<msg></msg>
+</logentry>
+</log>

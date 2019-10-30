@@ -1,0 +1,463 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<!--<meta http-equiv="X-UA-Compatible" content="IE=11" />-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+		<link rel="stylesheet" href="../css/styles.min.css" />
+		<style>
+			.aui-margin-l-5 {
+				margin-left: 1px !important;
+			}
+			
+			.aui-margin-t-5 {
+				margin-top: 1px !important;
+			}
+			
+			.aui-margin-t-10 {
+				margin-top: 2px !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="aui-bar aui-bar-nav c-fixed" id="aui-header">
+			<a class="aui-btn aui-pull-left">
+
+				<!--<i class="aui-iconfont aui-icon-phone"></i>-->
+			</a>
+			<div class="aui-title">
+
+			</div>
+			<a id="logoutId" class=" aui-pull-right" onclick="openMy()">
+				<i class="iconfont icon-zhanghux c-font-size"></i>
+			</a>
+		</header>
+
+		<div id="fBar" class="aui-bar aui-bar-nav">
+			&nbsp;
+		</div>
+
+		<div id="vm-Login" style="display: none;" class="aui-flex-row aui-flex-middle" v-cloak>
+			<div v-show="curSystem == 'web'" class="aui-flex-col aui-flex-right aui-padded-10 c-bg-black aui-text-white">
+				<div class="aui-padded-0" onclick="downloadApp()">
+					<div class="aui-btn aui-btn-danger">下载App</div>
+				</div>
+				<div class="aui-padded-l-15" onclick="jumpToApp()">
+					<div class="aui-btn aui-btn-warning">App中打开</div>
+				</div>
+			</div>
+			<div class="aui-padded-15">
+				<div class="aui-padded-15 aui-margin-t-15">
+					<div class="aui-flex-col aui-flex-middle aui-flex-center aui-margin-t-15 aui-margin-b-15">
+						<img src="../image/logo/Icon_SIPG_blue.png" class="aui-margin-r-5" style="height: 1.5rem;" />
+						<img src="../image/logo/logo_s_blue.png" style="height: 1.5rem;" class="aui-padded-r-15" />
+					</div>
+					<div class="aui-text-center aui-font-size-20 c-text-bold">后台管理系统</div>
+
+					<!--<p class="aui-margin-15 aui-font-size-18 c-text-bold">用户登录</p>-->
+				</div>
+				<div class="aui-flex-row aui-margin-t-15 aui-margin-b-15">
+					<ul class="aui-list aui-form-list aui-list-noborder">
+						<li class="aui-list-item">
+							<div class="aui-list-item-inner aui-padded-5">
+								<div class="aui-list-item-label-icon">
+									<i class="aui-iconfont aui-icon-my"></i>
+								</div>
+								<div class="aui-list-item-input">
+									<input id="user" type="text" placeholder="用户名" v-model.trim="info.UserName" autocomplete="off" @focus="inputFocus($event)" @blur="inputBlur($event)" :class="info.UserName == ''? '': 'aui-font-size-18'">
+								</div>
+							</div>
+						</li>
+						<li class="aui-list-item">
+							<div class="aui-list-item-inner aui-padded-5">
+								<div class="aui-list-item-label-icon">
+									<i class="aui-iconfont aui-icon-lock"></i>
+								</div>
+								<div class="aui-list-item-input">
+									<div class="aui-flex-item-10">
+										<input id="password" :type="pwdType" placeholder="密码" v-model.trim="info.Password" autocomplete="off" @focus="inputPwdFocus($event)" @blur="inputPwdBlur($event)" :class="info.Password == ''? '': 'aui-font-size-18'">
+									</div>
+									<div class="aui-flex-item-2 aui-flex-col aui-flex-center">
+										<i class="iconfont aui-text-primary aui-font-size-20 aui-padded-l-10 aui-padded-r-10" :class="pwdType == 'password'? 'icon-yincang': 'icon-xianshi'" @click="changePwdType()" style="margin-top: 0.2rem;"></i>
+									</div>
+								</div>
+							</div>
+						</li>
+
+						<li class="aui-list-item">
+							<div class="" style="position: absolute;right: 0.1rem;top: 0.35rem;z-index: 99;">
+								<img id='ImgCodeId' :src="imgCode_default" style="width: 5rem;height: 2rem;" onclick="getImgCode()"></img>
+							</div>
+							<div class="aui-list-item-inner aui-padded-5 c-border-b-thin">
+								<div class="aui-list-item-label-icon">
+									<i class="aui-iconfont aui-icon-paper"></i>
+								</div>
+								<div class="aui-list-item-input" style="padding-right: 5.75rem !important">
+									<input type="text" placeholder="请输入验证码" v-model.trim="info.Code" autocomplete="off" @focus="inputFocus($event)" @blur="inputBlur($event)" :class="info.Code == ''? '': 'aui-font-size-18'">
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="aui-margin-b-15 aui-btn aui-btn-block aui-btn-info" v-on:click="login(info)">
+					登录
+				</div>
+			</div>
+		</div>
+
+		<div id="panel_main" style="display: none;">
+			<!--<div v-show="curSystem == 'web'" class="aui-flex-col aui-flex-right aui-padded-10 c-bg-black aui-text-white">
+				<div class="aui-padded-0" onclick="downloadApp()">
+					<div class="aui-btn aui-btn-danger">下载App</div>
+				</div>
+				<div class="aui-padded-l-15" onclick="jumpToApp()">
+					<div class="aui-btn aui-btn-warning">App中打开</div>
+				</div>
+			</div>-->
+
+			<div class="aui-margin-10">
+
+				<div v-for="(obj,a) in info" class="aui-margin-t-10">
+					<div class="">
+						<div class="aui-flex-col aui-padded-10 aui-flex-middle" :style="{background:bgArr[0]}">
+							
+							<div class="aui-flex-item-2 aui-text-center">
+								<i class="aui-font-size-18 c-text-bold" :class="obj.icon"></i>
+							</div>
+							<div class="aui-flex-item-8 aui-font-size-16">
+								<div class="c-text-bold" style="color: #333;">{{obj.title}}</div>
+							</div>
+							<div class="aui-flex-item-2 aui-text-center" @click="togglet(obj)">
+								<i class="iconfont icon-shang" :class="obj.showList ? 'icon=shang':'icon-xia'"></i>
+							</div>
+						</div>
+
+						<ul v-if="obj.showList" class="aui-list aui-list-in aui-list-noborder aui-margin-l-10">
+							<li v-for="(x,b) in obj.list" class="aui-list-item" @click="winOpen(x)">
+								<div class="aui-list-item-label-icon aui-padded-l-10">
+									<i class="aui-font-size-18 iconfont icon-yuanquan"></i>
+								</div>
+								<div class="aui-list-item-inner aui-list-item-arrow">
+									<div class="aui-list-item-title">
+										{{x.title}}
+									</div>
+									
+								</div>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="c-footer" class="aui-bar">
+			<div class="c-footer"></div>
+		</div>
+
+	</body>
+
+</html>
+
+<script type="text/javascript" src="../script/CryptoJS/core-min.js"></script>
+<script type="text/javascript" src="../script/CryptoJS/cipher-core-min.js"></script>
+<script type="text/javascript" src="../script/CryptoJS/aes-min.js"></script>
+<script type="text/javascript" src="../script/CryptoJS/md5-min.js"></script>
+
+<script type="text/javascript" src="../script/common.min.js"></script>
+<script type="text/javascript" src="../script/aui.min.js"></script>
+<script type="text/javascript" src="../script/plugins.min.js"></script>
+<script type="text/javascript" src="../script/chart/echarts.common.min.js"></script>
+<!--<script type="text/javascript" src="../script/chart/macarons.js"></script>-->
+<script>
+	var ImgCodeObj = null;
+	var curSystem = jsTools.getCurSystem();
+	var colorArr = ["#707070", "#707070"];
+	var bgArr = ["#eeeeee", "#bbbbbb"];
+	//["#5481BB","#6c82bb", "#64a5c1", "#77ccc5", "#bdd654"];
+	//	var colorArr = ['#e95d68', '#5696f7', '#70c44a', '#efa640', '#CDB971'];
+
+	var panelMain = new Vue({
+		el: '#panel_main',
+		data: {
+			info: [],
+			curSystem: curSystem,
+			userInfo: {},
+			colorArr: colorArr,
+			bgArr: bgArr,
+		},
+
+		methods: {
+			togglet : function(ret){
+				ret.showList = !ret.showList;
+			},
+			winOpen: function(ret) {
+				if(ret.href)
+					jsTools.Win.open(ret.name, ret.href);
+			},
+			call: function(ret) {
+				//打电话
+				if(jsTools.getCurSystem() != 'web') {
+					jsApi.call(ret);
+				}
+			},
+			downFile: function(ret) {
+				jsTools.openFile(ret);
+			},
+
+		},
+		mounted: function() {
+
+		}
+	});
+
+	function openMy() {
+		jsTools.Win.open('my', 'my/My.html');
+	}
+
+	function downloadApp() {
+
+		var u = navigator.userAgent;
+
+		var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+		var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+		var name = '';
+
+		if(isAndroid)
+			name = 'android';
+		else if(isiOS)
+			name = 'ios';
+
+	}
+
+	function jumpToApp() {
+		var urlScheme = 'eharborAdmin://';
+		location.href = urlScheme;
+	}
+
+	var panelLogin = new Vue({
+		el: '#vm-Login',
+		data: {
+			info: {
+				UserName: '',
+				Password: '',
+				Code: '',
+			},
+			pwdType: 'password',
+			imgCode_default: '../image/img_null.jpg'
+		},
+		filters: {
+
+		},
+		methods: {
+			inputFocus: function(el) {
+				$(el.currentTarget).parent().prev().addClass("c-text-bold");
+			},
+			inputBlur: function(el) {
+				$(el.currentTarget).parent().prev().removeClass("c-text-bold");
+			},
+			inputPwdFocus: function(el) {
+				$(el.currentTarget).parent().parent().prev().addClass("c-text-bold");
+			},
+			inputPwdBlur: function(el) {
+				$(el.currentTarget).parent().parent().prev().removeClass("c-text-bold");
+			},
+			changePwdType: function() {
+				this.pwdType = this.pwdType === 'password' ? 'text' : 'password';
+			},
+			forgetPassword: function() {
+				jsTools.Win.open('userForget', 'userForget.html');
+			},
+			registerP: function() {
+				jsTools.Win.open('userRegisterP', 'userRegisterP.html');
+			},
+
+			registerC: function() {
+				jsTools.Win.open('userRegisterC', 'userRegisterC.html');
+			},
+
+			login: function(ret) {
+				if(ret.UserName.trim() == '' ||
+					ret.Password.trim() == '') {
+					jsTools.toast('请输入用户名和密码！', 2000, 'custom');
+					return;
+				}
+
+				if(ret.Code.trim() == '') {
+					jsTools.toast('请输入验证码！', 2000, 'custom');
+					return;
+				}
+
+				//调用登录API，成功后获取当前用户的角色，并保存到本地
+				jsTools.showProgress({
+					title: '登录中...'
+				});
+
+				var tag = {
+					CheckCodeKey: ImgCodeObj.Key,
+					CheckCode: ret.Code.trim()
+				};
+
+				var userMD5 = CryptoJS.MD5(ret.UserName).toString().toUpperCase();
+
+				phAjax.logOnVerify(userMD5, ret.Password, JSON.stringify(tag), function(xmlHttpRequest, textStatus) {
+					jsTools.hideProgress();
+
+					if(xmlHttpRequest.status === 200) {
+						jsTools.Storage.setVal(jsTools.Res.userNumber, ret.UserName);
+						getUserInfo();
+						//closeWin();
+					} else {
+						setTimeout(function() {
+							getImgCode();
+						}, 1000);
+
+						jsTools.onErrorFunc(xmlHttpRequest);
+					}
+
+				});
+
+			},
+
+		},
+		mounted: function() {}
+	});
+
+	jsTools.initPage(function() {
+		jsTools.initService(phAjax);
+
+		jsTools.Win.init();
+
+		jsTools.setStatusBarStyle('light', '#5481BB'); //#3371AF
+
+		jsTools.exitApp();
+
+		//解决返回不刷新的问题
+		var isPageHide = false;
+		window.addEventListener('pageshow', function() {
+			if(isPageHide) {
+				changePanel();
+			}
+		});
+		window.addEventListener('pagehide', function() {
+			isPageHide = true;
+		});
+
+		jsTools.addEvent('MAIN_CHANGE_PANEL', function() {
+			changePanel();
+		});
+
+		jsTools.addEvent('MAIN_TIPS', function(ret) {
+			panelMain.busInfo = ret.value;
+
+			jsTools.animate('#tipId', 'bounceInDown');
+
+			setTimeout(function() {
+				panelMain.busInfo = {};
+			}, 10000);
+		});
+
+		changePanel();
+
+		//检查更新
+		jsTools.isHasNetwork(jsTools.checkVersion(false));
+
+	});
+
+	function changePanel() {
+
+		var userInfo=jsTools.Storage.getVal(jsTools.Res.userInfo);
+		panelMain.userInfo = userInfo;
+		if(userInfo!=null){
+			var menuLists=jsRes.Res.managerMenu(panelMain.userInfo);
+			if(panelMain.userInfo && panelMain.userInfo.MenmberKind == 9) {
+				if(menuLists[4].list[1].name == 'AddUser') {
+					menuLists[4].list.splice(1, 1);
+					menuLists[4].list.push({});
+				}
+	
+			}
+			panelMain.info = menuLists;			
+		}
+
+		if(!jsTools.isLogon()) {
+
+			for(var i in panelLogin.info) {
+				panelLogin.info[i] = '';
+			}
+			$('html').css('background-color', '#FFFFFF');
+			$('body').css('background-color', '#FFFFFF');
+
+			$('#vm-Login').fadeIn('normal');
+			$('#panel_main').hide();
+			$('.aui-title').text('用户登录');
+			$('#logoutId').hide();
+			$('#footer').hide();
+			getImgCode();
+			//		$('#user').trigger('click').focus();
+		} else {
+			$('html').css('background-color', '#FFFFFF'); /* f4f4f4 */
+			$('body').css('background-color', '#FFFFFF');
+			$('#vm-Login').hide();
+			$('#panel_main').fadeIn('normal');
+			$('.aui-title').text('海福宝后台管理');
+			$('#logoutId').show();
+			$('#footer').show();
+
+			var userInfo = jsTools.Storage.getVal(jsTools.Res.userInfo);
+			if(userInfo == null) {
+				jsTools.Storage.clearVal();
+				jsTools.initService(phAjax);
+				changePanel();
+				return;
+			}
+		}
+	}
+
+	function getImgCode() {
+		var dat = {
+			disHead: true,
+			serviceName: jsTools.Server.GetCheckCodeService,
+			data: {}
+		};
+
+		jsTools.ajax(dat, function(result) {
+			ImgCodeObj = result;
+			$('#ImgCodeId').attr('src', 'data:image/png;base64,' + result.CheckCode);
+		});
+	}
+
+	function getUserInfo() {
+		var dat = {
+			serviceName: jsTools.Server.GetUserInfoService,
+			data: {}
+		};
+
+		jsTools.ajax(dat, function(result) {
+			if(result.MenmberKind != 9 && result.MenmberKind != 99) {
+				jsTools.toast('该用户不允许登录！', 2000, 'fail');
+				return;
+			}
+
+			jsTools.Storage.setVal(jsTools.Res.userInfo, result);
+
+			changePanel();
+		});
+	}
+
+	//注销
+	function logout() {
+		jsTools.dialog.confirm('是否要退出登录？', function(ret) {
+			phAjax.logOff(function() {
+				changePanel();
+			});
+		})
+	}
+</script>

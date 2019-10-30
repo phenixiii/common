@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="keywords" content="上海深水港国际物流有限公司,深水港国际物流,洋山 保税港区,集装箱装卸、堆存及存货管理，集装箱拆装箱、清洗、修理和租赁，仓储、保管、加工、货运及物流信息管理，集装箱货物查验服务，国际货运代理，港口辅助设施的建设、管理，物流咨询">
+		<meta name="description" content="上海深水港国际物流有限公司位于中国（上海）自由贸易试验区同汇路1号，于2005年9月30日在自贸区市场监督管理局登记成立，是由上港集团物流有限公司和上海同盛物流园区投资开发有限公司共同投资建立的专业物流服务企业，公司经营范围包括集装箱装卸、堆存及存货管理，集装箱拆装箱等。">
+
+		<link rel="stylesheet" href="../css/styles.min.css">
+		<link rel="stylesheet" href="../Js/others/element/element.min.css" />
+		<link rel="stylesheet" href="../Js/others/alertify/css/alertify.min.css">
+		<link rel="stylesheet" href="../Js/others/alertify/css/themes/default.min.css" />
+		<link rel="icon" sizes="any" mask="" href="../Images/icon_favicon.ico">
+		<title>深水港</title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body class="d-container">
+		<div id="div-register" v-cloak>
+			<el-header height="90" class="d-background-white d-border-b-gray2">
+				<el-container class="d-padded-t-10 d-padded-b-10">
+					<el-row class="d-container" type="flex" align="middle">
+						<el-col :span="12">
+							<el-row type="flex" align="middle">
+								<img src="../Images/logo/logo_blue.png" /><span class="d-lineseptal d-login-title">欢迎注册</span>
+							</el-row>
+						</el-col>
+						<el-col :span="12" style="text-align: right;" class="d-link-black">
+							<span class="d-text-gray9">已有账号？</span>
+							<a href="login.html" class="d-padded-l-5">直接登录</a>
+							<a href="login.html" class="d-lineseptal d-padded-r-5">首页</a>
+						</el-col>
+					</el-row>
+				</el-container>
+			</el-header>
+
+			<el-main class="d-background-gray" style="padding: 0;">
+				<div class="d-regbox" >
+					<!--<el-steps :active="1" finish-status="finish" simple style="margin-bottom: 2rem">
+						<el-step class="d-center" title="注册用户"></el-step>
+					</el-steps>-->
+					<div class="d-text-center d-margin-b-20">
+						<el-label class="d-font-size-18 d-margin-l-65 d-text-light">注册用户</el-label>
+					</div>
+					<div class="d-padded-30">
+						<el-row type="flex" align="middle" justify="center">
+							<el-col :span="20">
+								<el-form :model="info" label-width="100px" class="demo-ruleForm">
+									<el-row type="flex" justify="center">
+										<el-col :xs="24" :sm="18" :md="15" :lg="12" :xl="12">
+											<el-form-item label="客户名称" prop="CustomerName">
+												<el-input v-model="info.CustomerName" autocomplete="off" placeholder="您的公司名称"></el-input>
+											</el-form-item>
+											<el-form-item label="设置密码" prop="Password">
+												<el-input type="password" v-model="info.Password" autocomplete="off" placeholder="建议使用两种或两种以上字符组合"></el-input>
+											</el-form-item>
+											<el-form-item label="确认密码" prop="ConfirmPwd">
+												<el-input type="password" v-model="info.ConfirmPwd" autocomplete="off" placeholder="请再次输入密码"></el-input>
+											</el-form-item>
+											<el-form-item label="集团代码" prop="GroupNo">
+												<el-input v-model="info.GroupNo" autocomplete="off" placeholder="请输入集团代码"></el-input>
+											</el-form-item>
+											<el-form-item label="公司电话" prop="PhoneNo">
+												<el-input v-model.number="info.PhoneNo" placeholder="请输入公司的联系方式"></el-input>
+											</el-form-item>
+											<el-form-item label="联系人" prop="ContactPerson">
+												<el-input v-model="info.ContactPerson" autocomplete="off" placeholder="请输入联系人"></el-input>
+											</el-form-item>
+											<el-form-item label="公司传真" prop="Fax">
+												<el-input v-model="info.Fax" autocomplete="off" placeholder="请输入公司传真"></el-input>
+											</el-form-item>
+											<el-form-item label="公司邮箱" prop="Email">
+												<el-input v-model="info.Email" autocomplete="off" placeholder="请输入公司邮箱"></el-input>
+											</el-form-item>
+											<el-form-item label="公司地址" prop="Address">
+												<el-input v-model="info.Address" autocomplete="off" placeholder="请输入公司地址"></el-input>
+											</el-form-item>
+											<el-form-item style="margin-bottom: 10px;">
+												<el-checkbox v-model="checked">我同意</el-checkbox>
+												<el-button type="text" @click="isDialogShow=true" class="d-agremt">注册协议</el-button>
+											</el-form-item>
+											<el-form-item class="d-margin-0">
+												<el-button type="primary" style="width: 100%;" @click="submitForm('')">提交</el-button>
+											</el-form-item>
+										</el-col>
+									</el-row>
+								</el-form>
+							</el-col>
+						</el-row>
+					</div>
+
+					<el-dialog title="注册须知" top="0vh" width="60%" :visible.sync="isDialogShow">
+						<div>
+							<h3 style="margin: 8px;">一、用户</h3>
+							<p style="margin: 6px;">本公司网站信息查询注册用户，仅限于与本公司存在业务关系的公司所认可的个人或团体、部门等。</p>
+							<h3 style="margin: 8px;">二、新用户注册</h3>
+							<p style="margin: 6px;">具体注册方法如下：（1）按要求在网上填写注册信息。</p>
+							<h3 style="margin: 8px;">三、用户撤销</h3>
+							<p style="margin: 6px;">如果注册用户动态发生变化，申请注册公司务必提交撤销用户申请，以确保数据安全。用户撤销方法如下：</p>
+							<p style="margin: 6px;">（1）请至下载中心下载《用户撤销申请表》。<br /> （2）按要求填妥表格，并加盖原申请注册公司章，以示对其所申请撤销用户的确认。
+								<br /> （3）以快递、邮寄以及专人递送等方式递交表格原件。
+								<br /> （4）撤销成功后以e-mail、电话、Fax等形式告知申请公司以及被撤销用户。
+							</p>
+							<h3 style="margin: 8px;">四、拒绝提供担保</h3>
+							<p style="margin: 6px;">用户对网络服务的使用承担风险，本公司对此不作任何类型的担保，不论是明确的或隐含的。本公司不担保服务一定能满足用户的要求，也不担保服务不会被中断，对服务的及时性、安全性、出错发生同样不作担保。</p>
+							<h3 style="margin: 8px;">五、接受本条款</h3>
+							<p style="margin: 6px;">用户必须接受本条款，才能成为注册用户。对普通非注册用户，若使用本公司网站所提供的服务，亦视同接受本条款。</p>
+						</div>
+						<div slot="footer" class="dialog-footer">
+							<el-button type="primary" @click="Agree()">同 意</el-button>
+							<el-button @click="Refuse()">拒 绝</el-button>
+						</div>
+					</el-dialog>
+				</div>
+			</el-main>
+
+			<el-footer height="auto" style="padding: 0;">
+				<el-container class="d-copyright-footer">
+					<el-row class="d-container" type="flex" align="middle" justify="center">
+						<el-col :span="24">
+							<span style="padding-right: 2rem;">沪ICP备10013911号 © 2018 上海深水港国际物流有限公司 版权所有 </span>
+							<a target="_blank" class="d-text-white" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31022102000164"><img src="../Images/beiangov.png" style="padding-right: 1rem;" />沪公网安备 31022102000164号</a>
+						</el-col>
+					</el-row>
+				</el-container>
+			</el-footer>
+		</div>
+
+	</body>
+
+</html>
+
+<script type="text/javascript" src="../Js/CryptoJS/core-min.js"></script>
+<script type="text/javascript" src="../Js/CryptoJS/cipher-core-min.js"></script>
+<script type="text/javascript" src="../Js/CryptoJS/aes-min.js"></script>
+<script type="text/javascript" src="../Js/CryptoJS/md5-min.js"></script>
+
+<script type="text/javascript" src="../Js/common.min.js"></script>
+<script type="text/javascript" src="../Js/component.min.js"></script>
+<script type="text/javascript" src="../Js/others/element/element.min.js" ></script>
+<script type="text/javascript" src="../Js/barcode.min.js"></script>
+<script type="text/javascript" src="../Js/plugins.min.js"></script>
+
+<script type="text/javascript" src="../Js/others/alertify/alertify.min.js"></script>
+
+<script type="text/javascript" src="../Js/biz/register.js"></script>

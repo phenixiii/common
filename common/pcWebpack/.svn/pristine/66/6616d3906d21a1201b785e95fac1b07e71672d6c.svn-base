@@ -1,0 +1,4631 @@
+$body: #040f2b;
+$mainBody: #010f2b;
+$leftMenu-Bg: rgba(213, 221, 242, 0.9);
+$foot-Bg: #121f41;
+$footmenu-Border: #121f40;
+$head-Bg: #0b396a;
+$head-Shadow: rgba(1, 15, 43, 0.26);
+$head-Border: #071f4e;
+$notice-Bg: linear-gradient(to right, rgba(1, 15, 23, 0.47), rgba(5, 128, 154, 0.47), rgba(1, 15, 23, 0.47));
+$submenu-active-Bg: linear-gradient(68deg, #0a3f75, #09a7e9);
+$submenuItem-Border : #121f41;
+$transparent-Bg: transparent;
+$white-Bg: #fff;
+$secWharf-Bg: #001131;
+$secWharf-Shadow: #124f6d;
+$secWharf-Border: #007083;
+$secWharf-Border-dash: #19385d;
+$berth-Line: #225c79;
+$computer-Border-blue: #1b5979;
+$computer-Border-yellow: #e6b42b;
+$computer-Bg-yellow: #F9C32F;
+$computer-Shadow: rgba(0,0,0,0.1);
+$computer-sel-Bg: linear-gradient(#082e55, #01102d, #082e55);
+$computer-sel-Shadow: #0a59cb;
+$noticebox-Border: #3592af;
+$noticebox-Shadow: rgba(85, 183, 213, 1);
+$noticebox-bline: linear-gradient(to right, #0f3274, #fff, #0f3274);
+$noticebox-txt: #fefffd;
+$noticebox-nail-Bg: #55b8d8;
+$noticebox-nail-Border: #27507a;
+$warnbox-Line: #022f65;
+$warnbox-Bg: linear-gradient( #011c42, #010e2b);
+
+/*$warnbox-Border: #007083;*/
+
+$warnbox-Shadow: rgba(0, 112, 131, 0.5);
+$circle-red-Bg: linear-gradient( #ea4d4e, #fe4e54);
+$circle-red-Border: #591d34;
+$circle-yellow-Bg:linear-gradient( #e3c513, #ffd84f);
+$circle-yellow-Border: #57522f;
+$circle-yellow-Color: #010d2b;
+$titsecond-Bg: linear-gradient(to right, #047daa, #075697);
+$tabswitch-Border: #065686;
+$tabswitch-Bg: #04294f;
+$table-th-Bg: rgba(1, 44, 79, 0.8);
+$table-even-Bg: rgba(2, 21, 61, 1);
+$table-odd-Bg: #f1f5f9;
+$tabBlue-tr-Border: #dcdfe6;
+$table-tr-hover-Bg: #096b90;
+$table-tr-hover-Border: #6b7485;
+$table-tr-hover-Shadow: rgba(198, 216, 247, 0.6);
+$table-info-Border: #016f88;
+$photo-Bg: rgba(0, 29, 64, 0.15);
+$photo-Color: #a5c5e8;
+$recline-Bg: #02bfd5;
+$triangle-Bg: #18325b;
+$card-analyze-Bg: #02112e;
+$card-analyze-Shadow: rgba(14, 37, 74, 1);
+$statistics-Bg: #01112e;
+$statistics-Border: #042143;
+$statistics-line: #083264;
+$overviewbar-Border1: #025b71;
+$overviewbar-Bg1: linear-gradient(to right, #3ce2f9, #2399d4);
+$overviewbar-Border2: #004671;
+$overviewbar-Bg2: linear-gradient(to right, #47a0fb, #0071cd);
+$linear-shipBg: linear-gradient(#010f2b, #02163f);
+$ship-hover-Bg: #20497F;
+$ship-hover-Shadow: rgba(0,0,0,0.4);
+$shipBody-shape-Bg: rgba(1, 24, 58, 0.8);
+$setup-Border-linear: linear-gradient(#011f59, #a0b3d4, #011f59) 3 3;
+$head-line-Border: #022257;
+$onelevel-rec-Bg: #021237;
+$onelevel-rec-Border: #12284c;
+$onelevel-rec-Border-acitve: #3d86cf;
+$onelevel-rec-inset-active: #1149a9;
+$onelevel-rec-shadow-active: rgba(0, 79, 211, 0.6);
+$onelevel-rec-head-active: linear-gradient(to bottom, #002a67, #01a2e7);
+$cut-Bg: linear-gradient(#010f2b, #02163f);
+$cut-Border: #13306a;
+$cutRed-Border: #c54747;
+
+/*$rect-success-Color: #17ca94;*/
+
+$rect-danger-Color : #873746;
+$rect-inset: #3e86d0;
+$rect-hover-Border: #5375a1;
+$submenu-Border: #1667ad;
+$cardtit-Border: #103a77;
+$cardlabel-Color: #31b6ee;
+$card-Border: #071c46;
+$card-Border2: #02697f;
+$search-Border: #04729f;
+$search-Color: #0aa9e7;
+$overview-Border: #102241;
+$search-Shadow: rgba(118, 137, 178, 0.32);
+$search-btnBg: rgba(44, 83, 157, 0.4);
+$search-timeBg: rgba(37, 149, 196, 0.23);
+$photo-Border: rgba(16, 58, 119, 1);
+$photo-recline: #02bfd5;
+$photo-carousel-Bg: rgba(0, 29, 64, 0.12);
+$btn-Color: #2595c4;
+$btn-Border: #032058;
+$btn-Border-com: #045f6e;
+$btn-Color-com: #0d8fad;
+$btn-disable: #166f8a;
+$btn-active-Bg: linear-gradient(to right, #082e55, #01102d, #082e55);
+$btn-avtive-Border: #7be4f7;
+$btn-active-Shadow: rgba(112, 200, 226, 0.7);
+$btn-search-active-Bg: rgba(37, 149, 196, 0.6);
+$weakBlue-Color: #c6d8f7 !important;
+$foot-Color: #b9c6d3;
+$info-Color: #7be4f7;
+$formLabel-Color: #02c7fe;
+$overview-info: #26c6de;
+$red-Color: #ff5959;
+$darkred-Color: #FF0000;
+$orange-Color: #f38f19;
+$green-Color: #36f88e;
+$darkgreen-Color: #10674c;
+$yellow-Color: #f9c32f;
+$lightyellow-Color: #f1d920;
+$blue-Color: #137ed9;
+$darkblue-Color: #04294f;
+$golden-Color: #e7b087;
+$gray-Color: #ddd;
+$white-Color: #fff;
+$darkWhite-Color: #6A7283;
+$black-Color: #333;
+$lightblack-Color: #555;
+$purple-Color: #7030A0;
+$pink-Color: #E7AB84;
+$clock-Color: #95c2f4;
+$tabOper-Color: #4ca9f7;
+$threeLevel-bar: #19598B;
+$text-shine: #3d86cf;
+$popupBox-input-Bg: #c6d8f7;
+$popupBox-close-Bg: #4492da;
+$popupBox-wrap-Bg: rgba(1, 13, 36,0.4);
+$popupBox-con-Bg: #9baecf;
+$popupBox-Border: #c5d8f8;
+$popupBox-foot-line: #899ab7;
+$popupBox-tit-line: linear-gradient(to right, #010f2b, #c6d8f7 ,#010f2b);
+$popupBox-red: #fd3f3f;
+$mask-Bg: #3d86cf;
+$maskLeft-Bg: linear-gradient(to right, #022c57, #043f7b, #022c57);
+$maskLeft-Shadow: rgba(8, 59, 110, 0.35);
+$mask-Border: #0f1e45;
+$mask-submenu-Border: rgba(31, 8, 92, 0.9);
+$rect-danger-Bg : transparent;
+$lscreen-tit-line: #3f4f69;
+$maps-Bg: #0e1d4b;
+$maps-redBg: rgba(158, 31, 36, 0.5);
+$maps-greenBg-circle: rgba(53, 248, 144, 0.2);
+$maps-greenBg-text: rgba(53, 248, 144, 1);
+$maps-Line: #010e2b;
+$maps-cls6: #042349;
+$maps-cls7: #ffd200;
+$maps-cls10: #36f88e;
+$tabBlue-Border: #007083;
+$tabBlue-Shadow: rgba(14,37,74,0.35);
+$warncardlist-bg: linear-gradient(#011c42,#010e2b);
+$lightblue-Color: #0f549a;
+$lightgreen-Color: #359b54; /* 67C23A */
+$gray2-Color: #b0b3b9;
+$darkyellow: #e4b01f;
+$barHor-warning-Bg: linear-gradient(to left, #881029,#d35b7d);
+$barHor-danger-Bg: linear-gradient(to left, #fdb053,#fdf576);
+$warnDesc-Bg: #001d39;
+$warnbox-Border: #07688c;
+$warn-barHover-Bg: #2D3B4D;
+$mainBody-opcity: rgba(1,15,23,0.6);
+$tabswitch-selOn-Bg: linear-gradient(to right, #09a7e9, #0a3f75);
+$tabswitch-table: #011132;
+$shipTol-hd-Bg: linear-gradient(to right,#19253F, #1B2D56, #19253F);
+$shipTol-bd-Bg: #19253F;
+$shipTol-bd-Line: #263650;
+$shipoverview-Border: #0E394A;
+$table-tr-overview: #005F8E;
+$table-tr-ship: #020D2B;
+$shipWork-Bg: rgba(2, 15, 44,0.5);
+$shipWeather-Bg: linear-gradient(to bottom,#01102E,#021335);
+$shipMap-Bg: linear-gradient(to top,#021B43,#020D2D);
+$shipMap-Border: #2F556A;
+$floating-triangle-Box: rgba(4, 50, 83, 1);
+$floating-triangle-inset:  0 0 10px #00aeb7 inset;
+$floating-triangle-Bg: #2e627a;
+$floating-triangle-Border: #6db3f9;
+$time-Color: #71b1e6;
+$el-dateTime-Color: #409EFF;
+
+.d-mainbg {
+    background: url("../../static/Images/pub/bg_main_fir.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+
+.d-body {
+    background: $body;
+}
+
+.d-mainBody-con {
+    height: 100%;
+    background: $mainBody;
+    box-sizing: border-box;
+}
+
+
+/********************通用样式*********************/
+
+
+/**字体颜色**/
+
+.d-text-green {
+    color: $green-Color;
+}
+
+.d-text-blue {
+    color: $blue-Color;
+}
+
+.d-text-orange {
+    color: $orange-Color;
+}
+
+.d-text-red {
+    color: $red-Color;
+}
+
+.d-text-yellow {
+    color: $lightyellow-Color;
+}
+
+.d-text-info {
+    color: $info-Color;
+}
+
+.d-text-weakBlue {
+    color: $weakBlue-Color;
+}
+
+.d-radioBox {
+    border-color: $darkblue-Color;
+    background: $transparent-Bg;
+}
+
+
+/**头部**/
+
+.d-header {
+	width: 100%;
+    background: $head-Bg;
+    padding: 0 1rem !important;
+    -webkit-box-shadow: 2px 1px 9px $head-Shadow;
+    box-shadow: 2px 1px 9px $head-Shadow;
+    border-bottom: 0.1rem solid $head-Border;
+}
+
+.d-head-user {
+    color: $weakBlue-Color;
+    padding: 0 1.25rem;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border: 2px solid $head-Bg;
+    padding-top: 7px;
+}
+
+.d-head-user .iconfont {
+    color: $weakBlue-Color;
+    font-size: 1.45rem;
+    padding-left: 0.25rem;
+}
+
+.d-head-user:hover{
+    color: $white-Color !important;
+    background: $submenu-active-Bg !important;
+    border: 2px solid $submenu-Border !important;
+}
+
+.d-head-user:hover .iconfont{
+	color: $white-Color !important;
+}
+
+.d-head-time .d-line-l,
+.d-head-weather .d-line-l {
+    border-left: 1px solid $head-line-Border;
+}
+
+.d-head-time .d-line-r,
+.d-head-weather .d-line-r {
+    border-right: 1px solid $head-line-Border;
+}
+
+.d-head-weather {
+    position: relative;
+    cursor: pointer;
+}
+
+.d-weather-detail {
+    display: none;
+    min-width: 10rem;
+    border: 0.12rem solid $submenu-Border !important;
+    box-shadow: $maskLeft-Shadow 0px 0px 7px inset !important;
+    -webkit-box-shadow: $maskLeft-Shadow 0px 0px 7px inset !important;
+    background: $maskLeft-Bg !important;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    text-align: center;
+    color: $weakBlue-Color !important;
+    line-height: 23px;
+    z-index: 99;
+}
+
+.d-head-weather:hover .d-weather-detail {
+    display: block;
+    color: $white-Color !important;
+}
+
+.d-head-time .d-clocktime {
+    font-family: "font-digital" !important;
+    color: $info-Color;
+    text-align: center;
+    width: 100px;
+}
+
+.d-head-time .d-clockdate {
+    font-size: 12px;
+    padding: 0 10px;
+}
+
+.d-submenu-top {
+    color: $info-Color !important;
+}
+
+.d-submenu-top .d-tit {
+    color: $info-Color !important;
+    font-size: 1.3rem !important;
+}
+
+.d-submenu-top .d-sub-icon {
+    color: $info-Color !important;
+    font-size: 1.85rem !important;
+}
+
+.d-submenu-top.active{
+    color: $white-Color;
+    background: $submenu-active-Bg;
+    border: 2px solid $submenu-Border !important;
+}
+
+.d-submenu-top .el-menu{
+	background: $transparent-Bg;
+}
+
+.d-submenu-top .el-menu--horizontal>.el-menu-item{
+	border: 0.12rem solid $transparent-Bg;
+	margin-right: 2px;
+}
+
+.d-submenu-top .el-submenu__title {
+    min-width: 8rem;
+    border: 0.12rem solid $transparent-Bg;
+}
+
+.d-submenu-top .el-submenu__title,
+.d-submenu-top .el-menu--horizontal>.el-submenu.is-active .el-submenu__title {
+    color: $info-Color !important;
+    text-align: center;
+}
+
+.d-submenu-top .el-menu--horizontal>.el-submenu.is-active .el-submenu__title {}
+
+.d-submenu-top .is-active .el-submenu__title {
+    color: $white-Color !important;
+    background: $submenu-active-Bg;
+    -webkit-background: $submenu-active-Bg;
+    border: 0.12rem solid $submenu-Border !important;
+}
+
+.d-submenu-top .is-active .d-sub-icon,
+.d-submenu-top .is-active .d-tit {
+    color: $white-Color !important;
+}
+
+.d-submenu-top .el-submenu__title:hover,
+.d-submenu-top .el-submenu__title:hover .d-sub-icon,
+.d-submenu-top .el-submenu__title:hover .d-tit,
+.d-submenu-top .el-menu--horizontal>.el-menu-item:hover,
+.d-submenu-top .el-menu--horizontal>.el-menu-item:hover .d-sub-icon{
+    color: $white-Color !important;
+}
+
+.d-submenu-top .el-menu--horizontal>.el-menu-item:hover,
+.d-submenu-top .el-menu--horizontal>.el-submenu .el-submenu__title:hover,
+.d-submenu-top .el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
+.d-submenu-top .el-menu--horizontal>.el-menu-item.is-active{
+    color: $white-Color;
+    background: $submenu-active-Bg;
+    -webkit-background: $submenu-active-Bg;
+    border: 0.12rem solid $submenu-Border !important;
+    box-sizing: border-box;
+}
+
+.d-submenu-top .el-menu--horizontal>.el-menu-item:hover .d-tit,
+.d-submenu-top .el-menu--horizontal .el-menu-item:not(.is-disabled):focus span, 
+.d-submenu-top .el-menu--horizontal .el-menu-item:not(.is-disabled):hover span{
+	color: $white-Color !important;
+}
+
+.d-submenu-top .el-menu--horizontal>.el-submenu .el-submenu__title {
+    box-sizing: border-box;
+}
+
+
+/*导航弹出框*/
+
+.el-menu--popup {
+    min-width: 12.5rem !important;
+}
+
+.el-menu--popup,
+.d-submenu-body {
+    border: 0.12rem solid $submenu-Border !important;
+    box-shadow: $maskLeft-Shadow 0px 0px 7px inset !important;
+    -webkit-box-shadow: $maskLeft-Shadow 0px 0px 7px inset !important;
+    background: $maskLeft-Bg !important;
+    -webkit-background: $maskLeft-Bg !important;
+    position: relative;
+}
+
+.el-menu--popup-bottom-start {}
+
+.el-menu--popup .el-menu-item {
+    background: $transparent-Bg !important;
+    border-bottom: 0.018rem solid $mask-Border !important;
+    height: 40px !important;
+    line-height: 35px !important;
+}
+
+.el-menu--popup .el-menu-item:last-child {
+    border-bottom: none !important;
+}
+
+.el-menu--horizontal{
+	background: transparent;
+}
+
+.el-menu--horizontal .el-menu .el-menu-item{
+	border-bottom: 1px solid $mask-submenu-Border !important;
+}
+
+.el-menu--horizontal .el-menu .el-menu-item:hover,
+.el-menu--horizontal .el-menu .el-submenu__title:hover {
+    color: $info-Color !important;
+}
+
+.d-weather-nav i,.d-weather-nav .iconfont,.d-weather-nav .d-text-weather {
+    color: $weakBlue-Color;
+    font-size: 1.8rem;
+    padding-left: 1rem;
+}
+ 
+.d-weather-nav .wea {
+    line-height: 1;
+}
+
+
+/*公共主体*/
+
+.d-pubContent{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+/*底部*/
+
+.d-footer {
+    position: fixed;
+    bottom: 0;
+    background: $foot-Bg;
+    color: $foot-Color;
+    min-height: 2.4rem;
+    line-height: 2.4rem;
+    border-top: 1px solid $transparent-Bg;
+}
+
+.d-footer .d-menu {
+    background: $mainBody;
+    color: $info-Color;
+    cursor: pointer;
+    border-top: 1px solid $footmenu-Border;
+    border-bottom: 1px solid $footmenu-Border;
+}
+
+
+/*底部-左侧内容*/
+
+#g-sideBar {
+    position: absolute;
+    width: 10%;
+    left: -137px;
+    top: 62px;
+    background: $leftMenu-Bg;
+    color: $darkblue-Color;
+    z-index: 999;
+}
+
+#g-sideBar .portTitle {
+    padding: 18px 12px 0 20px;
+    color: #042950;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+#g-sideBar .portTitle span {
+    font-size: 15px;
+}
+
+#g-sideBar .u-text {
+    color: $darkblue-Color;
+}
+
+#g-sideBar .sliderIcon{
+	position: absolute;
+	right: 0;
+	padding: 10px;
+}
+
+#g-sideBar .sliderIcon .hideIcon{
+	font-size: 20px;
+}
+
+#g-sideBar .el-radio__inner,.d-radioWrap .el-radio__inner {
+    border: 1.5px solid $darkblue-Color;
+    background: transparent;
+}
+
+#g-sideBar .el-radio__input.is-checked .el-radio__inner,.d-radioWrap .el-radio__input.is-checked .el-radio__inner{
+    border-color: $darkblue-Color;
+    background: $darkblue-Color;
+}
+
+#g-sideBar .el-radio__input.is-disabled .el-radio__inner,
+#g-sideBar .el-radio__input.is-disabled.is-checked .el-radio__inner,
+.d-radioWrap .el-radio__input.is-disabled .el-radio__inner,
+.d-radioWrap .el-radio__input.is-disabled.is-checked .el-radio__inner {
+    background-color: $darkblue-Color;
+    border-color: $darkblue-Color;
+}
+
+.d-radioWrap .el-radio__label,.d-radioWrap .el-radio__input.is-checked+.el-radio__label{
+	color: $darkblue-Color !important;
+}
+
+.d-input-hor .el-switch__core{
+	 
+}
+
+.d-input-hor .el-switch.is-checked .el-switch__core{
+	 
+}
+
+.d-submenu-item {
+    padding: 1rem;
+    border-bottom: 0.1rem solid $submenuItem-Border;
+}
+
+.d-tabswitch-con {
+    border-bottom: 0.1rem solid $tabswitch-Border;
+    background: $tabswitch-Bg;
+}
+
+
+/* 二级标题-tab页 */
+
+.d-tit-second {
+    text-align: center;
+    background: $titsecond-Bg;
+    -webkit-background: $titsecond-Bg;
+    color: $white-Color;
+    position: relative;
+}
+
+
+/* 三级标题 */
+
+.d-tit-three {
+    color: $info-Color;
+    border-left: 0.4rem solid $info-Color;
+    padding-left: 0.5rem;
+    font-weight: normal;
+}
+
+.d-tit-three span{
+	font-size: 1.5rem;
+}
+
+/*警告轮播*/
+
+.d-carousel-warning {
+    width: 100%;
+    height: 4%;
+    margin-bottom: 1%;
+    z-index: 9;
+}
+
+.notice-wrap{
+	width:100%;
+	height:25px;
+	margin:0 auto;
+	overflow: hidden;
+}
+
+.notice-list,.notice-list2{
+	padding:0;
+	margin:0;
+	list-style: none;
+	overflow: hidden;
+}
+
+.notice-list li.danger,.notice-list2 li{ 
+	white-space: nowrap; 
+	text-overflow: ellipsis; 
+	overflow: hidden; 
+	height:30px;
+	line-height: 30px; 
+	color: $red-Color; 
+}
+
+.notice-list li.warning,.notice-list2 li{ 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    overflow: hidden; 
+    height:30px;
+    line-height: 30px; 
+    color: $yellow-Color; 
+}
+//
+//.notice-list li:hover,.notice-list2 li:hover{
+//	color: $red-Color;
+//}
+
+.notice-list li.warning a,.notice-list2 li.warning a{
+	color: $yellow-Color;
+}
+
+.notice-list li.danger a,.notice-list2 li.danger a{
+    color: $red-Color;
+}
+
+.notice-list li.danger a{
+	font-weight: bold;
+}
+
+.notice-list li .iconfont{ 
+	margin-right: 6px; 
+}
+
+
+/*下拉*/
+
+.d-dropdown,.d-dropdown-item{
+    border: 1px dashed $secWharf-Border;
+    position: relative;
+    top: 0;
+    min-width: 100px;
+    margin-left: 10px;
+}
+
+.d-dropdown-item .el-select .el-input__inner,.d-secLevel-hd .el-input__inner{
+	background: $transparent-Bg;
+	color: $white-Color;
+	border: none;
+	font-size: 0.75rem;
+}
+
+.d-dropdown-item .el-select .el-input .el-select__caret,
+.d-resentry .el-select .el-input .el-select__caret{
+	color: $white-Color;
+}
+
+.d-dropdown-item .el-select .el-input__inner:hover,.d-secLevel-hd .el-input__inner:hover{
+	color: $white-Color;
+}
+
+.d-dropdown-item .el-select .el-input:hover .el-select__caret{
+	color: $weakBlue-Color;
+}
+
+.d-dropdown-item .el-dropdown{
+	width: 100%;
+    height: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.d-dropdown-item .el-dropdown .el-dropdown-link{
+	width: 100%;
+	font-size: 12px;
+	padding: 3px 10px;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;        
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+}
+
+.d-dropdown-item .el-dropdown i{
+	float: right;
+	margin-top: 4px;
+}
+
+.d-dropdown:hover,
+.d-dropdown.active,.d-dropdown-item:hover{
+    border: 1px solid $btn-avtive-Border;
+    background: $btn-active-Bg;
+    box-shadow: $btn-active-Shadow 0px 0px 10px inset;
+    -webkit-box-shadow: $btn-active-Shadow 0px 0px 10px inset;
+}
+
+.d-dropdown .d-text {
+    display: inline-block;
+    min-width: 66px;
+}
+
+/*下拉*/
+.el-select-dropdown.d-selectUl-com,.d-darkpick-wrap .el-picker-panel {
+    background: $body;
+    border: 1px solid $btn-avtive-Border;
+    box-sizing: border-box;
+    box-shadow: 2px 1px 9px $head-Shadow;
+}
+
+.el-select-dropdown.d-selectUl-com .el-select-dropdown__item,.d-darkpick-wrap .el-picker-panel{
+	color: $weakBlue-Color;
+}
+
+.el-select-dropdown.d-selectUl-com .el-select-dropdown__item.hover,.d-darkpick-wrap .el-picker-panel .time-select-item:hover{
+    color: $white-Color !important;
+    background: $maskLeft-Bg;
+    font-weight: normal;
+}
+
+.el-select-dropdown.d-selectUl-com .popper__arrow::after{
+	border-bottom-color: $tabBlue-Border !important;
+}
+
+.d-selectUl-dialog .el-select-dropdown__item.hover,
+.d-selectUl-dialog .el-select-dropdown__item:hover {
+	background-color: $gray-Color;
+}
+
+/*日期时间*/
+.d-selectUl-com.el-picker-panel{
+	background: $body;
+    border: 1px solid $btn-avtive-Border;
+    box-sizing: border-box;
+    box-shadow: 2px 1px 9px $head-Shadow;
+    color: $weakBlue-Color;
+} 
+
+.d-selectUl-com .el-picker-panel__icon-btn,
+.d-selectUl-com .el-date-picker__header-label{
+	color: $weakBlue-Color;
+}
+
+.d-selectUl-com .el-date-table th{
+	color: $weakBlue-Color;
+	border-bottom-color: $card-Border;
+}
+
+.d-selectUl-com .el-date-table td.next-month, .d-selectUl-com .el-date-table td.prev-month{
+	color: $btn-Color-com;
+	opacity: 0.55;
+}
+
+//.d-selectUl-com .el-date-table td.current:not(.disabled) span{
+//	background-color: $info-Color;
+//	color: $mainBody;
+//	font-weight: bold;
+//}
+//
+//.d-selectUl-com .el-date-table td.today span{
+//	color: $info-Color;
+//}
+
+.d-selectUl-com.el-popper[x-placement^=top] .popper__arrow::after{
+	border-top-color: $mainBody !important;
+}
+
+.d-selectUl-com.el-popper[x-placement^=bottom] .popper__arrow::after{
+	border-bottom-color: $mainBody !important;
+}
+
+/*日期+时间*/
+.d-selectUl-com .el-date-picker__time-header{
+	border-bottom-color: $card-Border;
+}
+
+.d-selectUl-com .el-date-picker__time-header .el-input .el-input__inner{
+	background-color: $mainBody ;
+	color: $el-dateTime-Color ;
+	border: 1px solid $secWharf-Border;
+	font-weight: bold;
+}
+
+.d-selectUl-com .el-picker-panel__footer{
+	background-color: $mainBody;
+	border-top: 1px solid $card-Border;
+}
+
+.d-selectUl-com .el-picker-panel__footer .el-button{
+	background-color: $mainBody;
+	border: 1px solid $mainBody;
+	color: $el-dateTime-Color; 
+}
+
+.d-selectUl-com .el-picker-panel__footer .el-button.is-plain{
+	border: 1px solid $mainBody;
+}
+
+.d-selectUl-com .el-picker-panel__footer .el-button:hover{
+	color: $info-Color; 
+}
+
+.d-selectUl-com .el-date-picker__time-header .el-time-panel{
+	background: $mainBody;
+	border: 1px solid $info-Color;
+}
+
+.d-selectUl-com .el-time-spinner__item{
+	color: $weakBlue-Color;
+}
+
+.d-selectUl-com .el-time-spinner__item:hover:not(.disabled):not(.active){
+	background: $el-dateTime-Color;
+	color: $white-Color;
+	font-weight: bold;
+}
+
+.d-selectUl-com .el-time-panel .el-time-panel__footer{
+	border-top: 1px solid $card-Border;
+}
+
+.d-selectUl-com .el-time-panel .el-time-panel__btn{
+	color: $el-dateTime-Color;
+}
+
+.d-selectUl-com .el-time-panel .el-time-panel__btn:hover{
+	color: $info-Color;
+}
+
+.d-selectUl-com .el-time-panel .el-time-panel__content::after, .d-selectUl-com .el-time-panel .el-time-panel__content::before{
+	border-top: 1px solid $secWharf-Border;
+    border-bottom: 1px solid $secWharf-Border;
+}
+
+
+.el-picker-panel.d-selectUl-com .time-select-item.selected:not(.disabled){
+	color: $white-Color;
+	font-weight: normal;
+}
+
+.el-picker-panel.d-selectUl-com .time-select-item:hover {
+	color: $white-Color;
+    background: $maskLeft-Bg;
+}
+
+.d-dropdown .dropdown-bt {
+    background: none;
+    border: none;
+    color: $white-Color;
+    padding: 2px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.d-dropdown .dropdown-bt i {
+    padding-right: 5px;
+}
+
+.d-dropdown .dropdown-content {
+    width: 100%;
+    position: absolute;
+    padding: 0;
+    z-index: 99;
+    background: $body;
+    border: 1px solid $btn-avtive-Border;
+    box-sizing: border-box;
+    box-shadow: 2px 1px 9px $head-Shadow;
+}
+
+.dropdown-content li {
+    text-align: center;
+    color: $weakBlue-Color;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.dropdown-content li:hover {
+    color: $white-Color;
+    background: $maskLeft-Bg;
+}
+
+.dropdown-content li .dropLine {
+    border-bottom: 1px solid $card-Border;
+    padding: 9px 0;
+    margin: 0 6px;
+}
+
+.dropdown-content li:hover .dropLine {
+    border-bottom-color: transparent;
+}
+
+.dropdown-content li:last-child .dropLine {
+    border-bottom: none;
+}
+
+.d-dropdown .dropicon {
+    position: relative;
+    left: 10px;
+}
+
+.d-popupBox .d-dropdown .dropdown-bt{
+	color: $darkblue-Color;
+}
+
+/*日期控件*/
+ 
+.d-time-pick{
+    width:100%;
+    height: 100%;
+}
+
+.d-time-pick .timepick{
+    background: $mainBody;
+    border: 1px solid $cut-Border;
+    color: $weakBlue-Color;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    width: 140px;
+}
+
+.d-time-pick .timepick .iconfont{
+    font-size: 14px;
+    color: $weakBlue-Color;
+}
+
+.d-time-pick .timepick .u-picktime{
+    z-index: 99;
+    opacity: 0;
+    position: absolute;
+    width: 140px;
+    left: 0;
+    top: 0;
+}
+
+.d-time-pick .datepick{
+    background: $mainBody;
+    border: 1px solid $cut-Border;
+    color: $weakBlue-Color;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    width: 240px;
+}
+
+.d-time-pick .datepick .u-date{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 240px;
+    z-index: 99;
+    opacity: 0;
+}
+
+.d-time-pick .datepick .iconfont{
+    font-size: 14px;
+    color:$weakBlue-Color;
+}
+
+.d-time-pick .pickday{
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    top: 0;
+}
+
+.d-time-pick .onday{
+    width: 222px;
+}
+
+.d-time-pick .iconfont{
+    position: relative;
+    right: 6px;
+}
+
+
+/*分页*/
+
+.d-paging{
+	text-align: center;
+    margin-top: 1%;
+    color: $weakBlue-Color;
+}
+
+.d-paging .pag {
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 0 5px;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    background: $mainBody;
+    color: $btn-Color-com;
+    border: .1rem solid $btn-Border-com;
+}
+
+.d-paging .pag:hover {
+    color: $white-Color;
+    border: .1rem solid $btn-avtive-Border;
+    background: $btn-active-Bg;
+    box-shadow: $btn-active-Shadow 0px 0px 10px inset;
+    -webkit-box-shadow: $btn-active-Shadow 0px 0px 10px inset;
+}
+
+.d-paging .pag:hover .icon {
+    color: $info-Color;
+}
+
+.d-paging .pagnumber {
+    display: inline-block;
+    padding: 4px 10px;
+    box-sizing: border-box;
+    text-align: center;
+    color: $weakBlue-Color;
+}
+
+.d-paging .disable,
+.d-paging .disable:hover {
+    cursor: not-allowed;
+    background: $mainBody;
+    color: $btn-Color-com;
+    border: .1rem solid $btn-Border-com;
+    opacity: 0.55;
+    filter: alpha(opacity=55);
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.d-paging .disable:hover .icon {
+    color: $btn-disable;
+}
+
+.d-paging .d-pageTxt{
+	color: $weakBlue-Color;
+	padding: 0 15px;
+}
+
+/*搜索*/
+
+.d-searchtime {
+    position: relative;
+    color: $white-Color;
+    border: 1px dashed $secWharf-Border;
+}
+
+.d-searchtime .d-time {
+    opacity: 0;
+    position: absolute;
+    width: 160px !important;
+    height: 24px;
+    bottom: -4px;
+}
+
+.d-searchtime .d-searchicon {
+    color: $btn-Color;
+    cursor: pointer;
+    padding: 5px;
+    text-align: center;
+    background: $search-timeBg;
+}
+
+.d-searchtime:hover{
+    border: 1px solid $btn-avtive-Border;
+    background: $btn-active-Bg;
+    box-shadow: $btn-active-Shadow 0px 0px 3px inset;
+    -webkit-box-shadow: $btn-active-Shadow 0px 0px 3px inset;
+}
+
+.d-searchtime .d-searchicon:hover {
+    color: $weakBlue-Color;
+    background: $btn-search-active-Bg;
+}
+
+.d-searchtime .el-date-editor .el-range-separator{
+	color: $weakBlue-Color;
+}
+
+.d-searchtime .el-range-editor .el-range-input{
+	background: $mainBody !important;
+	color: $white-Color;
+}
+
+.d-search-round {
+    background: $mainBody;
+    border: 0.1rem solid $search-Border;
+    box-shadow: $search-Shadow 0px 0px 10px inset;
+    -webkit-box-shadow: $search-Shadow 0px 0px 10px inset;
+}
+
+.d-search-round .d-btn-blue {
+    background: $search-btnBg;
+    color: $search-Color;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    -webkit-border-top-right-radius: 50%;
+    -webkit-border-bottom-right-radius: 50%;
+}
+
+.d-search-round .d-lineseptal {
+    color: $statistics-line !important;
+}
+
+/*单个时间*/
+.d-inputStyle .d-resSetTime{
+	background: $mainBody;
+	border: 1px solid $tabswitch-Border;
+	color: $white-Color;
+}
+
+.d-inputStyle .d-resSetTime .el-input .el-input__inner{
+	background: $mainBody;
+	border: 0;
+	border-radius: 0;
+	color: $white-Color;
+}
+
+.d-inputStyle .d-resSetTime .el-input__prefix, .d-inputStyle .d-resSetTime .el-input__suffix{
+	 
+}
+
+/*矩形卡片*/
+
+.d-card {
+    border: 0.1rem solid $card-Border;
+    box-sizing: border-box;
+}
+
+.d-card-light {
+    border: 0.1rem solid $card-Border2;
+    box-sizing: border-box;
+}
+
+.d-card-tit {
+    color: $white-Color;
+    padding: 0.8rem 0.4rem;
+    border-bottom: 0.1rem solid $cardtit-Border;
+}
+
+
+/*表格*/
+
+.d-table-wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 0.1rem solid $card-Border;
+    box-sizing: border-box;
+    clear: both;
+}
+
+.d-table-fixedTh .d-table-th {
+    background: $table-th-Bg;
+    color: $info-Color;
+}
+
+.d-table-headtitle {
+    color: $white-Color;
+    height: 10%;
+    margin-bottom: 20px;
+}
+
+.d-table-headtitle .bline {
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid $btn-Border;
+}
+
+.d-table-bdInner tr:nth-child(2n) {
+    background: $table-even-Bg;
+}
+
+.d-table-hover tr:hover,.d-table-hover .active{
+    cursor: pointer;
+    background: $table-tr-hover-Bg;
+//  border: 1px solid $table-tr-hover-Border;
+//  box-shadow: 0 0 7px $table-tr-hover-Shadow;
+//  -webkit-box-shadow: 0 0 7px $table-tr-hover-Shadow;
+    box-sizing: border-box;
+}
+
+.d-table-bdInner tr {
+    border: 1px solid $transparent-Bg;
+    box-sizing: border-box;
+}
+
+.d-table-bdInner td {
+    color: $white-Color;
+    font-size: 12px;
+}
+
+.d-table-blueWrap{
+	width: 100%;
+    height: 100%;
+    background: $transparent-Bg;
+    overflow: hidden;
+    border: 0.1rem solid $tabBlue-Border;
+    box-shadow: 0 0 10px $tabBlue-Shadow inset;
+    box-sizing: border-box;
+    clear: both;
+}
+
+.d-table-blueWrap .el-table{
+	color: $white-Color;
+	background: $mainBody;
+}
+
+.d-table-blueWrap .el-table td, .d-table-blueWrap .el-table th.is-leaf{
+	border-color: $transparent-Bg;
+	background: $transparent-Bg;
+	border-top: 1px solid $mainBody;
+}
+
+.d-table-blueWrap .el-table td.el-table__expanded-cell{
+	background: $mainBody;
+}
+
+.el-table__expand-icon{
+    color: $white-Color;
+}
+
+.d-table-blueWrap .el-table th,.d-table-blueWrap .el-table .el-table__header tr{
+	background: $mainBody;
+	border-bottom-color: $triangle-Bg;
+}
+
+/*th字体颜色*/
+.d-table-blueWrap .el-table thead{
+	color: $info-Color;
+}
+
+.d-table-blueWrap .el-table .d-btnItem{
+	color: $tabOper-Color;
+	margin: 0 2px;
+	cursor: pointer;
+}
+
+.d-table-blueWrap .el-table .d-btnItem:hover{
+	color: $blue-Color;
+}
+
+/*文字链接*/
+.d-table-blueWrap .el-table .d-btnItem.nDisabled,.d-table-blueWrap .el-table .d-btnItem.nDisabled:hover{
+	opacity: 0.4 !important;
+    filter: alpha(opacity=40) !important;
+    cursor: not-allowed !important;
+}
+
+.d-table-blueWrap .el-table .d-line-l {
+    border-left: 1px solid transparent;
+    padding-left: 6px;
+}
+
+.d-table-blueWrap .el-table .d-line-r {
+    border-right: 1px solid transparent;
+    padding-right: 6px;
+    float: left;
+}
+
+/*空数据*/
+.d-table-blueWrap .el-table__empty-block{
+	background: $mainBody;
+//	padding-top: 10%;
+}
+
+.d-table-blue .d-table-th{
+	background: $transparent-Bg;
+	white-space: nowrap;
+    overflow: hidden;
+    user-select: none;
+}
+
+.d-table-noTxt{
+	color: $white-Color;
+	text-align: center;
+	padding-top: 6%;
+}
+
+.d-noTxt{
+	color: $darkblue-Color;
+}
+
+/*全选*/
+.d-table-blueWrap .el-checkbox .el-checkbox__inner{
+	background: $mainBody;
+	border-color: $info-Color;
+}
+
+.d-table-blueWrap .el-checkbox .is-checked .el-checkbox__inner{
+ 	background: $info-Color;
+}
+
+.d-table-blueWrap .el-checkbox .el-checkbox__inner::after{
+	border-width: 2px;
+	border-color: $mainBody;
+}
+
+/*奇数行背景*/
+.d-table-blueWrap .el-table--striped .el-table__body tr.el-table__row--striped td{
+	background: $mainBody;
+}
+
+/*偶数行背景*/
+.d-table-blueInner tr:nth-child(2n),
+.d-table-blueWrap .el-table__body tr.el-table__row,
+.d-table-blueWrap .el-table__body tr.el-table__row td{
+    background: $table-even-Bg;
+}
+
+.d-table-blueWrap .el-table__body tr.hover-row>td {
+    background: $mainBody;
+}
+
+.d-table-blueInner tr.el-table__row:hover,
+.d-table-blueWrap .el-table__row.hover-row,
+.d-table-blueWrap .el-table__body tr.hover-row{
+    cursor: pointer;
+    background: $table-tr-hover-Bg;
+//  border: 1px solid $table-tr-hover-Border;
+//  box-shadow: 0 0 7px $table-tr-hover-Shadow;
+//  -webkit-box-shadow: 0 0 7px $table-tr-hover-Shadow;
+    box-sizing: border-box;
+}
+
+.d-table-blueWrap .el-table--striped .el-table__body tr.el-table__row--striped.current-row td,
+.d-table-blueWrap .el-table__body tr.current-row>td,
+.d-table-blueWrap .el-table__body tr.hover-row.current-row>td,
+.d-table-blueWrap .el-table__body tr.hover-row.el-table__row--striped.current-row>td,
+.d-table-blueWrap .el-table__body tr.hover-row.el-table__row--striped>td,
+.d-table-blueWrap .el-table__body tr.hover-row>td,
+.d-table-blueWrap .el-table--enable-row-hover .el-table__body tr:hover>td {  //add 隐藏的hover
+	cursor: pointer;
+    background: $table-tr-hover-Bg;
+//  border-top: 1px solid $table-tr-hover-Border;
+//  border-bottom: 1px solid $table-tr-hover-Border;
+//  box-shadow: 0 0 7px $table-tr-hover-Shadow;
+//  -webkit-box-shadow: 0 0 7px $table-tr-hover-Shadow;
+    box-sizing: border-box;
+}
+
+.d-table-blueInner tr.el-table__row:hover .d-btnItem,
+.d-table-blueWrap .el-table__row.hover-row .d-btnItem,
+.d-table-blueWrap .el-table__body tr.el-table__row.current-row .d-btnItem,
+.d-table-blueWrap .el-table--enable-row-hover .el-table__body tr:hover>td .d-btnItem{ //add 隐藏的hover
+	color: $white-Color;
+}
+
+.d-table-blueInner tr.el-table__row:hover .d-btnItem:hover,
+.d-table-blueWrap .el-table__row.hover-row .d-btnItem:hover,
+.d-table-blueWrap .el-table__body tr.el-table__row.current-row .d-btnItem:hover,
+.d-table-blueWrap .el-table__body tr.el-table__row.current-row .d-btnItem.on,
+.d-table-blueWrap .el-table--enable-row-hover .el-table__body tr:hover>td .d-btnItem:hover{ //add 隐藏的hover
+	color: $mainBody;
+	font-weight: bold;
+}
+
+.d-table-blueWrap .el-table__body tr.hover-row > td .d-btnItem{
+	 
+}
+
+
+.d-table-blueInner tr{
+    border: 1px solid $transparent-Bg;
+    box-sizing: border-box;
+}
+
+.d-table-blueInner td.iconfontwarp{
+	color: $blue-Color;
+}
+
+.d-table-blueInner td{
+    color: $white-Color;
+}
+
+.d-table-txt-light {
+    color: $info-Color !important;
+}
+
+.d-table-item-first {
+    font-weight: bold;
+    color: $info-Color;
+}
+
+.d-table-blueWrap .textwarning{
+	color: $yellow-Color;
+}
+
+.d-table-blueWrap .textRed{
+	color: $red-Color;
+}
+
+.d-tab-tranbg.el-table th, .d-tab-tranbg.el-table tr{
+	background: $transparent-Bg;
+}
+
+.d-tab-tranbg.el-table--border::after,
+.d-tab-tranbg.el-table--group::after,
+.d-tab-tranbg.el-table::before {
+	background-color: $gray-Color;
+	opacity: 0.8;
+	display: none;
+}
+
+
+/*地图*/
+/*实体背景*/
+.st0,
+.st1,
+.st2,
+.st4{
+	fill: $blue-Color !important;
+}
+
+.cls-2,
+.cls-4{
+	fill: $blue-Color !important;
+}
+
+.cls-5 {
+	fill: $blue-Color !important;
+}
+
+.cls-6 {
+	opacity: 0.9 !important;
+	stroke: $maps-cls6 !important;
+	fill: $blue-Color !important;
+}
+
+.cls-7 {
+	fill: $maps-cls7;
+}
+
+.st7 {
+	font-size: 2rem;
+	fill: $white-Bg;
+	font-weight: normal;
+}
+
+.cls-10 {
+	fill: $maps-cls10;
+}
+
+/*地图线条内部*/
+.st12 {
+	fill: none;
+	stroke-miterlimit: 2.41;
+	stroke: $maps-Line !important;
+	stroke-width: 4px;
+}
+
+.cls-redbord {
+	fill:  $maps-redBg !important;
+}
+
+.cls-bord {
+	fill:  $maps-greenBg-circle !important;
+}
+
+.cls-bord:hover,.cls-bord:hover+.st7{
+	cursor: pointer;
+//	transition: all 0.2s ease-in-out;
+	fill: $maps-greenBg-text !important;
+	color: $maps-greenBg-text;
+	font-size: 2.1rem;
+	font-weight: bold;
+}
+
+.cls-12:hover{
+	fill: $maps-greenBg-text !important;
+	opacity: 1 !important;
+}
+	
+.cls-12:hover+.st7{
+	color: $maps-greenBg-text;
+	font-size: 2.1rem;
+	font-weight: bold;
+	fill: $maps-greenBg-text;
+}
+
+.st10:hover,.st14:hover,.st11:hover,
+.st9txt:hover,.cls-10.site6:hover,
+.st12:hover + .st7,.st10:hover + .st12 + .st7{
+	cursor: pointer;
+//	transition: all 0.2s ease-in-out;
+	fill: $maps-greenBg-text !important;
+	color: $maps-greenBg-text;
+	font-size: 2.1rem;
+	font-weight: bold;
+}
+		
+			
+/*弹框*/
+
+.d-map-rectangle {
+    width: 24%;
+    border: 0.1rem solid $mask-Bg;
+    color: $white-Color;
+    z-index: 9;
+    position: relative;
+}
+
+.d-map-triangle {
+    width: 0px;
+    height: 0px;
+    left: 45%;
+    position: absolute;
+    bottom: -11px;
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: $floating-triangle-Border transparent transparent;
+}
+
+.d-map-triangle span {
+    border-width: 10px;
+    border-style: solid;
+    border-color: $floating-triangle-Bg transparent transparent;
+    width: 0px;
+    height: 0px;
+    left: -10px;
+    top: -11px;
+    position: absolute;
+}
+
+
+/*四边装饰 */
+
+.d-bg-recline {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+    background: linear-gradient(to left, $recline-Bg, $recline-Bg) left top no-repeat, linear-gradient(to bottom, $recline-Bg, $recline-Bg) left top no-repeat, linear-gradient(to left, $recline-Bg, $recline-Bg) right top no-repeat, linear-gradient(to bottom, $recline-Bg, $recline-Bg) right top no-repeat, linear-gradient(to left, $recline-Bg, $recline-Bg) left bottom no-repeat, linear-gradient(to bottom, $recline-Bg, $recline-Bg) left bottom no-repeat, linear-gradient(to left, $recline-Bg, $recline-Bg) right bottom no-repeat, linear-gradient(to left, $recline-Bg, $recline-Bg) right bottom no-repeat;
+    background-size: 0.18rem 1.25rem, 1.25rem 0.18rem, 0.2rem 1.25rem, 1.25rem 0.18rem;
+}
+
+
+/*弹出框*/
+.d-popupBox{
+    width: 100%;
+    height: 88%;
+    position: absolute;
+     
+    background: $popupBox-wrap-Bg;
+    z-index: 999;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.d-popupBox .d-body{
+	width: 40%;
+	justify-content: center; 
+    align-items: center;
+//  margin: 0 auto;
+    padding: 0 10px;
+    background: $popupBox-con-Bg;
+    position: relative;
+    bottom: 10%;
+    border: 1px solid $popupBox-Border;
+    box-shadow: 0 0 10px $popupBox-Border;
+}
+
+.d-popheader .d-tit{
+	padding: 8px 0;
+	color: $mainBody;
+    font-weight: bold;
+	font-size: 16px;
+}
+
+.d-popheader .line{
+    height: 1.6px;
+    background: $popupBox-tit-line;
+}
+
+.d-popupBox .close{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background: $popupBox-red;
+    color: $white-Color;
+    position: absolute;
+    right: 0;
+    top: 8px;
+    cursor: pointer;
+}
+
+.d-popupBox .d-label{
+    text-align: right;
+    color: $darkblue-Color;
+    font-weight: bold;
+    font-size: 1.0rem;
+}
+
+.d-popupBox .d-input-hor .d-dropdown,.d-popupBox .d-input-hor .el-dropdown{
+	background: $popupBox-input-Bg;
+	border: 1px solid $tabswitch-Bg;
+	padding: 0;
+    box-sizing: border-box;
+}
+
+.d-popupBox .d-input-hor .el-dropdown-link{
+	color: $black-Color;
+}
+
+.d-popupBox .d-input-hor .d-dropdown.active,.d-popupBox .d-input-hor .d-dropdown:hover{
+	box-shadow: none !important;
+}
+
+.d-popupBox .d-input-hor .d-dropdown.active .dropicon,
+.d-popupBox .d-input-hor .d-dropdown:hover .dropicon{
+	color: $blue-Color;
+}
+
+.d-popupBox .d-input-hor .d-txt{
+	color: $darkblue-Color;
+}
+
+.d-popupBox .d-link-emonitor a:hover,.d-popupBox .d-link-emonitor a:focus{
+	color: $blue-Color;
+	text-decoration: underline;
+}
+
+/*文本框*/
+
+.d-popupBox .d-input-hor .el-input .el-input__suffix i{
+	color: $darkblue-Color;
+}
+
+.d-popupBox .d-input-hor .el-textarea .el-textarea__inner{
+//	background: $popupBox-input-Bg;
+    border: 1px solid $tabswitch-Bg;
+    border-radius: 0;
+}
+
+.d-popupBox .d-input-hor input{
+    color: $darkblue-Color;
+//  background: $popupBox-input-Bg;
+    border: 1px solid $tabswitch-Bg;
+}
+
+.d-popupBox .d-input-hor input:hover{
+	border-color: $blue-Color;
+}
+
+
+.d-popupBox .d-input-hor .el-date-editor.el-input input::-webkit-input-placeholder{
+    color: $black-Color;
+}
+
+.d-popupBox .d-input-hor .is-disabled .el-input__inner{
+	color: $darkblue-Color;
+    background: $gray-Color;
+    border: 1px solid $tabswitch-Bg;
+    cursor: not-allowed !important;
+    opacity: 0.5;
+}
+
+.d-popupBox .el-input.is-disabled .el-input__icon{
+	
+}
+
+.d-popupBox .d-input-hor .el-date-editor .el-input__prefix{
+	color: $black-Color;
+}
+
+.d-popupBox .m-dropdown{
+    background: $popupBox-input-Bg;
+    border: 1px solid $mainBody;
+    width: 161px;
+    padding: 4px 0;
+}
+
+.d-popupBox .m-dropdown .u-text, .d-popupBox .m-dropdown .dropicon{
+    color: $mainBody;
+}
+
+.d-popupBox .d-popfoot .d-inner{
+	border-top: 1px solid $popupBox-foot-line;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.d-popupBox .d-popfoot .btn{
+    background: transparent;
+    border: 1px solid $mainBody;
+    color: $darkblue-Color;
+    display: inline-block;
+    padding: 6px 40px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.d-popupBox .d-popfoot .btn.d-save,.d-popupBox .el-button--primary{
+    border: 1px solid $mainBody !important;
+    background: $mainBody !important;
+    color: $info-Color !important;
+    box-shadow: none;
+}
+
+.d-popupBox .d-popfoot .btn.d-save .iconfont{
+    color: $info-Color; 
+}
+
+.d-popupBox .d-popfoot .btn .d-cancel{
+	color: $darkblue-Color;
+}
+
+.d-popupBox .d-popfoot .btn:hover,.d-popupBox .el-button--primary:hover{
+	border-color: $info-Color !important;
+	background: $mainBody !important;
+	color: $info-Color !important;
+}
+
+.d-popupBox .el-checkbox__input .el-checkbox__inner{
+	border-color: $blue-Color;
+}
+
+.d-popform .d-linkR{
+	color: $red-Color;
+	cursor: pointer;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.d-popform .d-linkR:hover{
+	background: $red-Color;
+	color: $white-Color;
+	font-weight: normal;
+}
+
+/******************** 各页面 *********************/
+
+
+/*公告页面*/
+
+.d-gradient-header {
+    padding: 0.75rem;
+    color: $info-Color;
+    font-weight: bold;
+    background: $notice-Bg;
+    -webkit-background: $notice-Bg;
+}
+
+.d-noticlist {
+    color: $golden-Color;
+}
+
+.d-noticlist .d-circle {
+    width: 0.5rem;
+    height: 0.5rem;
+    display: inline-block;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    background: $golden-Color;
+    margin-right: .5rem;
+}
+
+
+
+/*
+ * 大屏监控页面
+ * 
+ */
+
+/*切换*/
+
+.d-chart-title .chartname,
+.d-overview-hd .d-chartname{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $white-Color;
+}
+
+.d-chart-title .chartline,
+.d-overview-hd .d-chartline{
+    border-bottom: 1px solid $lscreen-tit-line;
+    position: relative;
+}
+
+.d-chart-title .chartcolor{
+    width: 30px;
+    height: 2px;
+    background: $info-Color;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+
+
+/*
+ * 监控总览页面
+ * 
+ */
+
+.d-link-jump{
+	color: $white-Color;
+	position: absolute;
+	right: 30px;
+	text-shadow: 0 0 7px $white-Color;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.d-ports-changeBox{
+	color: $white-Color;
+	position: absolute;
+	right: 30px;
+	text-shadow: 0 0 7px $white-Color;
+	cursor: pointer;
+	z-index: 2;
+	font-weight: bold;
+}
+
+.d-site-mode {
+    width: 18%;
+    height: 43%;
+    box-sizing: border-box;
+    padding: 0px 1rem;
+    cursor: pointer;
+    margin-top: 1%;
+    margin-right: 2%;
+    margin-bottom: 1.6%;
+    background: $onelevel-rec-Bg;
+    border: 1px solid $onelevel-rec-Border;
+    box-sizing: border-box;
+}
+
+.d-site-tit .d-head-middle {
+	height: 2.5rem;
+    line-height: 2.5rem;
+    display: inline-block;
+    padding: 0 50px;
+    box-sizing: border-box;
+    position: relative;
+    bottom: 14px;
+    font-weight: bold;
+    background: $triangle-Bg;
+}
+
+.d-site-tit .d-arrow-l,
+.d-site-tit .d-arrow-r {
+    width: 15px;
+    height: 2.5rem;
+    background: $triangle-Bg;
+}
+
+.d-site-tit .d-arrow-l {
+    position: absolute;
+    left: -14px;
+    top: 0;
+    -webkit-clip-path: polygon( 0px 50%, 100% 100%, 100% 0px);
+    background: $triangle-Bg;
+}
+
+.d-site-tit .d-arrow-r {
+    position: absolute;
+    right: -15px;
+    top: 0;
+    -webkit-clip-path: polygon( 0px 50%, 100% 100%, 100% 0px);
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    background: $triangle-Bg;
+}
+
+.d-site-tit .d-tit {
+	min-height: 21px;
+    display: block;
+    float: left;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $white-Color;
+}
+
+.d-site-mode:hover {
+    background: $onelevel-rec-Bg;
+    border: 1px solid $onelevel-rec-Border-acitve;
+    /*box-shadow: 5px 5px 8px $onelevel-rec-inset-active inset;
+    -webkit-box-shadow: 5px 5px 8px $onelevel-rec-inset-active inset;*/
+    box-shadow: 0 0 10px $onelevel-rec-shadow-active;
+    -webkit-box-shadow: 0 0 8px $onelevel-rec-shadow-active;
+}
+
+.d-site-mode:hover .d-tit {
+    color: $white-Color;
+}
+
+.d-site-mode:hover .d-head-middle {
+    background: $onelevel-rec-head-active;
+}
+
+.d-site-mode:hover .d-arrow-l,
+.d-site-mode:hover .d-arrow-r {
+    background: $onelevel-rec-head-active;
+}
+
+.d-shipOverview .d-overview-hd {
+    color: $white-Color;
+    height: 15%;
+}
+
+.d-overview-hd .d-ship,
+.d-overview-hd .d-call {
+    width: 45%;
+    text-align: center;
+    border-bottom: 1px solid $overview-Border;
+    margin-bottom: 1rem;
+}
+
+.d-overview-rate .d-ctn {
+    height: 42%;
+    color: $overview-info;
+}
+
+.d-overview-rate .d-conlot {
+    height: 42%;
+    color: $blue-Color;
+}
+
+.d-overview-rate .bar1Wrap {
+    border: 1px solid $overviewbar-Border1;
+}
+
+.d-overview-rate .bar1 {
+    background: $overviewbar-Bg1;
+}
+
+.d-overview-rate .bar2Wrap {
+    border: 1px solid $overviewbar-Border2;
+}
+
+.d-overview-rate .bar2 {
+    background: $overviewbar-Bg2;
+}
+
+
+/*
+ * 二级-码头明细页面
+ * 
+ */
+
+
+/*返回按钮*/
+
+.d-btn-back {
+    padding: 5px 20px;
+    cursor: pointer;
+    color: $info-Color;
+    border: 1px solid $secWharf-Border !important;
+    background: $mainBody;
+}
+
+.d-btn-back:hover{
+	color: $info-Color;
+	background: $btn-active-Bg;
+	border: 1px solid $info-Color !important;
+	box-shadow: $btn-active-Shadow 0px 0px 10px inset;
+    -webkit-box-shadow: $btn-active-Shadow 0px 0px 10px inset;
+}
+
+.d-wharf-state .d-text-green {
+    color: $green-Color;
+}
+
+.d-wharf-state .d-square {
+    width: 0.75rem;
+    margin-right: .5rem;
+    float: left;
+    display: block;
+    background: $green-Color;
+}
+
+.d-wharf-con {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background: $secWharf-Bg;
+    box-shadow: $secWharf-Shadow 0 0 30px inset;
+    -webkit-box-shadow: $secWharf-Shadow 0 0 30px inset;
+    border: 0.15rem solid $secWharf-Border;
+    box-sizing: border-box;
+}
+
+
+/*两角装饰*/
+
+.d-bg-recline-two {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+    background: linear-gradient(to left, $recline-Bg, $recline-Bg) left top no-repeat, linear-gradient(to bottom, $recline-Bg, $recline-Bg) left top no-repeat, linear-gradient(to left, $recline-Bg, $recline-Bg) right bottom no-repeat, linear-gradient(to left, $recline-Bg, $recline-Bg) right bottom no-repeat;
+    background-size: 0.2rem 1.5rem, 2rem 0.2rem, 0.2rem 1.5rem, 2rem 0.2rem;
+}
+
+.d-wharf-detail .d-navitem {
+    width: 21%;
+    height: 100%;
+    border: 1px dashed $secWharf-Border-dash;
+    padding: 0.75rem 0.5rem;
+    margin-right: 0.75rem;
+}
+
+.d-wharf-detail .d-navitem .title{
+	color: $white-Color;
+	font-weight: normal;
+}
+
+.d-wharf-detail .d-portimg {
+    border: 1px dashed $secWharf-Border-dash;
+    width: 100%;
+    height: 100%;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box;
+    position: relative;
+    clear: both;
+    overflow: hidden;
+	overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.d-propwarp .d-proitm:hover {
+    cursor: pointer;
+    background: $onelevel-rec-Bg;
+    border: 1px solid $onelevel-rec-Border-acitve;
+    box-shadow: 0 0 10px $onelevel-rec-shadow-active;
+    -webkit-box-shadow: 0 0 8px $onelevel-rec-shadow-active;
+}
+
+.d-propwarp .d-proitm {
+    width: 100%;
+    height: 29%;
+    margin-bottom: 12%;
+    border: 1px dashed $secWharf-Border-dash;
+    position: relative;
+}
+
+.d-pieline {
+    width: 1px;
+    height: 20px;
+    background: $white-Bg;
+    display: inline-block;
+    position: relative;
+    top: 50px;
+}
+
+.d-pietext {
+    position: absolute;
+    left: 42%;
+    color: $white-Color;
+    font-size: 14px;
+}
+
+.d-propnav {
+    position: absolute;
+    top: -10px;
+    left: 20%;
+    padding: 0 12px;
+    background: $secWharf-Bg;
+    border-radius: 9px;
+    -webkit-border-radius: 9px;
+}
+
+
+/* 占比 */
+
+.d-litter-title .strip {
+    height: 16px;
+    background: $info-Color;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.d-litter-title .striptext {
+    color: $white-Color;
+    font-size: 14px;
+    vertical-align: bottom;
+    font-weight: normal;
+}
+
+
+/* 泊位图相关 */
+.changeShip,.d-yanchi{
+	color: $white-Color;
+}
+
+.changeShip:hover{
+	color: $blue-Color;
+}
+
+.port-btn-wrap li{
+	padding: 10px;
+	color: $white-Color;
+	cursor: pointer;
+	font-weight: normal;
+}
+			
+.port-btn-wrap .active{
+	color: $blue-Color;
+	border-top: 1px solid $blue-Color;
+	border-bottom: 1px solid $blue-Color;
+	font-weight: normal;
+}
+			
+.d-allship .d-textwrap:hover div {
+    text-shadow: 0 0 12px $white-Bg;
+}
+
+.d-allship .d-textwrap div {
+    color: $weakBlue-Color;
+}
+
+.d-boxship{
+	position: absolute;
+	color: $white-Color;
+	left:10px;
+	font-weight: normal;
+}
+
+/* 泊位线 */
+
+.d-portContent .adjust {
+    width: 100%;
+    height: 100%;
+    background: url(../../static/Images/sub/img_ship_l.png);
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.d-port-line {
+    width: 100%;
+    height: 2px;
+    background: $berth-Line;
+    position: relative;
+    top: 31%;
+}
+
+.d-port-line .number {
+    color: $blue-Color;
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+
+.d-port-line .point {
+    width: 2px;
+    height: 18px;
+    border-radius: 12px;
+    background: $berth-Line;
+    position: relative;
+    bottom: 6px;
+}
+
+.d-bridge li{
+	background: url(../../static/Images/sub/brige_green_dark.png);
+    background-size: 100% 100%;
+}
+
+.d-bridge li.d-text-red {
+    background: url(../../static/Images/sub/brige_danger_light.png);
+    background-size: 100% 100%;
+    color: $red-Color;
+}
+
+.d-bridge li:hover {
+    cursor: pointer;
+    background: $table-tr-hover-Bg;
+//  box-shadow: 0 0 5px $table-tr-hover-Shadow;
+//  -webkit-box-shadow: 0 0 5px $table-tr-hover-Shadow;
+    box-sizing: border-box;
+}
+
+
+/* hoverdata组件相关样式结构 */
+
+.d-hover-alert .d-wrap {
+	color: $white-Color;
+	font-weight: bold;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background: $floating-triangle-Box;
+    border: 0.1rem solid $mask-Bg;
+    box-shadow: $floating-triangle-inset;
+    position: relative;
+    text-align: left;
+}
+
+.d-hover-alert .d-wrap .title {
+    color: $info-Color;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.d-hover-alert .d-wrap .item {
+    width: 50%;
+    color: $white-Color;
+    margin-bottom: 4px;
+}
+
+.d-hover-alert .d-wrap .bright {
+    color: $info-Color;
+}
+
+ 
+ 
+
+/*
+ * 船舶监控页面
+ * 
+ */
+
+.d-workRoadBody .d-ship-parents .d-table-bdInner tr:nth-child(even) .d-fir-shape {
+    background: linear-gradient(-67deg, transparent 28px, $shipBody-shape-Bg 0);
+}
+
+.d-ship-child .d-inner {
+    padding: 10px;
+    border: 0.1rem solid $card-Border;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.d-ship-child .d-headtitle {
+    width: 100%;
+    height: 10%;
+    padding-bottom: 8px;
+    border-bottom: 0.1rem solid $card-Border;
+    color: $info-Color;
+}
+
+.d-shipList li {
+    width: 16%;
+    height: 100%;
+    display: inline-block;
+    margin-right: 10px;
+    box-sizing: border-box;
+    padding: 6px;
+    background: $linear-shipBg;
+}
+
+.d-shipList .d-overtitle {
+    padding: .7rem;
+    margin-bottom: 3%;
+    border-bottom: 1px solid $card-Border;
+    color: $white-Color;
+    text-align: center;
+    font-weight: normal;
+}
+
+.d-shipList .normal {
+    color: $green-Color;
+}
+
+.d-shipList .malfunction {
+    color: $red-Color;
+}
+
+.d-shipList .overtime {
+    color: $yellow-Color;
+}
+
+.d-shipList .workType,
+.d-shipList .workState {
+    color: $weakBlue-Color;
+}
+
+.d-shipList .working{
+	color: $green-Color;
+}
+
+.d-shipList .d-shipItem.d-text-default{
+	color: $weakBlue-Color;
+}
+
+.d-shipList .maintain{
+	color: $red-Color;
+}
+
+.d-shipList .iconfont {
+    margin-right: 6px;
+}
+
+.d-shipList .d-shipItem.d-last{
+	margin: 0 0.7rem;
+	border-top: 1px solid $card-Border;
+}
+
+
+/*
+ * 设备故障页面
+ * 
+ */
+
+.d-changeBtn {
+    color: $white-Color;
+    cursor: pointer;
+    padding: 0 5px;
+    font-size: 1.5rem;
+}
+
+.d-changeBtn .iconfont {
+	font-size: 1.5rem;
+}
+
+.d-changeBtn:hover {
+    color: $info-Color;
+}
+
+.d-faultNum {
+    margin-top: 1rem;
+    color: $red-Color;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.d-faultNum .d-square {
+    width: 0.75rem;
+    margin-right: .5rem;
+    float: left;
+    background: $red-Color;
+}
+
+
+/*切换卡片模式*/
+
+.d-rectangle{
+    padding: 0.5rem;
+    background: $cut-Bg;
+    -webkit-background: $cut-Bg;
+    border: 1px solid $cut-Border;
+    border-radius: 0.5rem;
+}
+
+.d-rectangle:hover{
+    background: $body;
+    border: 1px solid $blue-Color;
+    box-shadow: 0 0 20px $rect-inset inset;
+}
+
+.d-rectangle-cut {
+    padding: 0.75rem 1rem 1rem 1rem;
+    background: $cut-Bg;
+    -webkit-background: $cut-Bg;
+    clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0 calc(100% - 20px), 0 20px);
+    -webkit-clip-path: polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0 calc(100% - 20px), 0 20px);
+    /*background: linear-gradient(135deg, $transparent-Bg 15px, #011934 0) top left,
+          		linear-gradient(-135deg, $transparent-Bg 15px, #011934 0) top right,
+          		linear-gradient(-45deg, $transparent-Bg 15px, #011934 0) bottom right,
+          		linear-gradient(45deg, $transparent-Bg 15px, #011934 0) bottom left;
+	background-size: 50% 50%;
+	background-repeat: no-repeat; 
+	 */
+    position: relative;
+    border: 1px solid $cut-Border;
+}
+
+.d-rectangle-cut:before {
+    content: ' ';
+    border: solid $transparent-Bg;
+    position: absolute;
+    border-width: 10px;
+    border-top-color: $cut-Border;
+    border-left-color: $cut-Border;
+    left: 0;
+    top: 0;
+}
+
+.d-rectangle-cut:after {
+    content: ' ';
+    border: solid $transparent-Bg;
+    position: absolute;
+    border-width: 10px;
+    border-top-color: $cut-Border;
+    border-right-color: $cut-Border;
+    top: 0;
+    right: 0;
+}
+
+.d-equipment-cards .d-rec-lb {
+    content: ' ';
+    border: solid $transparent-Bg;
+    position: absolute;
+    border-width: 10px;
+    border-bottom-color: $cut-Border;
+    border-left-color: $cut-Border;
+    left: 0;
+    bottom: 0;
+}
+
+.d-equipment-cards .d-rec-rb {
+    content: ' ';
+    border: solid $transparent-Bg;
+    position: absolute;
+    border-width: 10px;
+    border-bottom-color: $cut-Border;
+    border-right-color: $cut-Border;
+    right: 0;
+    bottom: 0;
+}
+
+.d-rectangle-cut.danger {
+    border-color: $cutRed-Border;
+}
+
+.d-rectangle-cut.danger:before {
+    border-top-color: $cutRed-Border;
+    border-left-color: $cutRed-Border;
+}
+
+.d-rectangle-cut.danger:after {
+    border-top-color: $cutRed-Border;
+    border-right-color: $cutRed-Border;
+}
+
+.d-rectangle-cut.danger .d-rec-lb {
+    border-bottom-color: $cutRed-Border;
+    border-left-color: $cutRed-Border;
+}
+
+.d-rectangle-cut.danger .d-rec-rb {
+    border-bottom-color: $cutRed-Border;
+    border-right-color: $cutRed-Border;
+}
+
+.d-rectangle-item:hover .d-rectangle-cut,
+.d-rectangle-cut.active,
+.d-choiceit{
+    background: $body;
+    border: 1px solid $blue-Color;
+    box-shadow: 0 0 20px $rect-inset inset;
+}
+
+.d-rectangle-item:hover .d-rec-lb,
+.d-rectangle-cut.active .d-rec-lb,
+.d-choiceit .d-rec-lb{
+    border-bottom-color: $blue-Color !important;
+    border-left-color: $blue-Color !important;
+}
+
+.d-rectangle-item:hover .d-rec-rb,
+.d-rectangle-cut.active .d-rec-rb,
+.d-choiceit .d-rec-rb{
+    border-bottom-color: $blue-Color !important;
+    border-right-color: $blue-Color !important;
+}
+
+.d-rectangle-item:hover .d-rectangle-cut:before,
+.d-rectangle-cut.active:before,
+.d-choiceit:before {
+    border-top-color: $blue-Color !important;
+    border-left-color: $blue-Color !important;
+}
+
+.d-rectangle-item:hover .d-rectangle-cut:after,
+.d-rectangle-cut.active:after,
+.d-choiceit:after {
+    border-top-color: $blue-Color;
+    border-right-color: $blue-Color;
+}
+
+.d-rectangle-item:hover .d-rectangle-cut.danger,
+.d-rectangle-cut.active.danger{
+    border: 1px solid $red-Color !important;
+}
+
+.d-rectangle-item:hover .d-rectangle-cut.danger .d-rec-lb,
+.d-rectangle-cut.active.danger .d-rec-lb,
+.d-choiceit.danger .d-rec-lb {
+    border-bottom-color: $rect-danger-Color !important;
+    border-left-color: $rect-danger-Color !important;
+}
+
+.d-rectangle-item:hover .d-rectangle-cut.danger .d-rec-rb,
+.d-rectangle-cut.active.danger .d-rec-rb,
+.d-choiceit.danger .d-rec-rb {
+    border-bottom-color: $rect-danger-Color !important;
+    border-right-color: $rect-danger-Color !important;
+}
+
+.d-rectangle-item:hover .d-rectangle-cut.danger:before,
+.d-rectangle-cut.active.danger:before,
+.d-choiceit.danger:before {
+    border-top-color: $rect-danger-Color !important;
+    border-left-color: $rect-danger-Color !important;
+}
+
+.d-rectangle-item:hover .d-rectangle-cut.danger:after,
+.d-rectangle-cut.active.danger:after,
+.d-choiceit.danger:after {
+    border-top-color: $rect-danger-Color;
+    border-right-color: $rect-danger-Color;
+}
+
+.d-rectangle-cut .d-emonitor-tit {
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid $cut-Border;
+    text-align: center;
+}
+
+.d-emonitor-tit .d-craneName{
+	color: $white-Color;
+}
+
+.d-emonitor-tit .d-linkR{
+	color: $blue-Color;
+	cursor: pointer;
+}
+
+.d-emonitor-tit .d-linkR:hover .iconfont,
+.d-eMore:hover .iconfont{
+	color: $info-Color;
+}
+
+.d-rectangle-cut .d-square {
+    width: 0.75rem;
+    margin-right: .5rem;
+    float: left;
+    background: $white-Color;
+}
+
+.d-ebd-li.d-success .d-square {
+    background: $green-Color;
+}
+
+.d-ebd-li.d-success .d-equcol {
+    color: $green-Color;
+}
+
+.d-ebd-li.d-success{
+    color: $green-Color;
+}
+
+.d-ebd-li.d-danger{
+    color: $red-Color;
+}
+
+.d-ebd-li.d-danger .d-square {
+    background: $red-Color;
+}
+
+.d-equipment-cards .d-eMore{
+	color: $blue-Color;
+	text-align: center;
+	cursor: pointer;
+}
+
+.d-input-hor .d-danger{
+    color: $red-Color;
+}
+
+.d-input-hor .d-success{
+    color: $darkgreen-Color;
+}
+
+
+/*图片轮播*/
+
+.d-photoArea {
+    width: 22%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 0.1rem solid $card-Border;
+    background: $transparent-Bg;
+}
+
+.d-photoArea a{
+	color: $blue-Color;
+}
+
+.d-photoArea a:hover{
+	color: $info-Color;
+}
+
+.d-photoArea .d-tit {
+    color: $white-Color;
+    height: 8%;
+    margin-bottom: 3%;
+    padding-bottom: 1%;
+    border-bottom: 1px solid $photo-Border;
+}
+
+.d-bg-recline-sm {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 100%;
+    height: 98%;
+    padding: 1px;
+    background: linear-gradient(to left, $photo-recline, $photo-recline) left top no-repeat, linear-gradient(to bottom, $photo-recline, $photo-recline) left top no-repeat, linear-gradient(to left, $photo-recline, $photo-recline) right top no-repeat, linear-gradient(to bottom, $photo-recline, $photo-recline) right top no-repeat, linear-gradient(to left, $photo-recline, $photo-recline) left bottom no-repeat, linear-gradient(to bottom, $photo-recline, $photo-recline) left bottom no-repeat, linear-gradient(to left, $photo-recline, $photo-recline) right bottom no-repeat, linear-gradient(to left, $photo-recline, $photo-recline) right bottom no-repeat;
+    background-size: 1px 0.75rem, 0.75rem 1px, 1px 0.75rem, 0.75rem 1px;
+    border: 1px solid $card-Border;
+    box-sizing: border-box;
+}
+
+.d-carousel-operoute {
+    width: 100%;
+    height: 96%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    background: $photo-carousel-Bg;
+}
+
+.d-pho-carousel .el-button--primary {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    background: $transparent-Bg !important;
+    color: $btn-Color !important;
+    border: .1rem solid $btn-Border !important;
+    padding: 6px 10px !important;
+}
+
+
+/*按钮*/
+
+.d-btn-com,
+.d-restrainMain .btn {
+    padding: 5px 24px;
+    text-align: center;
+    background: $mainBody;
+    color: $cardlabel-Color;
+    border: .1rem solid $btn-Border;
+    cursor: pointer;
+}
+
+.d-addWrap .d-btn-com{
+	color: $white-Color;
+	border-color: $btn-Border-com;
+	background: $triangle-Bg !important;
+}
+
+.d-pho-carousel .el-button--primary:hover,
+.d-btn-com:hover,.d-addWrap .d-btn-com:hover,
+.d-restrainMain .btn:hover,
+.d-btnWrap .el-button:hover,
+.d-btnWrap .el-button.is-plain:focus,
+.d-btnWrap .el-button.is-plain:hover{
+    color: $white-Color !important;
+    border: .1rem solid $btn-avtive-Border !important;
+    background: $btn-active-Bg !important;
+    box-shadow: $btn-active-Shadow 0px 0px 10px inset !important;
+    -webkit-box-shadow: $btn-active-Shadow 0px 0px 10px inset !important;
+}
+
+
+/*element 按钮*/
+.d-btnWrap .el-button{
+	background: $mainBody;
+    color: $cardlabel-Color;
+    border: .1rem solid $btn-Border;
+    border-radius: 0;
+}
+
+.d-btnWrap .el-button.is-plain.is-disabled, 
+.d-btnWrap .el-button.is-plain.is-disabled:active, 
+.d-btnWrap .el-button.is-plain.is-disabled:focus,
+.d-btnWrap .el-button.is-plain.is-disabled:hover{
+	opacity: 0.6;
+    filter: alpha(opacity=60);
+    background: $mainBody;
+    color: $btn-Color-com;
+    border: .1rem solid $btn-Border;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+/*底下统计*/
+
+.d-operoute-statis {
+    height: 26%;
+    background: $statistics-Bg;
+    border: 0.1rem solid $statistics-Border;
+    padding: 0.5rem;
+    margin-top: 1rem !important;
+}
+
+.d-ofirst {
+    height: 100%;
+    border-right: 1px solid $statistics-Border;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.d-ofirst .d-tit {
+    font-weight: bold;
+    color: $white-Color;
+}
+
+.d-osecend {
+    height: 100%;
+    border-right: 1px solid $statistics-Border;
+    box-sizing: border-box;
+}
+
+.d-osecend h6 {
+    color: $weakBlue-Color;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.d-osecend div {
+    color: $info-Color;
+    text-align: center;
+    padding-top: 4px;
+}
+
+.d-osecend .u-line {
+    width: 1px;
+    background: $statistics-Border;
+    height: 11px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+
+/*
+ * 人员监控页面
+ * 
+ */
+
+.d-starwrap .d-sitem {
+    width: 100%;
+    height: 100%;
+    background: $transparent-Bg;
+    border: 1px dashed $computer-Border-blue;
+    box-sizing: border-box;
+    padding: 15px 12px;
+    box-shadow: 0 2px 4px $transparent-Bg;
+    -webkit-box-shadow: 0 2px 4px $transparent-Bg;    
+}
+
+.d-starwrap .d-head {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    height: 38%;
+    justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    background: $darkgreen-Color;
+    color: $white-Color;
+    text-align: center;
+}
+
+.d-starwrap .d-headalert {
+    background: $yellow-Color;
+    color: $mainBody;
+}
+
+.d-starwrap .d-line {
+    height: 1px;
+    background: $card-Border;
+    margin: 3% 0;
+}
+
+.d-starwrap .d-itemwrap .child {
+    width: 32%;
+    padding: 0;
+    color: $green-Color;
+    margin-right: 10px;
+    text-align: center;
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+}
+
+.d-starwrap .d-itemwrap .d-li {
+	width: 100%;
+	padding: 4px 0;
+    border: 1px dashed $card-Border;
+    position: relative;
+}	
+	
+.d-starwrap .d-li .d-circle {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: $darkgreen-Color;
+    color: $white-Color;
+    text-align: center;
+    position: absolute;
+    top: -7px;
+    right: 0;
+    z-index: 1;
+}
+
+.d-starwrap .d-brinum {
+    color: $red-Color;
+}
+
+.d-starwrap .d-screen-info {
+    height: 43%;
+    color: $green-Color;
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.d-sitemLi.success .d-sitem {
+    border-color: $computer-Border-blue !important;
+}
+
+.d-sitemLi.success .d-sitem .d-head{
+	background: $darkgreen-Color !important;
+	color: $white-Color !important;
+}
+
+.d-sitemLi.warning .d-sitem {
+    border-color: $computer-Border-yellow !important;
+}
+
+.d-sitemLi.warning .d-sitem .d-head{
+	background: $computer-Bg-yellow !important;
+	color: $mainBody !important;
+}
+
+.d-sitemLi.danger .d-sitem {
+    border-color: $red-Color !important;
+}
+
+.d-sitemLi.danger .d-sitem .d-head{
+	background: $red-Color !important;
+	color: $mainBody !important;
+}
+
+.d-bg-comBase {
+    width: 3.8rem;
+    height: 1.2rem;
+    background: url(../../static/Images/sub/bg_undercom_dark1.png) center no-repeat;
+    background-size: 100%;
+}
+
+/*
+ * 公告页面
+ * 
+ */
+
+.d-noticeBody .d-tit-three {
+    color: $white-Color !important;
+}
+
+.d-noticeMain {
+    height: 93%;
+    box-sizing: border-box;
+    padding: 14px;
+    background: $secWharf-Bg;
+    border: 1px solid $noticebox-Border;
+    box-shadow: 0 0 32px $noticebox-Shadow inset;
+    -webkit-box-shadow: 0 0 32px $noticebox-Shadow inset;
+    overflow: hidden;
+    position: relative;
+}
+
+.d-noticebd .d-nTit .inner {
+    font-size: 20px;
+    color: $white-Color;
+    text-stroke: $text-shine 0.2px;
+    -webkit-text-stroke: $text-shine 0.2px;
+    text-shadow: 0 0 7px $white-Color;
+    font-weight: bold;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.d-noticebd .d-nTit .line {
+    width: 100%;
+    height: 1px;
+    background: $noticebox-bline;
+    opacity: 0.4;
+    margin-top: 1rem;
+}
+
+.d-noticebd .d-list {
+    width: 100%;
+    height: 91%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    color: $noticebox-txt;
+    padding-top: 10px;
+}
+
+.d-noticebd .point {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: $noticebox-nail-Bg;
+    border: 3.4px solid $noticebox-nail-Border;
+}
+
+
+
+/*
+ * 报警页面
+ * 
+ */
+
+.d-warningBody .d-tit-three {
+    color: $white-Color !important;
+    border-left-color: $red-Color !important;
+}
+
+.d-warningMain {
+    width: 100%;
+    height: 82%;
+    overflow: hidden;
+    background: $warnbox-Bg;
+    border: 1px solid $secWharf-Border;
+    box-sizing: border-box;
+    box-shadow: 0 0 8px $warnbox-Shadow inset;
+    -webkit-box-shadow: 0 0 8px $warnbox-Shadow inset;
+}
+
+.d-warningCard{
+	height: 100%;
+	overflow: hidden;
+	background: $warncardlist-bg;
+}
+
+.d-warningMain .warning {
+    color: $yellow-Color;
+}
+
+.d-warningMain .danger {
+    color: $red-Color;
+}
+
+.d-warningMain .danger .d-wgicon-circle {
+    background: $circle-red-Bg;
+    border-color: $circle-red-Border;
+}
+
+.d-warningMain .danger .d-wgicon-circle .iconfont {
+    color: $white-Color;
+}
+
+.d-warningMain .warning .d-wgicon-circle {
+    background: $circle-yellow-Bg;
+    border-color: $circle-yellow-Border;
+}
+
+.d-warningMain .warning .d-wgicon-circle .iconfont {
+    color: $circle-yellow-Color;
+}
+
+.d-warningMain .d-warninglist:hover .d-wgitem{
+    background: $table-tr-hover-Bg;
+//  border: 1px solid $table-tr-hover-Border;
+//  box-shadow: 0 0 7px $table-tr-hover-Shadow;
+//  -webkit-box-shadow: 0 0 7px $table-tr-hover-Shadow;
+    box-sizing: border-box;
+}
+
+.d-warning-detail {
+    margin-left: 61px;
+    border-top: 1px dashed $warnbox-Line;
+    padding-top: 6px;
+    margin-top: 4px;
+    color: $weakBlue-Color;
+    line-height: 25px;
+    width: 100%;    
+}
+
+
+/*
+ * 数据分析页面
+ * 
+ */
+
+.d-screenArea {
+    padding: 1rem;
+    background: $mainBody;
+    border: 0.1rem solid $cut-Border;
+    margin-bottom: 1rem;
+}
+
+.d-screenArea .d-tit {
+    color: $white-Color;
+    padding-bottom: 0.5rem;
+    margin-bottom: 15px;
+    border-bottom: 0.1rem solid $statistics-Border;
+}
+
+.d-scrItem {
+    float: left;
+    margin-right: 20px;
+    color: $cardlabel-Color;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.d-scrItem .d-seldrop {
+    min-width: 120px;
+    color: $weakBlue-Color;
+    background: $mainBody;
+    border: .1rem solid $btn-Border;
+}
+
+.d-scrItem .d-seldrop:hover {
+    border: .1rem solid $btn-avtive-Border !important;
+}
+
+.d-scrItem .d-seldrop .dropdown-bt {
+    color: $weakBlue-Color;
+}
+
+.d-scrItem .d-input {
+    color: $white-Color;
+    background: $mainBody;
+    border: .1rem solid $btn-Border;
+    padding: 6px 5px;
+}
+
+.d-screenArea .label,
+.d-screenArea .el-form-item__label {
+    color: $cardlabel-Color;
+}
+
+.d-screenArea .d-inputTime {
+    color: $white-Color;
+    background: $mainBody;
+    border: .1rem solid $btn-Border;
+    float: right;
+}
+
+.d-screenArea .d-inputTime:hover,
+.d-screenArea .d-inputTime.active {
+    cursor: pointer;
+    border: .1rem solid $btn-avtive-Border !important;
+    background: $btn-active-Bg;
+    box-shadow: $btn-active-Shadow 0px 0px 10px inset;
+    -webkit-box-shadow: $btn-active-Shadow 0px 0px 10px inset;
+}
+
+.d-screenArea .datepick {
+    border: 0 !important;
+    padding: 5px !important;
+    cursor: pointer;
+    color: $weakBlue-Color;
+}
+
+.d-scrItem .d-seldrop:hover .dropdown-bt,
+.d-screenArea .d-inputTime:hover .datepick {
+    color: $white-Color;
+}
+
+.d-card-analyze {
+    width: 32%;
+    height: 54%;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 1%;
+    background: $card-analyze-Bg;
+    border: 0.1rem solid $photo-Border;
+    box-shadow: $card-analyze-Shadow 0px 0px 20px inset;
+    -webkit-box-shadow: $card-analyze-Shadow 0px 0px 20px inset;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.d-statistics {
+    background: $statistics-Bg;
+    border: 0.1rem solid $statistics-Border;
+    padding: 0.5rem;
+}
+
+.d-statistics .tit {
+    color: $white-Color;
+    border-right: $statistics-Bg;
+}
+
+.d-statistics .d-lineseptal {
+    color: $statistics-line !important;
+}
+
+
+
+/*
+ * 约束设置页面
+ * 
+ */
+
+.d-restrainMain {
+    height: 82%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin-top: 1%;
+    padding: 20px 10px;
+    background: $statistics-Bg;
+    border: 1.4px solid $head-Border;
+    border-image: -webkit-$setup-Border-linear;
+    border-image: -moz-$setup-Border-linear;
+    border-image: $setup-Border-linear;
+}
+
+.d-inputStyle .el-input .el-input__inner,.d-inputStyle .el-input-number__decrease,.d-inputStyle .el-input-number__increase{
+	background: $mainBody;
+	border-color: $tabswitch-Border;
+	border-radius: 0;
+	color: $white-Color;
+}
+
+.d-inputStyle .d-radioBox{
+	color: $weakBlue-Color;
+}
+
+.d-inputStyle .el-radio{
+	color: $tabswitch-Border;
+}
+
+.el-radio__input.is-checked+.el-radio__label{
+	color: $formLabel-Color;
+}
+
+.d-inputStyle .d-radioBox .el-radio+.el-radio{
+	margin-left: 15px;
+}
+
+/*边框样式*/
+.d-inputStyle .d-radioBox .el-radio--mini.is-bordered{
+	border-color: $tabswitch-Border;
+}
+
+.d-inputStyle .d-radioBox .el-radio.is-bordered.is-checked{
+	border-color: $blue-Color;
+}
+
+/*按钮样式*/
+.d-inputStyle .d-radioBox .el-radio-button__inner{
+	background: $mainBody;
+	border-color: $tabswitch-Border;
+	color: $tabswitch-Border;
+}
+
+.d-inputStyle .d-radioBox .el-radio-button__inner:hover{
+	color: $info-Color;
+}
+
+.d-inputStyle .el-radio__inner{
+	background-color: $mainBody;
+	border: 1.6px solid $tabswitch-Border;
+}
+
+.d-inputStyle .d-radioBox .is-active .el-radio-button__inner{
+	background: $info-Color;
+	color: $mainBody;
+	font-weight: bold;
+}
+
+.d-inputStyle .el-radio__input.is-checked .el-radio__inner{
+	background: $blue-Color;
+	border-color: $blue-Color;
+}
+
+.d-inputStyle  .el-radio__inner::after{
+	width: 6px;
+    height: 6px;
+	background-color:$mainBody;
+}
+
+.d-restrainMain .d-control-item {
+    padding: 15px 0;
+    height: 32px;
+    border-bottom: 1px dashed $statistics-Border;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.d-restrainMain .d-time-pick .datepick {
+    padding: 6px 16px !important;
+    width: 180px;
+}
+
+.d-restrainMain .d-name {
+    text-align: right;
+    padding: 0 20px;
+    color: $white-Color;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.d-restrainMain .d-name span {
+    display: block;
+}
+
+.d-restrainMain .d-resentry {
+    padding: 15px 0;
+    border-bottom: 1px solid $statistics-Border;
+    position: relative;
+}
+
+.d-restrainMain  .el-select .el-input.is-focus .el-input__inner{
+	border-color: $formLabel-Color;
+}
+
+.d-inputStyle .el-input-number__increase:hover,
+.d-inputStyle .el-input-number__decrease:hover,
+.d-inputStyle .el-input-number .el-input .el-input__inner:focus{
+	opacity: 1;
+	border-color: $formLabel-Color;
+}
+
+.d-inputStyle .el-input-number__increase:hover .el-icon-plus,
+.d-inputStyle .el-input-number__decrease:hover .el-icon-minus,
+.d-inputStyle .el-input-number .el-input .el-input__inner:focus,
+.d-inputStyle .el-input-number__increase:hover .el-icon-arrow-up,
+.d-inputStyle .el-input-number__decrease:hover .el-icon-arrow-down{
+	color: $info-Color;
+}
+
+.d-inputStyle .el-input-number__increase.is-disabled:hover .el-icon-plus,
+.d-inputStyle .el-input-number__decrease.is-disabled:hover .el-icon-minus,
+.d-inputStyle .el-input-number .el-input.is-disabled .el-input__inner:focus,
+.d-inputStyle .el-input-number__increase.is-disabled:hover .el-icon-arrow-up,
+.d-inputStyle .el-input-number__decrease.is-disabled:hover .el-icon-arrow-down{
+	color: $gray-Color;
+	opacity: 0.7;
+}
+
+.d-restrLabel{
+	width: 13%;
+	float: left;
+	color: $white-Color;
+}
+
+.d-restrainMain .check {
+    color: $formLabel-Color;
+}
+
+.d-restrainMain .default {
+    color: $info-Color;
+    position: relative;
+    top: 18px;
+    right: 55px;
+}
+
+.d-restrainMain .text {
+    color: $weakBlue-Color;
+    float: left; 
+}
+
+.d-restrainMain .d-editinput {
+    width: 78px;
+    height: 26px;
+    background: $mainBody;
+    border: 1px solid $cut-Border;
+    color: $weakBlue-Color;
+    text-align: center;
+    margin: 0 8px;
+}
+
+.d-restrainMain .d-editinput:hover,
+.d-restrainMain .d-time-pick .datepick:hover {
+    border-color: $onelevel-rec-Border-acitve;
+    /*cursor: pointer;*/
+}
+
+.d-restrainMain .d-editinput:focus,
+.d-restrainMain .d-time-pick .datepick:focus {
+    border-color: $blue-Color;
+}
+
+
+
+
+/*
+ *  天气设置页面
+ * 
+ */
+
+.d-weathNoDate .item{
+	height: 100%;
+	color: $blue-Color !important;
+    border: 1px dashed $blue-Color;
+}
+
+.d-weather-bd li,.d-weatherAdd-li{
+    width: 15%;
+    height: 45%;
+    min-height: 250px;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 22px;
+    background: $linear-shipBg;
+    box-sizing: border-box;
+    border: 1px solid $mainBody;
+    color: $weakBlue-Color;
+}
+
+.d-weatherBody .d-wearemove .d-inner{
+	width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: $popupBox-close-Bg;
+    color: $white-Color;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;        
+    -webkit-box-pack: justify;
+    -webkit-justify-content: center;
+            justify-content: center;
+    padding: 2px;
+}
+
+.d-weatherBody .d-weaedit{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    color: $blue-Color;
+}
+
+.d-weatherBody .d-weaedit .iconfont{
+    color: $blue-Color;
+    margin-right: 1px; 
+}
+
+.d-weatherBody .d-weaedit:hover,.d-weatherBody .d-weaedit:hover .iconfont{
+	color: $info-Color;
+}
+        
+.d-weather-bd li:hover{
+	color: $white-Color;
+    background: $onelevel-rec-Bg;
+    border-color: $onelevel-rec-Border-acitve;
+    box-shadow: 0 0 10px $onelevel-rec-shadow-active;
+    -webkit-box-shadow: 0 0 10px $onelevel-rec-shadow-active;
+}
+ 
+.d-weatherBody .d-addwea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $blue-Color !important;
+    border: 1px dashed $blue-Color;
+}
+
+.d-weatherBody .d-addwea .iconfont,.d-weatherAdd-li .item .iconfont{
+    color: $blue-Color;
+    font-size: 1.5rem;
+    padding-right: 5px;
+}
+
+.d-weatherBody .d-addwea:hover,.d-weatherAdd-li:hover{
+    border-color: $blue-Color;
+}
+
+.d-popupBox .el-input-number--mini .el-input-number__decrease,.d-popupBox .el-input-number__increase{
+	background: $darkblue-Color;
+	color: $info-Color;
+	height: 100%;
+    border-radius: 0;
+}
+
+.d-popupBox .el-input-number--mini .el-input-number__decrease:hover, .d-popupBox .el-input-number__increase:hover{
+     
+}
+
+.d-popupBox .el-input-number:hover{
+	 
+}
+
+
+/*
+ * 设备保养
+ */
+
+.d-popupBox .el-table tr{
+//	background: $transparent-Bg !important;
+}
+
+.d-popupBox .el-table th>.cell{
+	color: $black-Color !important;
+}
+
+.d-popupBox .el-table td,.d-popupBox .el-table th.is-leaf{
+	background: $transparent-Bg !important;
+	border-bottom-color: $gray-Color !important;
+	padding: 4px 0;
+}
+
+.d-popupBox .el-checkbox__input.is-checked .el-checkbox__inner,.d-popupBox .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+	background-color: $blue-Color !important;
+	border-color: $blue-Color !important;
+}
+
+
+.d-liform-col .d-time-pick .onday{
+	width: auto;
+    min-width: 160px;
+    background: $popupBox-input-Bg;
+	padding: 4px 0;
+	border: 1px solid $tabswitch-Bg;
+	color: $black-Color !important;
+}
+
+
+/*
+ * 人员借入借出
+ */ 
+ 
+.d-straffList .d-SItem{
+	width: 16%;
+    min-height: 34px;
+    padding: 5px;
+    background: $white-Bg;
+    border: 2px solid $white-Bg;
+    margin: 4px 10px;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.d-straffList .d-SItem .d-name{
+	font-weight: bold;
+	color: $mainBody;
+	padding-bottom: 2px;
+}
+
+.d-straffList .d-SItem .d-circle{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $lightgreen-Color;
+}
+
+.d-straffList .d-SItem .d-normal{
+	color: $lightgreen-Color;
+}
+
+.d-straffList .d-IsActive .d-circle{
+    background: $red-Color !important;
+}
+
+.d-straffList .d-IsActive .d-mark{
+	color: $red-Color !important;
+}
+
+.d-straffList .d-SItem.active,
+.d-straffList .d-SItem.d-IsActive{
+	color: $green-Color;
+	border: 1px solid $mainBody;
+	background: $mainBody-opcity;
+}
+
+.d-straffList .d-SItem.active .d-name,
+.d-straffList .d-SItem.d-IsActive .d-name{
+	color: $green-Color;
+}
+
+
+
+/*
+ * 人员出勤
+ */
+
+.d-attendCon .d-attendList{
+	margin-left: -5px;
+}
+
+.d-attendCon .d-attendList>li {
+	margin-bottom: 18px;
+	width: 100%;
+	height: 30px;
+}
+
+.d-attendCon .d-attendList .title {
+	margin-right: 8px;
+	width: 100px;
+	text-align: end;
+}
+
+.d-attendCon .d-attendList div {
+	color: $mainBody;
+	text-align: center;
+}
+
+.d-attendCon .d-attendList .d-cicrle {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: $lightgreen-Color;
+	vertical-align: middle;
+	margin-right: 6px;
+	display: inline-block;
+}
+   
+.d-attendList .d-checkstarff {
+	width: 14.3%;
+    min-height: 34px;
+    padding: 3px 5px;
+    background: $white-Bg;
+    border: 2px solid $white-Bg;
+    margin: 3px 5px;
+    cursor: pointer;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.d-attendList .d-checkstarff .d-name {
+	width: 100%;
+	margin-bottom: 1px;
+	color: $mainBody;
+	font-weight: bold;
+}
+
+.d-attendCon .choice-btn {
+	display: inline-block;
+	padding: 8px;
+	margin-right: 6px;
+	background: $white-Bg;
+	border: 1px solid $mainBody;
+	color: $lightblue-Color;
+	cursor: pointer;
+}
+
+.d-attendCon .atchoice,.d-attendCon .choice-btn:hover,
+.d-reset-people:hover {
+	background: $mainBody;
+	color: $info-Color;
+	border-color: $info-Color;
+}
+
+.d-attendList .m-vacation {
+	color: $gray2-Color;
+	border: 1px solid $gray2-Color;
+}
+
+.d-attendList .m-vacation .d-state,
+.d-attendList .m-vacation .d-name{
+	color: $gray2-Color;
+}
+
+.d-attendList .m-vacation .d-cicrle {
+	background: $gray2-Color;
+}
+
+.d-attendList .m-onduty {
+	color: $green-Color;
+	border: 1px solid $mainBody;
+	background: $mainBody-opcity;
+}
+
+.d-attendList .m-onduty .d-state,
+.d-attendList .m-onduty .d-name{
+	color: $green-Color;
+	font-weight: normal;
+}
+
+.d-attendList .m-onduty .d-cicrle {
+	background: $green-Color;
+}
+
+.d-attendList .m-leave {
+	color: $darkyellow;
+	border: 1px solid $darkyellow;
+}
+
+.d-attendList .m-leave .d-state,
+.d-attendList .m-leave .d-name{
+	color: $darkyellow;
+}
+
+.d-attendList .m-leave .d-cicrle {
+	background: $darkyellow;
+}
+
+.d-attendList .m-lend {
+	color: $gray2-Color;
+	border: 1px solid $gray2-Color;
+}
+
+.d-attendList .m-lend .d-state,
+.d-attendList .m-lend .d-name{
+	color: $gray2-Color;
+}
+
+.d-attendList .m-lend .d-cicrle {
+	background: $gray2-Color;
+}
+
+.d-attendList .m-sick {
+	color: $red-Color;
+	border: 1px solid $red-Color;
+}
+
+.d-attendList .m-sick .d-state,
+.d-attendList .m-sick .d-name{
+	color: $red-Color;
+}
+
+.d-attendList .m-sick .d-cicrle {
+	background: $red-Color;
+}
+
+.d-attendList .m-borrow {
+	color: $gray2-Color;
+	border: 1px solid $gray2-Color;
+}
+
+.d-attendList .m-borrow .d-state,
+.d-attendList .m-borrow .d-name{
+	color: $gray2-Color;
+}
+
+.d-attendList .m-borrow .d-cicrle {
+	background: $gray2-Color;
+}
+
+.d-attendList .m-annual {
+	color: $gray2-Color;
+	border: 1px solid $gray2-Color;
+}
+
+.d-attendList .m-annual .d-state,
+.d-attendList .m-annual .d-name{
+	color: $gray2-Color;
+}
+
+.d-attendList .m-annual .d-cicrle {
+	background: $gray2-Color;
+}
+
+.d-attendList .m-pubaff {
+	color: $gray2-Color;
+	border: 1px solid $gray2-Color;
+}
+
+.d-attendList .m-pubaff .d-state,
+.d-attendList .m-pubaff .d-name{
+	color: $gray2-Color;
+}
+
+.d-attendList .m-pubaff .d-cicrle {
+	background: $gray2-Color;
+}
+
+.d-attendList .m-marray {
+	color: $gray2-Color;
+	border: 1px solid $gray2-Color;
+}
+
+.d-attendList .m-marray .d-state,
+.d-attendList .m-marray .d-name{
+	color: $gray2-Color;
+}
+
+.d-attendList .m-marray .d-cicrle {
+	background: $gray2-Color;
+}
+
+.d-attendList .m-maternity {
+	color: $gray2-Color;
+	border: 1px solid $gray2-Color;
+}
+
+.d-attendList .m-maternity .d-state,
+.d-attendList .m-maternity .d-name{
+	color: $gray2-Color;
+}
+
+.d-attendList .m-maternity .d-cicrle {
+	background: $gray2-Color;
+}
+ 
+.d-reset-people {
+	display: inline-block;
+	padding: 6px;
+	background: $white-Bg;
+	border: 1px solid $mainBody;
+	color: $lightblue-Color;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+
+/*
+ * 报警总览
+ */
+
+.d-overview-hd .warning,
+.d-warnOver-li .d-barTxt .warning,
+.d-level-warning .d-legend-hd .warning{
+	color: $yellow-Color;
+}
+
+.d-overview-hd .warning .d-square,
+.d-warnOver-bar .d-barWrap .warning,
+.d-level-warning .warning .d-square{
+	background: $barHor-danger-Bg;
+}
+
+.d-overview-hd .danger,
+.d-warnOver-li .d-barTxt .danger,
+.d-level-warning .d-legend-hd .danger{
+	color: $red-Color;
+}
+
+.d-overview-hd .danger .d-square,
+.d-warnOver-bar .d-barWrap .danger,
+.d-level-warning .danger .d-square{
+	background: $barHor-warning-Bg;
+}
+
+.d-overview-bd{
+	color: $white-Color;
+}
+
+.d-overview-bd .d-arrowlt{
+ 	position: absolute;
+ 	float: left;
+ 	display: flex;
+    align-items: center;
+}
+
+.d-overview-bd .d-arrowlt:before,.d-overview-bd .d-arrowlt:after{
+	position: absolute;
+	content: '';
+	border-top: 15px transparent dashed;
+	border-left: 8px transparent dashed;
+	border-bottom: 15px transparent dashed;
+	border-right: 8px $triangle-Bg solid;
+}
+
+.d-overview-bd .d-arrowlt:before{
+	border-right: 10px $mainBody solid;
+}
+
+.d-overview-bd .d-arrowlt:after{
+	left: 1px;  
+	border-right: 10px $triangle-Bg solid;
+}
+
+.d-warnOver-li .d-name{
+	font-weight: normal;
+}
+
+.d-overview-bd  .d-rec{
+	width: 2px;
+	height: 28px;
+	background: $triangle-Bg;
+	float: left;
+}
+
+.d-warnOver-li .d-warn-arrowBg{
+	width: 30px;
+	height: 28px;
+	background: url("../../static/Images/pub/bg_warnArrow.png") no-repeat center;
+	background-size: auto 100%;
+}
+
+.d-level-warning{
+    height: 100%;
+    padding: 1.5rem;
+    background: $mainBody;
+    box-shadow: $secWharf-Shadow 0 0 10px inset;
+    -webkit-box-shadow: $secWharf-Shadow 0 0 10px inset;
+    border: 0.1rem solid $warnbox-Border;
+    box-sizing: border-box;
+    margin-left: 0.5rem;
+}
+
+.d-level-warning .d-tit{
+	font-size: 1.3rem;
+    font-weight: 600;
+    color: $white-Color;
+    text-stroke: $text-shine 0.2px;
+    -webkit-text-stroke: $text-shine 0.2px;
+    text-shadow: 0 0 7px $white-Color;
+}
+
+.d-warnOver-des{
+	color: $white-Color;
+	background: $warnDesc-Bg;
+    width: 100%;
+    margin-right: 25px;
+    margin-left: 20px;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.d-warnOver-des .d-inner{
+	height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.d-warnOver-des .d-num{
+	font-size: 2rem;
+	font-family: "font-digital" !important;
+	padding: 0 5px;
+}
+
+.d-warnOver-des .d-num.warning{
+	color: $yellow-Color;
+}
+
+.d-warnOver-des .d-num.danger{
+	color: $red-Color;
+}
+
+.d-overview-section .d-warnOver-li{
+	color: $white-Color;
+}
+
+
+
+/*
+ * 派工设置
+ */
+
+ .u-siteboss .site-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100px;
+    height: 30px;
+    background: none;
+    border: 1px dashed $card-Border;
+    color: $white-Color;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.u-siteboss .site-btn:hover{
+	color: $blue-Color;
+ 	background: $mainBody;
+}
+
+.u-siteboss .site-btn:hover .d-bg-recline-sm{
+ 
+}
+
+.u-siteboss .bossname{
+    color: $info-Color;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    display: flex;
+    margin-right: 5px;
+    font-weight: normal;
+}
+
+.d-port-head ul li{
+    background: $tabswitch-table;
+    color: $white-Color;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.d-port-head .port-active{
+    background: $tabswitch-selOn-Bg;
+    border: 1px solid $info-Color;
+}
+
+.port-content{
+    padding: 0 10px;
+    height: 300px;
+    overflow-y: auto;
+    background: $statistics-Bg;
+    border: 1.4px solid $head-Border;
+    border-image: -webkit-$setup-Border-linear;
+    border-image: -moz-$setup-Border-linear;
+    border-image: $setup-Border-linear;
+    box-shadow: $mainBody 0 0 4px;
+    -webkit-box-shadow: $mainBody 0 0 4px;
+}
+
+.port-table{
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $card-Border;
+    color: $weakBlue-Color;
+}
+
+.d-port-head{
+    color: $blue-Color;
+    font-weight: normal;
+}
+
+.choice-btn{
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    background: $triangle-Bg;
+    color: $blue-Color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.choice-btn:hover{
+	background: $popupBox-close-Bg;
+	color: $white-Color;
+}
+
+.removeMan{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: $popupBox-close-Bg;
+    color: $white-Color;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 17px;
+    display: none;
+    font-size: 16px;
+}
+
+.m-manage{
+    padding: 4px 10px;
+    box-sizing: border-box;
+    background: $statistics-Bg;
+    border: 1.4px solid $head-Border;
+    margin-bottom: 20px;
+    box-shadow: $mainBody 0 0 4px;
+    -webkit-box-shadow: $mainBody 0 0 4px;
+}
+
+.m-manage .d-arrow-b{
+	color: $white-Color;
+	cursor: pointer;
+}
+
+.u-secend-manage:hover {
+	cursor: pointer;
+	background: $mainBody;
+}
+
+.u-secend-manage:hover .d-arrow-b,.u-secend-manage .d-arrow-b:hover{
+	color: $blue-Color;
+	cursor: pointer;
+}
+
+.u-manage-head{
+    color: $info-Color;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $statistics-Bg;
+}
+
+.color-bar{
+    background: $info-Color;
+    width: 4px;
+    margin-right: 16px;
+}
+
+.u-secend-text{
+    color: $white-Color;
+    font-weight: normal;
+}
+ 
+.u-choice-list li, .add-wait{
+    width: 60px;
+    height: 30px;
+    line-height: 27px;
+    background: $mainBody;
+    color: $white-Color;
+    text-align: center;
+    margin: 0 10px 10px 0;
+    border: 1px dashed $secWharf-Border;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.computer-item{
+	background: $statistics-Bg;
+    border: 1px dashed $computer-Border-blue;
+    margin: 0 0 30px 7px;
+    color: #c5d8f6;
+    height: 86px;
+    box-sizing: border-box;
+    padding: 10px;
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: 0 2px 3px $mainBody;
+    -webkit-box-shadow: 0 2px 3px $mainBody;
+}
+
+.computer-item .name{
+    padding-bottom: 8px;
+    border-bottom: 1px solid $mainBody;
+}
+
+.site-index{
+    color: $white-Color;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.computed-add{
+    border: 1px dashed $card-Border;
+    text-align: center;
+    line-height: 60px;
+    cursor: pointer;
+    position: relative;
+    margin: 0 auto;
+}
+
+.computed-add .iconfont{
+	color: $weakBlue-Color;
+	font-size: 21px;
+}
+
+.computed-add:hover{
+	background: $mainBody;
+	color: $blue-Color;
+}
+
+.computed-add:hover .iconfont{
+	color: $blue-Color !important;
+}
+
+.footer-icon{
+    margin: 0 auto;
+    position: relative;
+    top: 14px;
+}
+
+.dailyactive{
+    border: 1px solid $info-Color !important;
+    background-color: $computer-sel-Bg;
+    background-image:  url(../../static/Images/pub/bg_btn_grid.png);
+    background-position: center;
+    box-shadow: $computer-sel-Shadow 0px 0px 18px inset;
+    -webkit-box-shadow: $computer-sel-Shadow 0px 0px 18px inset;
+    background-size: 100% auto;
+}
+
+.site-hover:hover{
+    border: 1px solid $info-Color;
+    box-shadow: 0 0 10px $onelevel-rec-shadow-active;
+    -webkit-box-shadow: 0 0 10px $onelevel-rec-shadow-active;
+}
+
+.u-btn-close{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: $popupBox-close-Bg;
+    color: $white-Color;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    display: none;
+}
+
+.site-btn:hover .u-btn-close-show,.computed-add:hover .u-btn-close-show{
+    display: block;
+}
+
+.computed-add:hover .u-btn-close-show i{
+	color: $white-Color !important;
+}
+
+.waibtn{
+    position: relative;
+    border: 1px solid $blue-Color !important;
+}
+
+.back-work{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: $blue-Color;
+    color: $white-Color;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+}
+
+.back-light{
+    border: 1px solid $blue-Color !important;
+    box-shadow: 0 0 10px $blue-Color !important;
+}
+
+.d-transform-rotate,.d-rotate{
+	transform:rotate(180deg);
+	-webkit-transform:rotate(180deg); 
+	transition: all .25s ease-in-out;  
+}
+
+.d-body .el-table__column-resize-proxy{
+	border-bottom: $mainBody;
+}
+
+.d-body .el-table__fixed-right-patch{
+	background: $mainBody;
+	border-bottom: $mainBody;
+}
+
+.d-body .el-input-number:hover .el-input__inner,
+.d-body .el-input__inner:focus,
+.d-body .el-select:hover .el-input__inner{
+	
+}
+
+.d-input-hor .el-textarea .el-textarea__inner:focus{
+	 
+}
+
+/*
+ * 修改密码
+ */
+
+.d-changePwd-icon{
+	color: $weakBlue-Color;
+}
+
+.d-changePwd-icon:hover{
+	color: $info-Color !important;
+}
+
+.d-inputStyle .el-input .el-input__inner:focus{
+	border-color: $info-Color;
+	color: $info-Color !important;
+}
+
+
+/*
+ * 船舶总览New
+ */
+
+.d-shipOver-date .d-wertxt{
+	color: $weakBlue-Color;
+	padding: 2px 0;
+	font-size: 1.8rem; 
+}
+
+.d-shipOver-date .d-wericon .iconfont{
+	font-size: 4.5rem;
+	color: $weakBlue-Color;
+}
+
+.d-shipOver-date .d-clockdate{
+	color: $weakBlue-Color;
+	font-family: "font-digital";
+	font-size: 1.7rem;
+	height: 30%;
+}
+
+.d-shipOver-date .d-clocktime{
+	padding-top: 0.1rem;
+	color: $time-Color;
+	font-size: 3.4rem;
+	font-family: "font-digital";
+	text-align: center;
+//	text-stroke: $white-Color 0.2px;
+//  -webkit-text-stroke: $white-Color 0.2px;
+    text-shadow: 0 0 2px $white-Color;
+}
+
+.d-shipOver-date .d-wericon{
+	color: $white-Color;
+}
+
+.d-shipOver-date .d-wealight{
+	color: $golden-Color;
+	font-size: 1.5rem;
+}
+
+.d-shipOver-gangs{
+	border: 1px solid $shipoverview-Border;
+	height: 36%;
+	background: $shipWork-Bg;
+}
+
+.d-shipOver-allData{
+	border: 1px solid $shipoverview-Border;
+}
+
+
+.d-echart-gangs .d-line{
+	position: absolute;
+	left: 63%;
+	width: 1px;
+	height: 90%;
+	background: $weakBlue-Color;
+}
+
+.d-echart-legend{
+	color: $white-Color;
+	font-weight: bold;
+	border-left: 1px solid $darkWhite-Color;
+	box-sizing: border-box;
+	padding-left: 0.5rem;
+	height: 100%;
+}
+
+.d-echart-legend .d-square{
+	width: 1.3rem;
+	height: 0.75rem;
+	border-radius: 1px;
+	-webkit-border-radius: 1px;
+	display: block;
+}
+
+.d-echart-legend .d-square.d-yellow{
+	background: $yellow-Color;
+}
+
+.d-echart-legend .d-square.d-red{
+	background: $darkred-Color;
+}
+
+.d-echart-legend .d-square.d-blue{
+	background: $blue-Color;
+}
+
+.d-echart-legend .d-square.d-pink{
+	background: $pink-Color;
+}
+
+.d-echart-legend .d-square.d-purple{
+	background: $purple-Color;
+}
+
+.d-echart-legend .d-square.d-green{
+	background: $green-Color;
+}
+
+.d-echart-legend .d-square.d-white{
+	background: $weakBlue-Color;
+}
+
+.d-echart-legend ul li{
+	padding: 0.2rem 0;
+}
+
+.d-overview-hd{
+	color: $black-Color;
+}
+
+.d-overview-hd .d-chartcolor{
+    width: 30px;
+    height: 2px;
+    background: $tabBlue-Border;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.d-shipOver-notice{
+	background: rgba($triangle-Bg, 0.65);
+	color: $white-Color;
+	box-sizing: border-box;
+}
+
+.d-shipOver-notice .d-chartname{
+	text-stroke: none;
+    -webkit-text-stroke: none;
+    text-shadow: none;
+}
+
+.d-shipOver-notice .d-chartline{
+	border-color: $weakBlue-Color;
+}
+
+.d-shipOver-map{
+	height: 70%;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.d-shipOver-map .map{
+	background: $mainBody url("../../static/Images/pub/bg_map_wrap.png") no-repeat;
+	background-size: 100% 100%;
+	height: 100%;
+	position: relative;
+}
+
+.d-mapCon{
+	width: 100%;
+    height: 92%;
+    overflow: hidden;
+    position: relative;
+    margin-left: 0.5rem;
+}
+
+.d-cirdot{
+	width: 6px;      
+	height: 6px;      
+	border-radius: 100%;      
+	background: $white-Bg; 
+	display: inline-block;  
+	margin-top: 13px;     
+}
+
+.d-shipOver-allData{
+	color: $white-Color;
+	font-weight: bold;
+}
+
+.d-shipOver-allData .d-sec-tit{
+	color: $white-Color;
+	font-weight: bold;
+	padding: 0.25rem 0;
+	font-size: 1.3rem;
+}
+
+.d-shipOver-allData  .d-iconwrap{
+	min-height: 5rem;
+}
+
+.d-shipOver-boxTotal{
+	color: $white-Color;
+	font-size: 1.8rem;
+	height: 37%;
+}
+
+.d-shipOver-boxTotal .d-box-hd{
+	position: relative;
+	color: $white-Color;
+	height: 16%;
+	background: $shipTol-hd-Bg;
+	text-align: center;
+}
+
+.d-shipOver-boxTotal .d-box-bd{
+	background: $shipTol-bd-Bg;
+	height: 80%;
+}	
+
+.d-shipOver-boxTotal .d-totalYear{
+	
+}	
+
+.d-totalYear .d-numYear{
+	color: $yellow-Color;
+}
+
+.d-shipOver-recRate{
+	background: $transparent-Bg;
+}
+
+.d-shipOver-boxTotal .d-box-bd .d-item{
+	height: 100%;
+	position: relative;
+	border-bottom: 0.18rem solid $shipTol-bd-Line;
+	padding: 5px 10px;
+    box-sizing: border-box;
+    color: $white-Color;
+}
+
+.d-shipOver-boxTotal .d-box-bd .d-line {
+    width: 1px;
+    background: $shipTol-bd-Line;
+    height: 40%;
+    position: absolute;
+    right: 0;
+    top: 30%;
+}
+
+.d-shipOver-boxTotal .d-title{
+	color: $white-Color;
+	font-weight: bold;
+	margin-bottom: 0.2rem;
+	font-size: 1.5rem;
+}
+
+.d-table-infoWrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 0.1rem solid $shipoverview-Border;
+    box-sizing: border-box;
+    clear: both;
+}
+
+.d-table-whiteWrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    clear: both;
+    color: $white-Color;
+}
+
+.d-table-infoWrap .d-table-th,
+.d-table-whiteWrap .d-table-th{
+	background: $table-tr-overview;
+	color: $white-Color;
+}
+
+.d-table-whiteWrap table {
+	border-collapse: collapse;
+	border: 1px solid $white-Color;
+}
+
+.d-table-infobd tr {
+    border: 1px solid $transparent-Bg;
+    box-sizing: border-box;
+}
+
+.d-table-infobd tr:nth-child(2n) {
+    background: $table-tr-overview;
+}
+
+.d-table-infobd td {
+    color: $white-Color;
+    font-size: 12px;
+}
+
+.d-table-infobd tr:nth-child(odd){
+	background: $table-tr-ship;
+}
+
+.d-intactRate .d-barOne-hor .d-bar-left{
+	background: $blue-Color;
+	text-align: center;
+	font-weight: bold;
+	height: 100%;
+}
+
+.d-intactRate .d-barOne-hor .d-bar-right{
+	background: $orange-Color;
+	text-align: center;
+	height: 100%;
+}
+
+.d-intactRate .d-line-l,
+.d-intactRate .d-line-c,
+.d-intactRate .d-line-r{
+	position: absolute;
+	top: 0;
+	height: 100%;
+	border-left: 1px solid $shipTol-bd-Line;
+	z-index: 0;
+	opacity: 0.6;
+}
+
+.d-intactRate .d-line-l{
+	left: 0;
+}
+
+.d-intactRate .d-line-c{
+	left: 50%;
+}
+
+.d-intactRate .d-line-r{
+	right: 0;
+}
+
+.d-shipOverview .d-text-red{
+	color: $darkred-Color;
+}
+
+#headquarters .d-table-tr:nth-child(odd){
+	background: $table-tr-overview;
+}
+
+.d-shipOver-tab{
+	background: $transparent-Bg;
+}
+
+.d-shipOver-tab .d-table-border{
+	border: 1px solid $shipoverview-Border;
+}
+
+.d-shipOver-tab .d-table-border table div,.d-table-whiteWrap table td div{
+	height: 2.4rem !important;
+	line-height: 2.4rem !important;
+}
+
+.d-emeresponse-li .d-orange{
+	color: $orange-Color;
+}
+
+.d-emeresponse-li .d-red{
+	color: $red-Color;
+}
+
+.d-emeresponse-li .d-blue{
+	color: $blue-Color;
+}
+
+.mapwrap .disabled{
+	pointer-events: none !important;
+}
+
+.d-shipOver-notice .d-noticeBox{
+	color: $white-Color;
+}
+
+.d-shipOver-boxTotal .d-bg-recline-two{
+	opacity: 0.45;
+	height: 98%;
+	background: linear-gradient(to left, $photo-recline, $photo-recline) left top no-repeat, linear-gradient(to bottom, $photo-recline, $photo-recline) left top no-repeat, linear-gradient(to left, $photo-recline, $photo-recline) right top no-repeat, linear-gradient(to bottom, $photo-recline, $photo-recline) right top no-repeat;
+    background-size: 1px 0.5rem, 0.5rem 1px, 1px 0.5rem, 0.5rem 1px;
+    border: 1px solid $card-Border;
+}
+
+.d-allship .d-textwrap{
+	font-weight: normal;
+}
+
+.ship-position .speci-name{
+	color: $weakBlue-Color;
+}
+
+.d-seewaring{
+	color: $blue-Color;
+	cursor: pointer;
+}
+
+.d-seewaring:hover{
+	color: $info-Color;
+}
+
+.d-switch .el-switch.is-checked .el-switch__core{
+	border-color: $mainBody;
+	background-color: $mainBody;
+}
+
+.d-starffBody .play-btn{
+	color: $white-Color;
+	display: flex;
+	align-items: center;
+}
+
+.d-starffBody .head-man,.d-secLevel-hd .head-man{
+	color: $white-Color;
+	margin-bottom: 16px;
+}
+
+.d-addWrap .el-switch__core{
+	background: $weakBlue-Color;
+}
+
+.d-addWrap .el-switch.is-checked .el-switch__core{
+	background: $blue-Color !important;
+}
