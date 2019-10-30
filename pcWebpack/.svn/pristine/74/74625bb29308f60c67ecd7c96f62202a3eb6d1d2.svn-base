@@ -1,8 +1,0 @@
-
-
-const state = {
-  token: '',
-  name: '',
-  avatar: ''
-}
-
