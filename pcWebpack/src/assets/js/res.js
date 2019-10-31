@@ -360,6 +360,12 @@ const jsRes = {
 		icon: 'el-icon-edit',
 		childIcon: 'el-icon-star-off',
 		list: [{
+				name: '布局',
+				href: 'layout',
+			},{
+				name: '按钮',
+				href: 'button',
+			},{
 				name: '表单',
 				href: 'form',
 			},
@@ -371,6 +377,22 @@ const jsRes = {
 				name: '表格',
 				href: 'table'
 			},
+		]
+	},{
+		dir: 'model',
+		name: '模块',
+		icon: 'el-icon-edit',
+		childIcon: 'el-icon-star-off',
+		list: [{
+				name: '单表1',
+				href: 'single1',
+			},{
+				name: '单表2',
+				href: 'single2',
+			},{
+				name: '多表',
+				href: 'muliti',
+			}
 		]
 	}],
 	managerMenu: function(ret) {

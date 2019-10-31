@@ -13,6 +13,10 @@
         <el-table-column property="address" label="Address" />
       </el-table>
     </el-dialog>
+
+    <el-button type="success" round @click="dialogTableVisible = true">
+      打开一个可拖动弹出框
+    </el-button>
   </div>
 </template>
 

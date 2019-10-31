@@ -12,7 +12,7 @@
       <el-table-column align="center" label="ID" width="95">
         <template slot-scope="scope">{{ scope.$index }}</template>
       </el-table-column>
-      <el-table-column label="Title">
+      <el-table-column label="Title" width="200">
         <template slot-scope="scope">{{ scope.row.title }}</template>
       </el-table-column>
       <el-table-column label="Author" width="110" align="center">
@@ -20,15 +20,15 @@
           <span>{{ scope.row.author }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Pageviews" width="110" align="center">
+      <el-table-column label="Pageviews" align="center">
         <template slot-scope="scope">{{ scope.row.pageviews }}</template>
       </el-table-column>
       <el-table-column class-name="status-col" label="Status" width="110" align="center">
         <template slot-scope="scope">
-          <el-tag :type="scope.row.status | statusFilter">{{ scope.row.status }}</el-tag>
+          <el-tag :type="scope.row.status | statusFilter">{{ scope.row.status | statusFilter }}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column align="center" prop="created_at" label="Display_time" width="200">
+      <el-table-column align="center" label="Display_time" width="200">
         <template slot-scope="scope">
           <i class="el-icon-time" />
           <span>{{ scope.row.display_time }}</span>
@@ -42,11 +42,8 @@
 export default {
   filters: {
     statusFilter(status) {
-      const statusMap = {
-        published: "success",
-        draft: "gray",
-        deleted: "danger"
-      };
+      const statusMap = ["success", "gray", "danger"];
+
       return statusMap[status];
     }
   },
@@ -63,18 +60,17 @@ export default {
     fetchData() {
       this.listLoading = true;
 
-      let t = {
-        title: "title",
-        author: "zgghc",
-        pageviews: "pageviews",
-        status: Math.floor(Math.random() * 2),
-        display_time: new Date().format("yyyy-MM-dd hh:mm:ss")
-      };
-
       let lis = [];
 
-      for (let i = 0;i < 20;i++) {
-        t.title = t.title + i.toString();
+      for (let i = 0; i < 20; i++) {
+        let t = {
+          title: "title" + i.toString(),
+          author: "zgghc",
+          pageviews: "pageviews",
+          status: Math.floor(Math.random() * 2),
+          display_time: new Date().format("yyyy-MM-dd hh:mm:ss")
+        };
+
         lis.push(t);
       }
 
