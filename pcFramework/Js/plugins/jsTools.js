@@ -16,17 +16,17 @@ var jsTools = {
 		Debug: true
 	},
 
-	debounce: function(fn, delayTime) {
+	debounce: function (fn, delayTime) {
 		//函数防抖
 		clearTimeout(jsTools.Res.timer);
-		jsTools.Res.timer = setTimeout(function() {
+		jsTools.Res.timer = setTimeout(function () {
 			fn.call();
 		}, delayTime);
 	},
 
 	//初始化IP和端口
-	initConfig: function(ret) {
-		if(jsTools.Res.isDebug) {
+	initConfig: function (ret) {
+		if (jsTools.Res.isDebug) {
 			ret.host = 'http://localhost';
 			ret.port = '8080';
 
@@ -36,36 +36,36 @@ var jsTools = {
 		}
 	},
 
-	ajax: function(ret, callback, errorback) {
+	ajax: function (ret, callback, errorback) {
 
 		var isShow = ret.title != null && ret.title.length > 0;
 
-		if(isShow)
+		if (isShow)
 			jsTools.showProgress(ret);
 
 		console.log('phajaxQuery:' + JSON.stringify(ret));
 		phAjax.execute({
 			serviceName: ret.serviceName,
 			data: ret.data,
-			onSuccess: function(response) {
+			onSuccess: function (response) {
 				console.log(ret.serviceName + ' phajaxData:' + JSON.stringify(response));
 
-				if(isShow)
+				if (isShow)
 					jsTools.hideProgress();
 
 				var result = response.ResultModel;
 
-				if(result != null && result.Status == 0) {
+				if (result != null && result.Status == 0) {
 					var dat = result.Msg;
-					if(callback && typeof callback == 'function') {
+					if (callback && typeof callback == 'function') {
 						callback(dat);
 					}
 
 				} else {
-					if(errorback && typeof errorback == 'function') {
+					if (errorback && typeof errorback == 'function') {
 						errorback(result.ErrorMsg);
 					} else {
-						if(result.ErrorMsg != null) {
+						if (result.ErrorMsg != null) {
 							jsTools.Alertify.msgTip('error', result.ErrorMsg);
 						}
 					}
@@ -73,14 +73,14 @@ var jsTools = {
 				}
 
 			},
-			onError: function(XMLHttpRequest, textStatus, errorThrown) {
+			onError: function (XMLHttpRequest, textStatus, errorThrown) {
 				console.log(XMLHttpRequest.responseText);
 
-				if(isShow)
+				if (isShow)
 					jsTools.hideProgress();
 
 				//alert("调用Service失败! status: " + XMLHttpRequest.statusText + ", response: " + XMLHttpRequest.responseText);
-				if(errorback && typeof errorback == 'function')
+				if (errorback && typeof errorback == 'function')
 					errorback(XMLHttpRequest);
 				else
 					jsTools.onErrorFunc(XMLHttpRequest, ret.serviceName);
@@ -88,20 +88,20 @@ var jsTools = {
 		});
 	},
 
-	onErrorFunc: function(xmlHttpRequest, serviceName) {
+	onErrorFunc: function (xmlHttpRequest, serviceName) {
 
 		var errorMsg = "调用Service:" + serviceName + "失败! status: " + xmlHttpRequest.status + ',' + xmlHttpRequest.statusText + ", response: " + xmlHttpRequest.responseText;
 		console.log(errorMsg);
 
-		if(xmlHttpRequest.status === 401) {
+		if (xmlHttpRequest.status === 401) {
 			var msg = xmlHttpRequest.responseJSON.Message;
 
 			jsTools.Alertify.msgTip('error', msg);
 
-		} else if(xmlHttpRequest.status == 0) {
-			if(xmlHttpRequest.statusText == 'error') {
+		} else if (xmlHttpRequest.status == 0) {
+			if (xmlHttpRequest.statusText == 'error') {
 				//关闭错误
-			} else if(xmlHttpRequest.statusText == 'timeout') {
+			} else if (xmlHttpRequest.statusText == 'timeout') {
 				jsTools.Alertify.msgTip('error', '调用服务：' + serviceName + '，网络超时，请检查您的网络配置（检查：' + jsTools.Res.serverIp + '是否加入白名单）！');
 			}
 		} else {
@@ -110,106 +110,132 @@ var jsTools = {
 	},
 
 	//本地存储
-	sessionStorage: {
-		SetItem: function(type, key, value) {
-			if(type == "JSON") {
-				window.sessionStorage.setItem(key, JSON.stringify(value));
-			} else {
-				window.sessionStorage.setItem(key, value);
+	SessionStorage: {
+		setVal: function (key, value) {
+			if (arguments.length === 2) {
+				var v = value;
+				if (typeof v == 'object') {
+					v = JSON.stringify(v);
+					v = 'obj-' + v;
+				} else {
+					v = 'str-' + v;
+				}
+				var ls = window.sessionStorage;
+				if (ls) {
+					ls.setItem(key, v);
+				}
 			}
 		},
-		GetItem: function(key) {
-			return window.sessionStorage.getItem(key);
+		getVal: function (key) {
+			var ls = window.sessionStorage;
+			if (ls) {
+				var v = ls.getItem(key);
+				if (!v) {
+					return;
+				}
+				if (v.indexOf('obj-') === 0) {
+					v = v.slice(4);
+					return JSON.parse(v);
+				} else if (v.indexOf('str-') === 0) {
+					return v.slice(4);
+				}
+			}
 		},
-		RemoveItem: function(key) {
-			window.sessionStorage.removeItem(key);
+		removeVal: function (key) {
+			var ls = window.sessionStorage;
+			if (ls && key) {
+				ls.removeItem(key);
+			}
 		},
-		Clear: function() {
-			window.sessionStorage.clear();
+		clear: function () {
+			var ls = window.sessionStorage;
+			if (ls) {
+				ls.clear();
+			}
 		},
 	},
 
 	//本地存储
 	Storage: {
-		getVal: function(key) {
+		getVal: function (key) {
 			var ls = window.localStorage;
-			if(ls) {
+			if (ls) {
 				var v = ls.getItem(key);
-				if(!v) {
+				if (!v) {
 					return;
 				}
-				if(v.indexOf('obj-') === 0) {
+				if (v.indexOf('obj-') === 0) {
 					v = v.slice(4);
 					return JSON.parse(v);
-				} else if(v.indexOf('str-') === 0) {
+				} else if (v.indexOf('str-') === 0) {
 					return v.slice(4);
 				}
 			}
 		},
-		setVal: function(key, value) {
-			if(arguments.length === 2) {
+		setVal: function (key, value) {
+			if (arguments.length === 2) {
 				var v = value;
-				if(typeof v == 'object') {
+				if (typeof v == 'object') {
 					v = JSON.stringify(v);
 					v = 'obj-' + v;
 				} else {
 					v = 'str-' + v;
 				}
 				var ls = window.localStorage;
-				if(ls) {
+				if (ls) {
 					ls.setItem(key, v);
 				}
 			}
 		},
-		removeVal: function(key) {
+		removeVal: function (key) {
 			var ls = window.localStorage;
-			if(ls && key) {
+			if (ls && key) {
 				ls.removeItem(key);
 			}
 
 		},
-		clearVal: function() {
+		clearVal: function () {
 			var ls = window.localStorage;
-			if(ls) {
+			if (ls) {
 				ls.clear();
 			}
 		}
 	},
 	//动态加载js
-	getScript: function(jsPath,callback) {
-		$.getScript(jsPath + '?' + encodeURI(jsTools.Res.VERSION), function() {
+	getScript: function (jsPath, callback) {
+		$.getScript(jsPath + '?' + encodeURI(jsTools.Res.VERSION), function () {
 			callback();
 		});
 	},
 
 	//动画
-	animate: function(dom, ani) {
+	animate: function (dom, ani) {
 		var el = $(dom);
 
 		var name = ani + ' animated infinite';
 		el.addClass(name);
 
-		setTimeout(function() {
+		setTimeout(function () {
 			el.removeClass(name);
 		}, 1000);
 	},
 
 	//全局用户名
-	userNumber: function() {
+	userNumber: function () {
 		return jsTools.SessionStorage.getVal(jsTools.Res.userNumber);
 	},
 
 	//判断是否已经登录
-	isLogon: function() {
+	isLogon: function () {
 		var userNumber = jsTools.userNumber();
-		if(userNumber == null || userNumber == "Guest") {
+		if (userNumber == null || userNumber == "Guest") {
 			return false;
 		}
 		return true;
 	},
 
 	//两个时间相差天数 兼容firefox chrome
-	dateDifference: function(sDate1, sDate2) { //sDate1和sDate2是2006-12-18格式  
+	dateDifference: function (sDate1, sDate2) { //sDate1和sDate2是2006-12-18格式  
 		var dateSpan,
 			tempDate,
 			iDays;
@@ -222,21 +248,21 @@ var jsTools = {
 	},
 
 	//判断是否是数组
-	isArray: function(obj) {
+	isArray: function (obj) {
 		return Object.prototype.toString.call(obj) === '[object Array]';
 	},
 
 	//克隆对象
-	deepCopy: function(source) {
+	deepCopy: function (source) {
 		var result = {};
-		for(var key in source) {
+		for (var key in source) {
 			result[key] = source[key];
 		}
 		return result;
 	},
 
 	//日志
-	log: function(str) {
+	log: function (str) {
 		console.log(str);
 	},
 
@@ -246,18 +272,18 @@ var jsTools = {
 		//msg:通知信息内容
 		//time：通知提示显示时间，单位：秒。如果time值为0，则表示提示信息一直显示，知道用户点击提示信息后消失。
 		//position: 提示框显示位置top-right(右上)、top-left(左上)、top-center(中上)、bottom-left(左下)、bottom-center(中下)、bottom-right(右下)
-		msgTip: function(type, msg, time, position) {
-			if(time == null)
+		msgTip: function (type, msg, time, position) {
+			if (time == null)
 				time = 5;
-			if(position == null)
+			if (position == null)
 				position = 'bottom-right';
 			alertify.set('notifier', 'delay', time);
 			alertify.set('notifier', 'position', position);
-			if(type == "success") {
+			if (type == "success") {
 				alertify.success(msg);
-			} else if(type == "warning") {
+			} else if (type == "warning") {
 				alertify.warning(msg);
-			} else if(type == "error") {
+			} else if (type == "error") {
 				alertify.error(msg);
 			} else {
 				alertify.error("参数有误");
@@ -269,12 +295,12 @@ var jsTools = {
 		//ret.closeButton：是否显示右上角关闭(×)按钮
 		//ret.basic：是否显示基础模板(即：没有标题，没有关闭label按钮)
 		//ret.callback：点击关闭按钮返回方法
-		alert: function(ret) {
-			if(ret.title == null)
+		alert: function (ret) {
+			if (ret.title == null)
 				ret.title = "提示";
-			if(ret.closeButton == null)
+			if (ret.closeButton == null)
 				ret.closeButton = false;
-			if(ret.basic == null)
+			if (ret.basic == null)
 				ret.basic = false;
 			alertify.alert().setting({
 				'title': ret.title == null ? "提示" : ret.title,
@@ -289,7 +315,7 @@ var jsTools = {
 		//msg：通知信息内容
 		//title：弹出窗标题
 		//callback：点击按钮返回方法
-		confirm: function(ret) {
+		confirm: function (ret) {
 			alertify.confirm()
 				.setting({
 					'title': ret.title == null ? "提示" : ret.title,
@@ -305,10 +331,10 @@ var jsTools = {
 		//title：提示框标题
 		//labelText：提示标签值
 		//placeholder：文本框提示内容
-		prompt: function(title, labelText, placeholder, okFun, cancelFun) {
-			alertify.prompt(title, labelText, placeholder, function(evt, value) {
+		prompt: function (title, labelText, placeholder, okFun, cancelFun) {
+			alertify.prompt(title, labelText, placeholder, function (evt, value) {
 				okFun(value);
-			}, function() {
+			}, function () {
 				cancelFun();
 			}).set('labels', {
 				ok: '确定',
@@ -319,17 +345,17 @@ var jsTools = {
 
 	//element操作提示
 	Element: {
-		alert: function(doc, msg, yesback) {
+		alert: function (doc, msg, yesback) {
 			doc.$alert(msg, '操作提示', {
 				confirmButtonText: '确定',
-				callback: function() {
-					if(yesback && typeof yesback == 'function')
+				callback: function () {
+					if (yesback && typeof yesback == 'function')
 						yesback();
 				}
 			});
 		},
 
-		$confirm: function(dom, msg, yesback, noback) {
+		$confirm: function (dom, msg, yesback, noback) {
 			dom.$confirm(msg, "提示", {
 					confirmButtonText: '确定',
 					cancelButtonText: '取消',
@@ -339,7 +365,7 @@ var jsTools = {
 		},
 
 		//element消息提示
-		msgTip: function(doc, msg) {
+		msgTip: function (doc, msg) {
 			doc.$message({
 				showClose: true,
 				message: msg,
@@ -351,10 +377,10 @@ var jsTools = {
 
 	//窗口
 	Win: {
-		open: function(name, url, params) {
+		open: function (name, url, params) {
 			var curUrl = url + '?' + new Date().getTime();
-			if(params) {
-				if(typeof params == 'object') {
+			if (params) {
+				if (typeof params == 'object') {
 					params = JSON.stringify(params);
 					curUrl += '&param=' + params;
 				} else {
@@ -364,37 +390,37 @@ var jsTools = {
 
 			location.href = curUrl;
 		},
-		close: function() {
+		close: function () {
 			window.history.back();
 		}
 	},
 
-	getCode: function(str, count, radix) {
+	getCode: function (str, count, radix) {
 		//new Date().getTime()
 		//guid唯一代码
 		//str 前缀
 		//count:为数字长度
 		//radix:为基数，10：十进制，16：十六进制
 		var guid = "";
-		for(var i = 1; i <= count; i++) {
+		for (var i = 1; i <= count; i++) {
 			var n = Math.floor(Math.random() * radix).toString(radix);
 			guid += n;
 		}
 		return str + guid.toUpperCase();
 	},
 
-	getObjLength: function(obj) {
+	getObjLength: function (obj) {
 		var c = 0;
-		if(!obj) {
+		if (!obj) {
 			return c;
 		}
-		if($.isArray(obj)) {
+		if ($.isArray(obj)) {
 			return obj.length;
 		} else {
-			if(!$.isPlainObject(obj)) {
+			if (!$.isPlainObject(obj)) {
 				return c;
 			}
-			for(var i in obj) {
+			for (var i in obj) {
 				c++;
 			}
 			return c;
@@ -402,8 +428,8 @@ var jsTools = {
 	},
 
 	//弹出等待自动关闭
-	toast: function(text, time) {
-		if(time == null)
+	toast: function (text, time) {
+		if (time == null)
 			time = 3000;
 
 		//浏览器
@@ -416,8 +442,8 @@ var jsTools = {
 	},
 
 	//显示进度提示框
-	showProgress: function(args) {
-		if(jsTools.Res.toast == null) {
+	showProgress: function (args) {
+		if (jsTools.Res.toast == null) {
 			jsTools.Res.toast = new auiToast();
 			jsTools.Res.toast.loading({
 				title: args.title
@@ -426,15 +452,15 @@ var jsTools = {
 
 	},
 	//隐藏进度提示框
-	hideProgress: function() {
-		if(jsTools.Res.toast != null) {
+	hideProgress: function () {
+		if (jsTools.Res.toast != null) {
 			jsTools.Res.toast.hide();
 			jsTools.Res.toast = null;
 		}
 	},
 
-	getDay: function(value) {
-		switch(value) {
+	getDay: function (value) {
+		switch (value) {
 			case 0:
 				return "周日";
 			case 1:
@@ -452,45 +478,45 @@ var jsTools = {
 		}
 	},
 
-	addDays: function(date, days) {
+	addDays: function (date, days) {
 		var result = new Date(date);
 		result.setDate(result.getDate() + days);
 		return result;
 	},
 
 	//获取url 参数
-	getQueryString: function(name) {
+	getQueryString: function (name) {
 
 		var url = window.location.href;
-		if(new RegExp(".*\\b" + name + "\\b(\\s*=([^&]+)).*", "gi").test(url)) {
+		if (new RegExp(".*\\b" + name + "\\b(\\s*=([^&]+)).*", "gi").test(url)) {
 			return RegExp.$2;
 		} else {
 			return null;
 		}
 	},
 
-	rndNum: function(n) {
+	rndNum: function (n) {
 		var rnd = "";
-		for(var i = 0; i < n; i++) {
+		for (var i = 0; i < n; i++) {
 			rnd += Math.floor(Math.random() * 10);
 		}
 		return rnd;
 	},
 
 	//创建条码
-	createBarcode: function(arg, index, elId) {
+	createBarcode: function (arg, index, elId) {
 		//index = 1 : 条形码; = 2 : 二维码
-		if(arg == '') {
+		if (arg == '') {
 			return;
 		}
 
 		var curEl = elId;
-		if(curEl == null) {
+		if (curEl == null) {
 			curEl = 'imgbarcode' + index;
 		}
 		curEl = '#' + curEl;
 
-		if(index == 1) {
+		if (index == 1) {
 			$(curEl).attr("src", "");
 			JsBarcode(curEl, arg, {
 				format: "CODE39", //选择要使用的条形码类型
@@ -508,7 +534,7 @@ var jsTools = {
 				//				lineColor: "#2196f3", //设置条和文本的颜色。
 				margin: 15 //设置条形码周围的空白边距
 			});
-		} else if(index == 2) {
+		} else if (index == 2) {
 			$(curEl).empty();
 			$(curEl).qrcode({
 				render: "canvas", //设置渲染方式，有table和canvas，使用canvas方式渲染性能相对来说比较好  
@@ -522,35 +548,35 @@ var jsTools = {
 		}
 	},
 
-	loadScript: function(url, callback) {  
-		var script = document.createElement("script");  
-		script.type = "text/javascript";  
-		if(typeof(callback) != "undefined") {    
-			if(script.readyState) {      
-				script.onreadystatechange = function() {        
-					if(script.readyState == "loaded" || script.readyState == "complete") {          
-						script.onreadystatechange = null;          
-						callback();        
-					}      
-				};    
-			} else {      
-				script.onload = function() {        
-					callback();      
-				};    
-			}  
-		}  
-		script.src = url;  
+	loadScript: function (url, callback) {
+		var script = document.createElement("script");
+		script.type = "text/javascript";
+		if (typeof (callback) != "undefined") {
+			if (script.readyState) {
+				script.onreadystatechange = function () {
+					if (script.readyState == "loaded" || script.readyState == "complete") {
+						script.onreadystatechange = null;
+						callback();
+					}
+				};
+			} else {
+				script.onload = function () {
+					callback();
+				};
+			}
+		}
+		script.src = url;
 		document.body.appendChild(script);
 	},
 
-	
-	addPreZero: function(num) {
-		return('000' + num).slice(-4);
+
+	addPreZero: function (num) {
+		return ('000' + num).slice(-4);
 	},
 
-	startInterval: function(el, className) {
+	startInterval: function (el, className) {
 		//验证码(用于获取验证码)		
-		if(jsTools.Res.count > 0) return;
+		if (jsTools.Res.count > 0) return;
 
 		jsTools.Res.count = jsTools.Res.times;
 		var initCount = jsTools.Res.count + 1;
@@ -558,9 +584,9 @@ var jsTools = {
 		$(el).attr("disabled", true);
 		$(el).removeClass(className);
 
-		var countdown = setInterval(function() {
+		var countdown = setInterval(function () {
 			$(el).val("重新获取(" + jsTools.Res.count + "s" + ")");
-			if(jsTools.Res.count <= 0) {
+			if (jsTools.Res.count <= 0) {
 				clearInterval(countdown);
 				jsTools.Res.count = 0;
 				$(el).val("重新获取").attr("disabled", false);
@@ -570,12 +596,12 @@ var jsTools = {
 		}, 1000);
 
 	},
-	endInterval: function() {
+	endInterval: function () {
 		jsTools.Res.count = 0;
 	},
 
-	convertToNumber: function(value) {
-		switch(value) {
+	convertToNumber: function (value) {
+		switch (value) {
 			case "A":
 				return 10;
 			case "B":
@@ -634,15 +660,15 @@ var jsTools = {
 	},
 
 	//根据字母获取车牌号汉字代码
-	GetCarCode: function(matchCode) {
+	GetCarCode: function (matchCode) {
 		var names = "京,津,冀,晋,蒙,辽,吉,沪,黑,苏,浙,皖,闽,赣,鲁,豫,鄂,湘,粤,桂,琼,渝,川,黔,云,藏,陕,甘,青,宁,新,港,澳,台";
 		var codes = "J,J,J,J,M,L,J,H,H,S,Z,W,M,G,L,Y,E,X,Y,G,Q,Y,C,Q,Y,Z,S,G,Q,N,X,G,O,T";
 		var list = [];
-		if(matchCode != "" || matchCode != null) {
+		if (matchCode != "" || matchCode != null) {
 			var nameList = names.split(',');
 			var codeList = codes.split(',');
-			for(var i = 0; i < codeList.length; i++) {
-				if(codeList[i] == matchCode) {
+			for (var i = 0; i < codeList.length; i++) {
+				if (codeList[i] == matchCode) {
 					var dat = {};
 					dat.Key = codeList[i];
 					dat.Caption = nameList[i];
@@ -654,16 +680,16 @@ var jsTools = {
 	},
 
 	//验证箱号是否符合标准(前4位字母后7位数字)
-	isCtnNo: function(no) {
-		if(no == "" || no == null)
+	isCtnNo: function (no) {
+		if (no == "" || no == null)
 			return false;
-		if(no.length != 11)
+		if (no.length != 11)
 			return false;
 		var noLetter = no.substring(0, 4);
 		var noNumber = no.substring(4, 11);
 		var RegL = /^[A-Za-z]+$/;
 		var regN = /^[0-9]*$/;
-		if(RegL.test(noLetter) && regN.test(noNumber)) {
+		if (RegL.test(noLetter) && regN.test(noNumber)) {
 			return true;
 		} else {
 			return false;
@@ -671,13 +697,13 @@ var jsTools = {
 	},
 
 	//设置页面关闭时间
-	PageTimeOut: function(count) {
+	PageTimeOut: function (count) {
 		var lastTime = new Date().getTime();
 		var currentTime = new Date().getTime();
 		var timeOut = count * 60 * 1000; //设置超时时间： 10分
-		$(function() {
+		$(function () {
 			/* 鼠标移动事件 */
-			$(document).mouseover(function() {
+			$(document).mouseover(function () {
 				lastTime = new Date().getTime(); //更新操作时间
 
 			});
@@ -685,7 +711,7 @@ var jsTools = {
 
 		function testTime() {
 			currentTime = new Date().getTime(); //更新当前时间
-			if(currentTime - lastTime > timeOut) { //判断是否超时
+			if (currentTime - lastTime > timeOut) { //判断是否超时
 				window.location.href = 'main_app.html';
 				console.log("长时间未操作,自动回到主页");
 			}
@@ -696,9 +722,9 @@ var jsTools = {
 	},
 
 	//验证是否车牌号
-	IsCarNo: function(carNo) {
+	IsCarNo: function (carNo) {
 		var result = false;
-		if(carNo.length == 7) {
+		if (carNo.length == 7) {
 			var reg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/;
 			result = reg.test(carNo);
 		}
@@ -706,7 +732,7 @@ var jsTools = {
 	},
 
 	//获取时间
-	GetNowDate: function(type, callbackTpye) {
+	GetNowDate: function (type, callbackTpye) {
 		var myDate = new Date();
 		//获取当前年
 		var year = myDate.getFullYear();
@@ -719,8 +745,8 @@ var jsTools = {
 		var s = myDate.getSeconds(); //获取当前秒数(0-59)
 		var ms = myDate.getMilliseconds(); //获取当前毫秒数(0-999)
 		var nowDate = "";
-		if(callbackTpye == 'N') {
-			switch(type) {
+		if (callbackTpye == 'N') {
+			switch (type) {
 				case "Y":
 					nowDate = p(year).toString();
 					break;
@@ -757,7 +783,7 @@ var jsTools = {
 					break;
 			}
 		} else {
-			switch(type) {
+			switch (type) {
 				case "Y":
 					nowDate = p(year).toString();
 					break;
@@ -801,7 +827,7 @@ var jsTools = {
 
 var jsCheck = {
 	//身份证验证
-	isIdCard: function(code) {
+	isIdCard: function (code) {
 		var city = {
 			11: "北京",
 			12: "天津",
@@ -842,15 +868,15 @@ var jsCheck = {
 		var tip = "";
 		var pass = true;
 
-		if(!code || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(code)) {
+		if (!code || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(code)) {
 			tip = "身份证号格式错误";
 			pass = false;
-		} else if(!city[code.substr(0, 2)]) {
+		} else if (!city[code.substr(0, 2)]) {
 			tip = "地址编码错误";
 			pass = false;
 		} else {
 			//18位身份证需要验证最后一位校验位
-			if(code.length == 18) {
+			if (code.length == 18) {
 				code = code.split('');
 				//∑(ai×Wi)(mod 11)
 				//加权因子
@@ -860,13 +886,13 @@ var jsCheck = {
 				var sum = 0;
 				var ai = 0;
 				var wi = 0;
-				for(var i = 0; i < 17; i++) {
+				for (var i = 0; i < 17; i++) {
 					ai = code[i];
 					wi = factor[i];
 					sum += ai * wi;
 				}
 				var last = parity[sum % 11];
-				if(parity[sum % 11] != code[17]) {
+				if (parity[sum % 11] != code[17]) {
 					tip = "校验位错误";
 					pass = false;
 				}
@@ -876,18 +902,18 @@ var jsCheck = {
 		return pass;
 	},
 
-	addBlur: function(id, check) {
+	addBlur: function (id, check) {
 		var dom = document.getElementById(id);
 		//注册一个失去焦点的事件
-		dom.onblur = function() {
+		dom.onblur = function () {
 			check(dom);
 		}
 	},
 
 	//用户名验证
-	isuser: function(obj) {
+	isuser: function (obj) {
 		//    var reg=/{1,8}[a-zA-Z0-9]{1,8}/;
-		if(obj == null || obj == '') {
+		if (obj == null || obj == '') {
 
 			// jsTools.alert("请正确填写用户名！");
 			return false;
@@ -896,9 +922,9 @@ var jsCheck = {
 	},
 
 	//电话号码验证
-	isphone: function(obj) {
+	isphone: function (obj) {
 		var reg = /^[0-9]{11}/;
-		if(!reg.test(obj)) {
+		if (!reg.test(obj)) {
 			obj = '';
 			//            jsTools.alert("请正确填写手机号！");
 			return false;
@@ -907,27 +933,27 @@ var jsCheck = {
 	},
 
 	//组织机构代码验证
-	isOrgCode: function(obj) {
+	isOrgCode: function (obj) {
 		var reg = /^[0-9]{18}/;
-		if(!reg.test(obj)) {
+		if (!reg.test(obj)) {
 			return false;
 		}
 		return true;
 	},
 
 	//联合国编号验证
-	isUnno: function(obj) {
+	isUnno: function (obj) {
 		var reg = /^[0-9]{4}/;
-		if(!reg.test(obj)) {
+		if (!reg.test(obj)) {
 			return false;
 		}
 		return true;
 	},
 
 	//验证邮件格式
-	ismail: function(obj) {
+	ismail: function (obj) {
 		var reg = /[a-zA-Z0-9]{1,10}@[a-zA-Z0-9]{1,5}\.[a-zA-Z0-9]{1,5}/;
-		if(!reg.test(obj)) {
+		if (!reg.test(obj)) {
 			obj = '';
 			// jsTools.alert("请正确填写邮件！");
 			return false;
@@ -936,29 +962,29 @@ var jsCheck = {
 	},
 
 	//验证用户名格式
-	isname: function(obj) {
+	isname: function (obj) {
 		var reg = /^[\u4e00-\u9fa5]{2,4}$/;
-		if(!reg.test(obj)) {
+		if (!reg.test(obj)) {
 			// jsTools.alert("请正确填写姓名！姓名为两到四个汉字。");
 			obj.value = "";
 		}
 	},
 
 	//校验箱号
-	checkCtnNo: function(containerNo) {
+	checkCtnNo: function (containerNo) {
 		var reg = /^[A-Z]{4}\d{7}$/;
-		if(!reg.test(containerNo))
+		if (!reg.test(containerNo))
 			return false;
 
-		if(containerNo.indexOf("HLCU") == 0)
+		if (containerNo.indexOf("HLCU") == 0)
 			containerNo = "4029" + containerNo.substr(4);
 
 		var sum = 0;
-		for(var i = 0; i < 10; i++) {
+		for (var i = 0; i < 10; i++) {
 			sum += parseInt(jsTools.convertToNumber(containerNo.substr(i, 1)) * Math.pow(2.0, i));
 		}
 
-		if(((sum % 11) == parseInt(containerNo.substr(10, 1))) ||
+		if (((sum % 11) == parseInt(containerNo.substr(10, 1))) ||
 			((sum % 11) == 10 && parseInt(containerNo.substr(10, 1)) == 0)) {
 			return true;
 		} else {
@@ -968,17 +994,17 @@ var jsCheck = {
 
 };
 
-String.prototype.format = function(args) {
-	if(arguments.length > 0) {
+String.prototype.format = function (args) {
+	if (arguments.length > 0) {
 		var result = this;
-		if(arguments.length == 1 && typeof(args) == "object") {
-			for(var key in args) {
+		if (arguments.length == 1 && typeof (args) == "object") {
+			for (var key in args) {
 				var reg = new RegExp("({" + key + "})", "g");
 				result = result.replace(reg, args[key]);
 			}
 		} else {
-			for(var i = 0; i < arguments.length; i++) {
-				if(arguments[i] == undefined) {
+			for (var i = 0; i < arguments.length; i++) {
+				if (arguments[i] == undefined) {
 					return "";
 				} else {
 					var reg = new RegExp("({[" + i + "]})", "g");
@@ -992,8 +1018,8 @@ String.prototype.format = function(args) {
 	}
 }
 
-String.prototype.stringDateFormat = function(fmt) {
-	if(this) {
+String.prototype.stringDateFormat = function (fmt) {
+	if (this) {
 		var strDate = this.substr(0, 10);
 		var dtArr = strDate.split("-");
 		var dt = new Date(dtArr[0], dtArr[1], dtArr[2]);
@@ -1003,7 +1029,7 @@ String.prototype.stringDateFormat = function(fmt) {
 	}
 }
 
-Date.prototype.format = function(fmt) {
+Date.prototype.format = function (fmt) {
 	var o = {
 		"M+": this.getMonth() + 1, //月份 
 		"d+": this.getDate(), //日 
@@ -1013,11 +1039,11 @@ Date.prototype.format = function(fmt) {
 		"q+": Math.floor((this.getMonth() + 3) / 3), //季度 
 		"S": this.getMilliseconds() //毫秒 
 	};
-	if(/(y+)/.test(fmt)) {
+	if (/(y+)/.test(fmt)) {
 		fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
 	}
-	for(var k in o) {
-		if(new RegExp("(" + k + ")").test(fmt)) {
+	for (var k in o) {
+		if (new RegExp("(" + k + ")").test(fmt)) {
 			fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
 		}
 	}
