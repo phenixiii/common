@@ -89,7 +89,7 @@
 
 <script>
 export default {
-  name: "single",
+  name: "single1",
   filters: {
     typeTags(ret) {
       const map = ["success", "gray", "danger"];

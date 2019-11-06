@@ -14,10 +14,25 @@
       </el-table>
     </el-dialog>
 
-    <el-button type="success" round @click="dialogTableVisible = true">
-      打开一个可拖动弹出框
-    </el-button>
+    <div class="aui-margin-t-20">
+      <el-button-group>
+        <el-button type="info" @click="msg(0)">msgTip</el-button>
+        <el-button type="info" @click="msg(1)">alert</el-button>
+        <el-button type="info" @click="msg(2)">confirm</el-button>
+      </el-button-group>
+    </div>
+
+    <div class="aui-margin-t-20">
+      <el-button-group>
+        <el-button type="primary" @click="msg(3)">ele-msgTip</el-button>
+        <el-button type="primary" @click="msg(4)">ele-alert</el-button>
+        <el-button type="primary" @click="msg(5)">ele-confirm</el-button>
+        <el-button type="primary" @click="msg(6)">ele-notify</el-button>
+      </el-button-group>
+    </div>
+
   </div>
+  
 </template>
 
 <script>
@@ -56,9 +71,47 @@ export default {
     }
   },
   methods: {
-    // v-el-drag-dialog onDrag callback function
     handleDrag() {
       this.$refs.select.blur()
+    },
+    msg(index){
+      switch(index){
+        case 0:
+          jsTools.Alertify.msgTip('success','TEST成功！',3,'top-right')
+          break;
+        case 1:
+          jsTools.Alertify.alert({title:'提示',message:'TEST成功！',callback:function(){
+            jsTools.Alertify.msgTip('success','TEST成功！');
+          }})
+          break;
+        case 2:
+           jsTools.Alertify.confirm({title:'提示',message:'TEST成功！',callback:function(){
+            jsTools.Alertify.msgTip('success','TEST成功！');
+          }})
+          break;
+        case 3:
+           jsTools.Element.msgTip(this,'test sucess!', 'success');
+          break;
+        case 4:
+           jsTools.Element.alert(this,'test success?',()=>{
+            jsTools.Element.msgTip(this,'test sucess!', 'info');
+          });
+          break;
+        case 5:
+           jsTools.Element.confirm(this,'test success?',()=>{
+            jsTools.Element.msgTip(this,'test sucess!', 'success');
+          },()=>{
+            jsTools.Element.msgTip(this,'test error!', 'error');
+          });
+          break;
+         case 6:
+           let i = Math.floor(Math.random(0,1) * 4);
+           let arr = ['success','warning','info','error'];
+
+           jsTools.Element.notify(this,'','test sucess!', arr[i]);
+          break;
+       
+      }
     }
   }
 }

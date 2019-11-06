@@ -39,8 +39,8 @@
           </div>
 
           <div class="aui-flex-col aui-flex-item-3 aui-flex-right">
-              <el-button type="" icon="el-icon-search" @click="query()">查询</el-button>
-              <el-button type="primary" icon="el-icon-plus">新增</el-button>
+            <el-button type icon="el-icon-search" @click="query()">查询</el-button>
+            <el-button type="primary" icon="el-icon-plus" @click="add()">新增</el-button>
           </div>
         </div>
 
@@ -84,19 +84,71 @@
 
           <el-table-column label="操作" width="200" fixed="right" align="center">
             <template slot-scope="scope">
-              <el-button size="mini" type="" icon="el-icon-edit">编辑</el-button>
-              <el-button size="mini" type="danger" icon="el-icon-delete">删除</el-button>
+              <el-button size="mini" type icon="el-icon-edit" @click="edit(scope.row)">编辑</el-button>
+              <el-button size="mini" type="danger" icon="el-icon-delete" @click="remove(scope.row)">删除</el-button>
             </template>
           </el-table-column>
         </el-table>
       </div>
     </el-card>
+    <!-- 编辑框 -->
+    <el-dialog v-if="model != null" v-el-drag-dialog :visible.sync="dialogVisible" title="编辑">
+      <div class="aui-flex-row">
+        <div class="aui-margin-b-20 aui-flex-col aui-flex-middle aui-flex-offset-2">
+          <div class="aui-flex-item-2">日期周期：</div>
+          <div class="aui-flex-auto">
+            <el-date-picker
+              v-model="model.date"
+              type="daterange"
+              range-separator="-"
+              start-placeholder="开始日期"
+              end-placeholder="结束日期"
+              value-format="yyyy-MM-dd"
+            ></el-date-picker>
+          </div>
+        </div>
+
+        <div class="aui-margin-b-20 aui-flex-col aui-flex-middle aui-flex-offset-2">
+          <div class="aui-flex-item-2">用户名：</div>
+          <div class="aui-flex-auto">
+            <el-input style="width:350px" v-model="model.name"></el-input>
+          </div>
+        </div>
+        <div class="aui-margin-b-20 aui-flex-col aui-flex-middle aui-flex-offset-2">
+          <div class="aui-flex-item-2">用户类型：</div>
+          <div class="aui-flex-auto">
+            <el-select v-model="model.type" placeholder="请选择">
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </div>
+        </div>
+        <div class="aui-flex-col aui-flex-middle aui-flex-offset-2">
+          <div class="aui-flex-item-2">备注：</div>
+          <div class="aui-flex-auto">
+            <el-input style="width:350px" type="textarea" v-model="model.remark"></el-input>
+          </div>
+        </div>
+      </div>
+
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="save">确 定</el-button>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
 <script>
+import elDragDialog from "@/directive/el-drag-dialog";
+
 export default {
-  name: "single",
+  name: "single2",
+  directives: { elDragDialog },
   filters: {
     typeTags(ret) {
       const map = ["success", "gray", "danger"];
@@ -117,25 +169,27 @@ export default {
   data() {
     return {
       search: {
-        date: "",
+        date: ["2019-01-01", "2019-10-02"],
         name: "",
-        type: "0"
+        type: 0
       },
 
       list: [],
       listLoading: false,
-
+      dialogVisible: false,
+      model: null,
+      operation: 0,
       options: [
         {
-          value: "0",
+          value: 0,
           label: "普通用户"
         },
         {
-          value: "1",
+          value: 1,
           label: "VIP用户"
         },
         {
-          value: "99",
+          value: 99,
           label: "全部"
         }
       ]
@@ -145,16 +199,59 @@ export default {
     query() {
       this.listLoading = true;
       this.list = [];
-      for (let i = 0; i < 20; i++) {
-        this.list.push({
+      for (let i = 0; i < 5; i++) {
+        let li = {
           startDt: "2019-01-" + ("0" + (i + 1).toString()).slice(-2),
           endDt: "2019-01-" + ("0" + (i + 2).toString()).slice(-2),
           name: "zgghc",
-          type: Math.floor(Math.random() * 2)
-        });
+          type: Math.floor(Math.random() * 2),
+          remark: "123123"
+        };
+        li.date = [li.startDt,li.endDt];
+        this.list.push(li);
       }
 
       this.listLoading = false;
+      this.operation = 0;
+    },
+    add(){
+      let ret = {
+        date : [new Date().format('yyyy-MM-dd'),new Date().format('yyyy-MM-dd')],
+        name :'',
+        type : 0,
+        remark : ''
+      };
+      this.model = ret;     
+      this.dialogVisible = true;
+      this.operation = 1;
+    },
+
+    edit(ret) {
+      this.model = ret;
+      this.dialogVisible = true;
+       this.operation = 2;
+    },
+    save(){
+      switch(this.operation){
+        case  1:
+          this.model.startDt = this.model.date[0];
+          this.model.endDt = this.model.date[1];
+          this.list.push(this.model);
+          break;
+        case 2:
+          this.model.startDt = this.model.date[0];
+          this.model.endDt = this.model.date[1];
+          break;
+      }
+      this.operation = 0;
+      this.dialogVisible = false;
+    },
+    remove(ret){
+      this.list.forEach((element,index) => {
+        if(element == ret)
+          this.list.splice(index,1);
+          return;
+      });
     }
   }
 };

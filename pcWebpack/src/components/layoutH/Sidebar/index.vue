@@ -41,7 +41,7 @@
           </template>
         </template>
 
-        <el-menu-item class="el-menu-item" @click="toLogin">
+        <el-menu-item key="logout" index="logout" class="el-menu-item" @click="logout">
           <template slot="title">
             {{loginUserName}}
             <i class="iconfont icon-signout"></i>
@@ -86,7 +86,7 @@ export default {
     } 
   },
   methods:{
-    toLogin: function() {
+    logout: function() {
       jsTools.Alertify.confirm({
         title: "提示",
         message: "是否要退出？",

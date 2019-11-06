@@ -39,8 +39,17 @@ export default {
     toggleSideBar() {
       this.$store.dispatch('app/toggleSideBar')
     },
-    logout() {
-      this.$router.push(`/`)
+    logout: function() {
+      jsTools.Alertify.confirm({
+        title: "提示",
+        message: "是否要退出？",
+        callback: () => {
+           jsTools.SessionStorage.removeVal(
+            jsTools.Res.userNumber
+          );
+          this.$router.push("/");
+        }
+      });
     }
   }
 }
