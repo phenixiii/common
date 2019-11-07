@@ -61,7 +61,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { resetRouter } from "@/router/wllh.js";
+import { resetRouter } from "@/router/index.js";
 
 export default {
   name: "demo",
@@ -114,22 +114,7 @@ export default {
       
       resetRouter(this.$store.state.app.menuPos);
       that.$router.push("/base/dialog");
-      // //登录
-      // //that.$router.push('main');
-      // phAjax.logOn(this.loginusername, this.loginpassword, xmlHttpRequest => {
-      //   if (xmlHttpRequest.status === 200) {
-      //     jsTools.SessionStorage.setVal(
-      //       jsTools.Res.userNumber,
-      //       that.loginusername
-      //     );
-      //     this.getUserInfo(() => {
-      //       that.$router.push("/notice/noticeInfo");
-      //     });
-      //   } else {
-      //     that.$router.push("/base/dialog");
-      //     jsTools.onErrorFunc(xmlHttpRequest);
-      //   }
-      // });
+      
     },
     next: function(num) {
       if (num == 1) {
@@ -138,64 +123,6 @@ export default {
       }
       this.login();
     },
-    getUserInfo(callback) {
-      var userData = {
-        data: {
-          Parameter: null,
-          ResultModel: {}
-        },
-        serviceName: jsRes.Server.GetUserInfoService
-      };
-      jsTools.ajax(userData, function(result) {
-        var userInfo = result;
-
-        //获取部门列表
-        var dat = {
-          serviceName: jsRes.Server.GetBaseDataService,
-          data: {
-            Parameter: 0
-          }
-        };
-
-        jsTools.ajax(dat, function(result) {
-          //增加部门列表
-          userInfo.Deptmentlist = JSON.parse(result);
-          //备份传入部门ID
-          userInfo.Department.DP_ID_ORA = userInfo.Department.DP_ID;
-
-          //判断当前选中部门是否在下拉列表中
-          var dp = Enumerable.From(userInfo.Deptmentlist).FirstOrDefault(
-            null,
-            "x=>x.DP_ID == " + userInfo.Department.DP_ID
-          );
-          if (dp == null) {
-            userInfo.Department.DP_ID = "";
-          }
-
-          //是否是全部权限
-          var deptDisable = false;
-          if (
-            userInfo.Department.DP_ID != "" &&
-            !jsTools.Res.Debug &&
-            !userInfo.Department.InHeadQuarters
-          ) {
-            deptDisable = true;
-          } else {
-            deptDisable = false;
-          }
-          userInfo.isGlobal = !deptDisable;
-
-          if (userInfo.Department.DP_ID == "") {
-            //如果部门为空，则初始化部门为第一个
-            userInfo.Department.DP_ID = userInfo.Deptmentlist[0].DP_ID;
-          }
-
-          jsTools.SessionStorage.setVal("loginUser", userInfo);
-
-          callback();
-        });
-      });
-    }
   }
 };
 </script>

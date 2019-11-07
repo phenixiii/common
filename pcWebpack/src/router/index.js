@@ -32,25 +32,14 @@ const createRouter = (path) => new Router({
 
 const router = createRouter(routePath)
 
-let val = jsTools.SessionStorage.getVal('menuPos');
-
-resetRouter(val);
-
 export default router
 
 export function resetRouter(menuPos) {
     
   if(menuPos == null) return;
 
-  jsTools.SessionStorage.setVal('menuPos',menuPos);
-  
   let dir = 'demo';
   let menus = jsRes.menuList;
-
-  if(menuPos == 'D'){
-    dir = 'wllh';
-    menus = jsRes.adminMenuList;
-  }
 
   let path = [];
 
@@ -85,8 +74,6 @@ export function resetRouter(menuPos) {
 
     path.push(item);
   });
-
-  console.log(path);
 
   const newRouter = createRouter(path);
   router.matcher = newRouter.matcher      // reset router
