@@ -51,12 +51,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
-    // https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
-      inject: true
-    }),
+
     // copy custom static assets
     new CopyWebpackPlugin([
       {
@@ -93,3 +88,28 @@ module.exports = new Promise((resolve, reject) => {
     }
   })
 })
+
+
+var pages = utils.getEntries('./*.html')
+console.log(pages)
+for(var page in pages) {
+  // 配置生成的html文件，定义路径等
+  var conf = {
+    filename: page + '.html',
+    template: pages[page], //模板路径
+    inject: true,
+    chunks:[page]
+    // excludeChunks 允许跳过某些chunks, 而chunks告诉插件要引用entry里面的哪几个入口
+    // 如何更好的理解这块呢？举个例子：比如本demo中包含两个模块（index和about），最好的当然是各个模块引入自己所需的js，
+    // 而不是每个页面都引入所有的js，你可以把下面这个excludeChunks去掉，然后npm run build，然后看编译出来的index.html和about.html就知道了
+    // filter：将数据过滤，然后返回符合要求的数据，Object.keys是获取JSON对象中的每个key
+    // excludeChunks: Object.keys(pages).filter(item => {
+    //   return (item != page)
+    // })
+  }
+
+  console.log(conf)
+
+  // 需要生成几个html文件，就配置几个HtmlWebpackPlugin对象
+  devWebpackConfig.plugins.push(new HtmlWebpackPlugin(conf))
+}

@@ -100,3 +100,14 @@ exports.createNotifierCallback = () => {
     })
   }
 }
+
+
+var glob = require('glob');
+exports.getEntries = function (globPath) {
+  var entries = {}
+  glob.sync(globPath).forEach(function (entry) {
+    var basename = path.basename(entry, path.extname(entry), 'router.js');
+    entries[basename] = entry
+  });
+  return entries;
+}

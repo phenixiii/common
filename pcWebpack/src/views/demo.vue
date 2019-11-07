@@ -39,6 +39,16 @@
             </div>
 
             <div class="d-input">
+              <el-radio v-model="menuPos" label="H" style="background:transparent">水平菜单</el-radio>
+              <el-radio v-model="menuPos" label="V" style="background:transparent">垂直菜单</el-radio>
+            </div>
+
+             <div class="d-input" v-if="menuPos == 'V' || menuPos == 'H'">
+              <el-radio v-model="mode" label="page" style="background:transparent">page</el-radio>
+              <el-radio v-model="mode" label="tab" style="background:transparent">tab</el-radio>
+            </div>
+
+            <div class="d-input">
               <el-button type="primary" style="width:100%" @click="login">登录</el-button>
               <!-- <div class="assign" @click="login">登录</div> -->
             </div>
@@ -51,10 +61,10 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { resetRouter } from "@/router/index.js";
+import { resetRouter } from "@/router/demo.js";
 
 export default {
-  name: "login",
+  name: "demo",
 
   data() {
     return {
@@ -65,10 +75,26 @@ export default {
     };
   },
   computed: {
-    
+    menuPos:{
+      get(){
+        return this.$store.state.app.menuPos;
+      },
+      set(val){
+        // this.$store.state.app.menuPos = val;
+        this.$store.dispatch('app/changeMenuPos', { menuPos: val });
+      }
+    },
+    mode:{
+      get(){
+        return this.$store.state.app.mode;
+      },
+      set(val){
+        this.$store.dispatch('app/changeMode', { mode: val });
+      }
+    }
   },
   mounted(){
-    this.$store.dispatch('app/changeMenuPos', { menuPos: 'D' });
+    this.$store.dispatch('app/changeMenuPos', { menuPos: 'H' });
   },
   methods: {
     login: function() {
@@ -85,24 +111,25 @@ export default {
         this.warningText = "请输入密码";
         return;
       }
-
+      
       resetRouter(this.$store.state.app.menuPos);
-
-      //登录
-      //that.$router.push('main');
-      phAjax.logOn(this.loginusername, this.loginpassword, xmlHttpRequest => {
-        if (xmlHttpRequest.status === 200) {
-          jsTools.SessionStorage.setVal(
-            jsTools.Res.userNumber,
-            that.loginusername
-          );
-          this.getUserInfo(() => {
-            that.$router.push("/notice/noticeInfo");
-          });
-        } else {
-          jsTools.onErrorFunc(xmlHttpRequest);
-        }
-      });
+      that.$router.push("/base/dialog");
+      // //登录
+      // //that.$router.push('main');
+      // phAjax.logOn(this.loginusername, this.loginpassword, xmlHttpRequest => {
+      //   if (xmlHttpRequest.status === 200) {
+      //     jsTools.SessionStorage.setVal(
+      //       jsTools.Res.userNumber,
+      //       that.loginusername
+      //     );
+      //     this.getUserInfo(() => {
+      //       that.$router.push("/notice/noticeInfo");
+      //     });
+      //   } else {
+      //     that.$router.push("/base/dialog");
+      //     jsTools.onErrorFunc(xmlHttpRequest);
+      //   }
+      // });
     },
     next: function(num) {
       if (num == 1) {
