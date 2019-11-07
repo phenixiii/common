@@ -6,12 +6,12 @@ Vue.use(Router)
 
 const routePath = [{
     path: '/',
-    redirect: '/login'
+    redirect: '/demo'
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import('@/views/login'),
+    path: '/demo',
+    name: 'demo',
+    component: () => import('@/views/demo'),
   },
   {
     path: '/404',
@@ -19,7 +19,7 @@ const routePath = [{
     component: () => import('@/views/404'),
   },
   // 404 page must be placed at the end !!!
-  //{ path: '*', redirect: '/404'}
+  { path: '*', redirect: '/404'}
 ];
 
 const createRouter = (path) => new Router({
@@ -39,7 +39,9 @@ resetRouter(val);
 export default router
 
 export function resetRouter(menuPos) {
+    
   if(menuPos == null) return;
+
   jsTools.SessionStorage.setVal('menuPos',menuPos);
   
   let dir = 'demo';

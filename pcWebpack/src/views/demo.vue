@@ -61,7 +61,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { resetRouter } from "@/router/demo.js";
+import { resetRouter } from "@/router/wllh.js";
 
 export default {
   name: "demo",

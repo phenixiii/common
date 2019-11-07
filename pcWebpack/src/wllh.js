@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import App from './App'
 import store from './store'
-import router from './router/demo.js'
+import router from './router/wllh.js'
 import Router from 'vue-router'
 import ElementUI from 'element-ui'
 
-import 'element-ui/lib/theme-chalk/index.css'           
+// import 'element-ui/lib/theme-chalk/index.css'           
 import locale from 'element-ui/lib/locale/lang/zh-CN' // lang i18n
 import '@/utils/permission' // permission control
 

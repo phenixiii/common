@@ -15,7 +15,7 @@ const routePath = [{
   },
   {
     path: '/404',
-    name: 'login',
+    name: '404',
     component: () => import('@/views/404'),
   },
   // 404 page must be placed at the end !!!
@@ -65,7 +65,7 @@ export function resetRouter(menuPos) {
       meta: {
         title: element.name,
         icon: element.icon,
-        childrenIcon: element.childrenIcon
+        childIcon: element.childIcon
       },
       children: []
     }
