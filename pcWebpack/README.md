@@ -38,7 +38,6 @@ npm run build --report
 │   ├── views                  // view
 │   ├── App.vue                // 入口页面
 │   ├── main.js                // 入口 加载组件 初始化等
-│   └── permission.js          // 路由钩子
 ├── static                     // 第三方不打包资源
 ├── .babelrc                   // babel-loader 配置
 ├── .gitignore                 // git 忽略项

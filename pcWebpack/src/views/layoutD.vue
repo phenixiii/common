@@ -114,7 +114,7 @@ import '@/styles/transition.scss'
 var userInfo = [];
 
 let vmLayout = {
-  name: "layoutH",
+  name: "layoutD",
   components: { cWarning, cWeather },
   data() {
     return {

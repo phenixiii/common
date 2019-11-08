@@ -77,6 +77,9 @@ export default {
       }]
     }
   },
+  mounted(){
+    console.log(this.$route.query.name);
+  },
   methods: {
     openWin(){
       window.open('wllh.html','_blank');

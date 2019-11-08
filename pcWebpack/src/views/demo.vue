@@ -113,7 +113,13 @@ export default {
       }
       jsTools.SessionStorage.setVal(jsTools.Res.userNumber,this.loginusername);
       resetRouter(this.$store.state.app.menuPos);
-      that.$router.push("/base/dialog");
+      // that.$router.push("/base/dialog");
+      that.$router.push({
+        path:"/base/dialog",
+        query: {
+            name: 'test'
+          }
+      })
       
     },
     next: function(num) {
