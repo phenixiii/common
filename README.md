@@ -8,4 +8,4 @@
 
 # pcWebpack
 
-	PC端框架（ES6单页）
+	PC端框架（ES6）

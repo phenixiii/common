@@ -41,12 +41,10 @@ npm run build --report
 │   └── permission.js          // 路由钩子
 ├── static                     // 第三方不打包资源
 ├── .babelrc                   // babel-loader 配置
-├── eslintrc.js                // eslint 配置项
 ├── .gitignore                 // git 忽略项
 ├── index.html                 // html模板
 └── package.json               // package.json
 ```
-
 
 ## 需熟悉vue-cli vuex router element webpack es6等
 
@@ -69,5 +67,3 @@ npm run build --report
         1.  增加vuex支持
         2.  优化动态路由
         3.  增加垂直菜单，其中垂直菜单有page和tab 两种模式
-
-    
