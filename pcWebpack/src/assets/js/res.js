@@ -358,7 +358,7 @@ const jsRes = {
 		dir: 'base',
 		name: '基础',
 		icon: 'el-icon-edit',
-		childIcon: 'el-icon-star-off',
+		childIcon: 'el-icon-star-on',
 		list: [{
 				name: '布局',
 				href: 'layout',
@@ -382,7 +382,7 @@ const jsRes = {
 		dir: 'model',
 		name: '模块',
 		icon: 'el-icon-edit',
-		childIcon: 'el-icon-star-off',
+		childIcon: 'el-icon-star-on',
 		list: [{
 				name: '单表1',
 				href: 'single1',
@@ -392,6 +392,9 @@ const jsRes = {
 			},{
 				name: '多表',
 				href: 'muliti',
+			},{
+				name: '外部页面',
+				href: 'wllh.html',
 			}
 		]
 	}],

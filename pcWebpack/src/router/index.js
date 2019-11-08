@@ -19,7 +19,7 @@ const routePath = [{
     component: () => import('@/views/404'),
   },
   // 404 page must be placed at the end !!!
-  { path: '*', redirect: '/404'}
+  // { path: '*', redirect: '/404'}
 ];
 
 const createRouter = (path) => new Router({
@@ -32,11 +32,17 @@ const createRouter = (path) => new Router({
 
 const router = createRouter(routePath)
 
+let val = jsTools.SessionStorage.getVal('menuPos');
+
+resetRouter(val);
+
 export default router
 
 export function resetRouter(menuPos) {
     
   if(menuPos == null) return;
+
+  jsTools.SessionStorage.setVal('menuPos',menuPos);
 
   let dir = 'demo';
   let menus = jsRes.menuList;
@@ -56,7 +62,6 @@ export function resetRouter(menuPos) {
       meta: {
         title: element.name,
         icon: element.icon,
-        childIcon: element.childIcon
       },
       children: []
     }
@@ -67,7 +72,8 @@ export function resetRouter(menuPos) {
         name: li.href,
         component: () => import('@/views/'+ dir +'/' + element.dir + '/' + li.href),
         meta: {
-          title: li.name
+          title: li.name,
+          icon: element.childIcon
         }
       })
     })

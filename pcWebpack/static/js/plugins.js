@@ -239,15 +239,15 @@ var jsTools = {
 
   //全局用户名
   userNumber: function () {
-    //		if(typeof phAjax != 'undefined' && phAjax.userNumber == 'Guest') {
-    //			jsTools.Storage.setVal(jsTools.Res.userNumber, phAjax.userNumber);
-    //		}
-    return jsTools.SessionStorage.getVal(jsTools.Res.userNumber);
+
+    var user = jsTools.SessionStorage.getVal(jsTools.Res.userNumber);
+
+    return user == null ? phAjax.userNumber:user;
   },
 
   //判断是否已经登录
   isLogon: function () {
-    var userNumber = jsTools.userNumber();
+    var userNumber = phAjax.userNumber;
     if (userNumber == null || userNumber == "Guest") {
       return false;
     }

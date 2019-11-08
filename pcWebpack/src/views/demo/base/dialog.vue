@@ -3,6 +3,11 @@
     <el-button type="primary" @click="dialogTableVisible = true">
       打开一个可拖动弹出框
     </el-button>
+
+    <el-button type="primary" @click="openWin()">
+      URL
+    </el-button>
+
     <el-dialog v-el-drag-dialog :visible.sync="dialogTableVisible" title="TEST" @dragDialog="handleDrag">
       <el-select ref="select" v-model="value" placeholder="请选择">
         <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
@@ -13,6 +18,8 @@
         <el-table-column property="address" label="Address" />
       </el-table>
     </el-dialog>
+
+    
 
     <div class="aui-margin-t-20">
       <el-button-group>
@@ -39,7 +46,7 @@
 import elDragDialog from '@/directive/el-drag-dialog' // base on element-ui
 
 export default {
-  name: 'dialog',
+  name: 'dialogs',
   directives: { elDragDialog },
   data() {
     return {
@@ -71,6 +78,9 @@ export default {
     }
   },
   methods: {
+    openWin(){
+      window.open('wllh.html','_blank');
+    },
     handleDrag() {
       this.$refs.select.blur()
     },

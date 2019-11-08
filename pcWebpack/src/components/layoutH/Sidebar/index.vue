@@ -25,14 +25,22 @@
             <el-submenu :key="item.path" :index="item.path" class="submenu-title-noDropdown">
               <template slot="title" v-if="item.meta">
                 <i class="aui-margin-r-20" :class="item.meta && item.meta.icon"></i>
-                <span class="d-tit" slot="title">{{item.meta.title}}</span>
+                <span class="" slot="title">{{item.meta.title}}</span>
               </template>
               <template v-for="li in item.children">
-                <router-link :to="item.path + '/' + li.path" :key="item.path + '/' + li.path">
+                <a v-if="resolvePath(li.path)" :href="li.path" target="_blank" :key="li.path">
                   <el-menu-item :index="li.path" :key="li.path">
                     <template slot="title" v-if="li.meta">
-                      <i :class="item.meta && item.meta.childIcon"></i>
-                      <span class="d-tit aui-margin-l-10" slot="title">{{li.meta.title}}</span>
+                      <i :class="li.meta.icon"></i>
+                      <span class="aui-margin-l-10" slot="title">{{li.meta.title}}</span>
+                    </template>
+                  </el-menu-item>
+                </a>
+                <router-link v-else :to="item.path + '/' + li.path" :key="item.path + '/' + li.path" >
+                  <el-menu-item :index="li.path" :key="li.path">
+                    <template slot="title" v-if="li.meta">
+                      <i :class="li.meta.icon"></i>
+                      <span class="aui-margin-l-10" slot="title">{{li.meta.title}}</span>
                     </template>
                   </el-menu-item>
                 </router-link>
@@ -43,7 +51,8 @@
 
         <el-menu-item key="logout" index="logout" class="el-menu-item" @click="logout">
           <template slot="title">
-            {{loginUserName}}
+            
+             <span class="aui-margin-r-10" slot="title">{{loginUserName}}</span>
             <i class="iconfont icon-signout"></i>
           </template>
         </el-menu-item>
@@ -97,6 +106,9 @@ export default {
           this.$router.push("/");
         }
       });
+    },
+    resolvePath(routePath) {
+      return isExternal(routePath);
     }
   }
 };

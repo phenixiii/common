@@ -111,7 +111,7 @@ export default {
         this.warningText = "请输入密码";
         return;
       }
-      
+      jsTools.SessionStorage.setVal(jsTools.Res.userNumber,this.loginusername);
       resetRouter(this.$store.state.app.menuPos);
       that.$router.push("/base/dialog");
       

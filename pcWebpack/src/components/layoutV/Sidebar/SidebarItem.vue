@@ -11,7 +11,7 @@
           <!-- <item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)" :title="onlyOneChild.meta.title" /> -->
           <template slot="title" v-if="item.meta">
             <i class="aui-margin-r-20" :class="item.meta && item.meta.icon"></i>
-            <span class="d-tit" slot="title">{{item.meta.title}}</span>
+            <span slot="title">{{item.meta.title}}</span>
           </template>
         </el-menu-item>
       </app-link>
