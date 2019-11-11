@@ -2,7 +2,7 @@
   <div :class="classObj" class="app-wrapper">
     <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
     <sidebar class="sidebar-container" />
-    <div class="main-container-v" style="height:100%">
+    <div class="main-container-v" :class="{hasTagsView:needTagsView}">
       <div :class="{'fixed-header':fixedHeader}">
         <navbar />
         <tags-view v-if="needTagsView" />
@@ -42,7 +42,7 @@ export default {
       return this.$store.state.app.device
     },
     fixedHeader() {
-      return false
+      return this.$store.state.settings.fixedHeader
     },
     classObj() {
       return {

@@ -1,6 +1,6 @@
 const state = {
     showSettings: false,
-    fixedHeader: false,
+    fixedHeader: true,
     sidebarLogo: true
   }
 
