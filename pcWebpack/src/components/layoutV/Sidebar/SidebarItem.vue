@@ -38,12 +38,10 @@
 import path from "path";
 import { isExternal } from "@/utils/validate";
 import AppLink from "./Link";
-import FixiOSBug from "./FixiOSBug";
 
 export default {
   name: "SidebarItem",
   components: { AppLink },
-  mixins: [FixiOSBug],
   props: {
     // route object
     item: {

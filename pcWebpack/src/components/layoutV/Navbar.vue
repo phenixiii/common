@@ -47,6 +47,7 @@ export default {
            jsTools.SessionStorage.removeVal(
             jsTools.Res.userNumber
           );
+          this.$store.dispatch('tagsView/delAllViews');
           this.$router.push("/");
         }
       });

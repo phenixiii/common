@@ -17,7 +17,6 @@
 import '@/styles/index.scss' // global css  
 // import '@/styles/blue.scss'
 import { Navbar, Sidebar, AppMain,TagsView } from '@/components/layoutH'
-import ResizeMixin from '@/utils/ResizeHandler'
 
 export default {
   name: 'layoutH',
