@@ -27,15 +27,14 @@ var jsTools = {
     }, delayTime);
   },
 
-  initConfig: function (ret) {
+  initConfig: function () {
     if (jsTools.Res.isDebug) {
-      //			ret.host = 'http://192.168.5.22';
-      ret.host = 'http://localhost';
-      ret.port = '8080';
+      phAjax.host = 'http://localhost';
+      phAjax.port = '8080';
 
     } else {
-      ret.host = jsTools.Res.serverIp;
-      ret.port = jsTools.Res.port;
+      phAjax.host = jsTools.Res.serverIp;
+      phAjax.port = jsTools.Res.port;
     }
 
   },
@@ -48,6 +47,15 @@ var jsTools = {
     clearInterval(jsTools.Res.timer);
     callback();
   },
+
+  //设置用户信息
+	setUserInfo: function(val) {
+		jsTools.SessionStorage.setVal(jsTools.Res.userInfo, val);
+	},
+	//获取用户信息
+	getUserInfo: function() {
+		jsTools.SessionStorage.getVal(jsTools.Res.userInfo);
+	},
 
   ajax: function (ret, callback, errorback) {
 
@@ -458,38 +466,6 @@ var jsTools = {
     }
   },
 
-  getCode: function (str, count, radix) {
-    //new Date().getTime()
-    //guid唯一代码
-    //str 前缀
-    //count:为数字长度
-    //radix:为基数，10：十进制，16：十六进制
-    var guid = "";
-    for (var i = 1; i <= count; i++) {
-      var n = Math.floor(Math.random() * radix).toString(radix);
-      guid += n;
-    }
-    return str + guid.toUpperCase();
-  },
-
-  getObjLength: function (obj) {
-    var c = 0;
-    if (!obj) {
-      return c;
-    }
-    if ($.isArray(obj)) {
-      return obj.length;
-    } else {
-      if (!$.isPlainObject(obj)) {
-        return c;
-      }
-      for (var i in obj) {
-        c++;
-      }
-      return c;
-    }
-  },
-
   //弹出等待自动关闭
   toast: function (text, time) {
     if (time == null)
@@ -694,7 +670,7 @@ var jsTools = {
     function testTime() {
       currentTime = new Date().getTime(); //更新当前时间
       if (currentTime - lastTime > timeOut) { //判断是否超时
-        window.location.href = 'main_app.html';
+        window.location.href = 'main.html';
         console.log("长时间未操作,自动回到主页");
       }
     }
