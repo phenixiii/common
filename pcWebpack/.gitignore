@@ -6,6 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 statsvn.jar
 统计.bat
+plugins.js
 
 # Editor directories and files
 .idea
