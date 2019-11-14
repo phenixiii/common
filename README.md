@@ -12,14 +12,6 @@
 
 	ps:自定义路由，传统html文件加载
 
-# pcVueCli2
-
-	PC端框架（ES6）
-
-	采用vue全家桶，2.0+脚手架，适用于企业门户、后台管理、ERP、MIS等系统的开发，基于单页模式，同时支持多页
-
-	ps:对vue高度依赖
-
 # pcVueCli4 （推荐）
 
 	pcVueCli2升级版
