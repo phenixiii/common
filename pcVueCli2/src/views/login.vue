@@ -74,7 +74,7 @@ export default {
     login: function() {
       var that = this;
       
-      jsTools.initConfig(phAjax);
+      jsTools.initConfig('192.18.28.235','80');
 
       if (!this.loginusername) {
         this.isComplete = true;
