@@ -35,7 +35,7 @@ npm run build --report
 │   ├── utils                  // 全局公用方法
 │   ├── views                  // view
 │   ├── App.vue                // 入口页面
-│   ├── main.js                // 入口 加载组件 初始化等
+│   ├── index.js                // 入口 加载组件 初始化等
 ├── static                     // 第三方不打包资源
 ├── .babelrc                   // babel-loader 配置
 ├── .gitignore                 // git 忽略项
