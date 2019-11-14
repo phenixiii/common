@@ -35,6 +35,8 @@ npm run build --report
 │   ├── App.vue                // 入口页面
 │   ├── index.js               // 入口 加载组件 初始化等
 ├── public                     // 第三方不打包资源
+│   ├── js                     // 入口 加载组件 初始化等
+│   ├── ├── plugins            // 插件组，可根据需要选择生成plugins.min.js(使用Minify插件)
 ├── .babel.config.js           // babel-loader 配置
 ├── .gitignore                 // git 忽略项
 └── package.json               // package.json
@@ -43,6 +45,10 @@ npm run build --report
 ## 需熟悉vue-cli vuex router element webpack es6等
 
 * 更新内容 
+
+    ### 2019-11-14：
+        1.  优化目录结构
+        2.  个性化定制plugins.min.js
 
     ### 2019-11-11：
         1.  新增页面传值demo
