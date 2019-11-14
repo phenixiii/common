@@ -38,6 +38,14 @@
       </el-button-group>
     </div>
 
+    <div class="aui-margin-t-20">
+      <el-button-group>
+        <el-button type="primary" @click="msg(7)">toast</el-button>
+        <el-button type="primary" @click="msg(8)">show/hideProcess</el-button>
+
+      </el-button-group>
+    </div>
+
   </div>
   
 </template>
@@ -123,7 +131,16 @@ export default {
 
            jsTools.Element.notify(this,'','test sucess!', arr[i]);
           break;
-       
+        case 7:
+           jsTools.toast('11111');
+          break;
+        case 8:
+           jsTools.showProgress('1111111111');
+           setTimeout(() => {
+             jsTools.hideProgress();
+           }, 5000);
+
+          break;
       }
     }
   }
