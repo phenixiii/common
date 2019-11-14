@@ -1,4 +1,4 @@
-# 基于vue-cli2 + webpack 3.6 的前端开发框架
+# 基于vue-cli4 + webpack4 的前端开发框架
 
     本框架需开发人员掌握一定的前端模块化知识，熟悉ES6编写方式，常用于企业内部管理系统的开发。
     
@@ -33,9 +33,9 @@ npm run build --report
 │   ├── utils                  // 全局公用方法
 │   ├── views                  // view
 │   ├── App.vue                // 入口页面
-│   ├── index.js                // 入口 加载组件 初始化等
+│   ├── index.js               // 入口 加载组件 初始化等
 ├── public                     // 第三方不打包资源
-├── .babelrc                   // babel-loader 配置
+├── .babel.config.js           // babel-loader 配置
 ├── .gitignore                 // git 忽略项
 └── package.json               // package.json
 ```
