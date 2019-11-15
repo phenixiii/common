@@ -16,8 +16,6 @@ npm run serve
 # 生产模式
 npm run build
 
-# 分析报表
-npm run build --report
 ```
 
 # 目录结构
