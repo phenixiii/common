@@ -12,7 +12,7 @@
 
 	ps:自定义路由，传统html文件加载
 
-# pcVueCli4 （推荐）
+# pcVueCli4
 
 	PC端框架（ES6,7）
 
