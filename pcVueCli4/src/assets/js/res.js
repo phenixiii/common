@@ -357,7 +357,7 @@ const jsRes = {
 	menuList:[{
 		dir: 'base',
 		name: '基础',
-		icon: 'el-icon-edit',
+		icon: 'el-icon-bangzhu',
 		childIcon: 'el-icon-star-on',
 		list: [{
 				name: '布局',
@@ -381,7 +381,7 @@ const jsRes = {
 	},{
 		dir: 'model',
 		name: '模块',
-		icon: 'el-icon-edit',
+		icon: 'el-icon-sugar',
 		childIcon: 'el-icon-star-on',
 		list: [{
 				name: '单表1',
