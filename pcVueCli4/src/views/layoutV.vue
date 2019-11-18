@@ -1,6 +1,6 @@
 <template>
   <div :class="classObj" class="app-wrapper">
-    <div v-if="device==='mobile'&&sidebar.opened" class="drawer-bg" @click="handleClickOutside" />
+    
     <sidebar class="sidebar-container" />
     <div class="main-container-v" :class="{hasTagsView:needTagsView}">
       <div :class="{'fixed-header':fixedHeader}">
@@ -42,21 +42,18 @@ export default {
       return this.$store.state.app.device
     },
     fixedHeader() {
-      return this.$store.state.settings.fixedHeader
+      return this.$store.state.app.fixedHeader
     },
     classObj() {
       return {
         hideSidebar: !this.sidebar.opened,
         openSidebar: this.sidebar.opened,
         withoutAnimation: this.sidebar.withoutAnimation,
-        mobile: this.device === 'mobile'
       }
     }
   },
   methods: {
-    handleClickOutside() {
-      this.$store.dispatch('app/closeSideBar', { withoutAnimation: false })
-    }
+   
   }
 }
 </script>

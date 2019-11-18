@@ -1,11 +1,13 @@
 
 const state = {
   sidebar: {
-    opened: true,
-    withoutAnimation: false,
+    opened: true,               //是否打开左边菜单栏
+    withoutAnimation: false,    //是否无动画
   },
   menuPos : 'H',             //菜单方向：D：默认，H：水平 V：垂直
   mode : 'page',            //展示模式：page：单页  tab:tab标签页
+  fixedHeader: true,        //是否固定
+  sidebarLogo: true         //是否显示LOGO
 }
 
 const mutations = {
