@@ -103,16 +103,8 @@ var jsCheck = {
       return pass;
     },
   
-    addBlur: function (id, check) {
-      var dom = document.getElementById(id);
-      //注册一个失去焦点的事件
-      dom.onblur = function () {
-        check(dom);
-      }
-    },
-  
     //用户名验证
-    isuser: function (obj) {
+    isUser: function (obj) {
       //    var reg=/{1,8}[a-zA-Z0-9]{1,8}/;
       if (obj == null || obj == '') {
   
@@ -123,11 +115,10 @@ var jsCheck = {
     },
   
     //电话号码验证
-    isphone: function (obj) {
-      var reg = /^[0-9]{11}/;
-      if (!reg.test(obj)) {
+    isPhone: function (obj) {
+      var reg = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
+      if(!reg.test(obj)) {
         obj = '';
-        //            jsTools.alert("请正确填写手机号！");
         return false;
       }
       return true;
@@ -152,7 +143,7 @@ var jsCheck = {
     },
   
     //验证邮件格式
-    ismail: function (obj) {
+    isMail: function (obj) {
       var reg = /[a-zA-Z0-9]{1,10}@[a-zA-Z0-9]{1,5}\.[a-zA-Z0-9]{1,5}/;
       if (!reg.test(obj)) {
         obj = '';
@@ -163,7 +154,7 @@ var jsCheck = {
     },
   
     //验证用户名格式
-    isname: function (obj) {
+    isChnName: function (obj) {
       var reg = /^[\u4e00-\u9fa5]{2,4}$/;
       if (!reg.test(obj)) {
         // jsTools.alert("请正确填写姓名！姓名为两到四个汉字。");
