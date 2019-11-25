@@ -397,6 +397,19 @@ const jsRes = {
 				href: 'wllh.html',
 			}
 		]
+	},{
+		dir: 'com',
+		name: '组件',
+		icon: 'el-icon-sugar',
+		childIcon: 'el-icon-star-on',
+		list: [{
+				name: '倍位',
+				href: 'beis',
+			},{
+				name: '船舶',
+				href: 'vessels',
+			}
+		]
 	}],
 	managerMenu: function(ret) {
 		var powerList = jsRes.adminMenuList;

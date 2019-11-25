@@ -37,7 +37,7 @@ export default {
   width: 100%;
   height: calc(100vh - 110px); /*为适配外理*/
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .fixed-header + .app-main {
   padding-top: 50px;
