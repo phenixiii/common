@@ -408,6 +408,9 @@ const jsRes = {
 			},{
 				name: '船舶',
 				href: 'vessels',
+			},{
+				name: '图片',
+				href: 'photos',
 			}
 		]
 	}],
