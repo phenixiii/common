@@ -67,7 +67,7 @@ export default {
       type: String,
       default: ''
     },
-    //当个倍位数据结构
+    //当个倍位的数据结构
     item: {
       type: Object,
       default: () => {
