@@ -37,7 +37,7 @@
 
     <div class="aui-flex-col aui-padded-5">
       <el-tag  v-for="(item,index) in data.qcArray"
-        :key="index" class="aui-margin-5" size='mini'>{{item}}</el-tag>
+        :key="index" class="aui-margin-5" size='mini' effect="dark" type="success">{{item}}</el-tag>
     </div>
   </div>
 </template>

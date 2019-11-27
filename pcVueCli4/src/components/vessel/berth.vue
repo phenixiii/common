@@ -100,6 +100,6 @@ export default {
 .cur_tag_e {
   position: absolute;
   margin-top: 10px;
-  margin-left: -20px;
+  right: 0px;
 }
 </style>

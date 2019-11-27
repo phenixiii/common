@@ -1,10 +1,10 @@
 <template>
-  <div class="aui-padded-5">
+  <div>
     <div v-for="(arr,i,k) in data.vessels" :key="i" :style="styleArr(k)">
       <vessel v-for="(item,j) in arr" :data="item" :key="j" :style="styleObj(item)"></vessel>
     </div>
 
-    <div style="margin-top:360px">
+    <div :style="styleArr(-1)">
       <berth :data="data.berths"></berth>
     </div>
   </div>
@@ -21,13 +21,13 @@ export default {
   },
   computed: {
     styleArr() {
-      return (k) => {
+      return k => {
         let m = 2 - k;
-         return {
-            position: "absolute",
-            width:'100%', 
-          'margin-top': 120 * m + "px",
-        };       
+        return {
+          position: "absolute",
+          width: "100%",
+          "margin-top": 120 * m + "px",
+        };
       };
     },
     styleObj() {
@@ -118,11 +118,11 @@ export default {
                 direction: "R",
                 startDt: "2019-11-27 15:12:12",
                 start: 150,
-                end: 700
+                end: 800
               }
             ],
             three: [
-                {
+              {
                 vessel: "EEE",
                 voyage: "12EF",
                 quantity: 100,
