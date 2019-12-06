@@ -1,7 +1,16 @@
 <template>
-  <div>
+  <div style="position:relative">
+    <vessel-data style="padding:1rem" :slide="slide" :swiperSlides="Slides" @linkTo="linkTo"></vessel-data>
+
     <div v-for="(arr,i,k) in data.vessels" :key="i" :style="styleArr(k)">
-      <vessel v-for="(item,j) in arr" :data="item" :key="j" :style="styleObj(item)"></vessel>
+      <vessel
+        v-for="(item,j) in arr"
+        :select="slide"
+        :data="item"
+        :key="j"
+        :style="styleObj(item)"
+        @linkTo="linkTo"
+      ></vessel>
     </div>
 
     <div :style="styleArr(-1)">
@@ -13,11 +22,19 @@
 <script>
 import vessel from "./vessel";
 import berth from "./berth";
+import vesselData from "./vesselData";
 
 export default {
+  data() {
+    return {
+      slide: 0,
+      Slides: []
+    };
+  },
   components: {
     vessel,
-    berth
+    berth,
+    vesselData
   },
   computed: {
     styleArr() {
@@ -26,7 +43,7 @@ export default {
         return {
           position: "absolute",
           width: "100%",
-          "margin-top": 120 * m + "px",
+          "margin-top": 120 * m + "px"
         };
       };
     },
@@ -75,17 +92,19 @@ export default {
           vessels: {
             one: [
               {
+                id: 0,
                 vessel: "AAA",
                 voyage: "12EF",
                 quantity: 100,
                 total: 500,
-                qcArray: ["Q801", "Q802", "Q803"],
+                qcArray: ["Q801", "Q802", "Q803","Q903"],
                 direction: "L",
                 startDt: "2019-11-27 12:12:12",
                 start: -100,
                 end: 100
               },
               {
+                id: 1,
                 vessel: "BBB",
                 voyage: "12EF",
                 quantity: 180,
@@ -99,6 +118,7 @@ export default {
             ],
             two: [
               {
+                id: 2,
                 vessel: "CCC",
                 voyage: "12EF",
                 quantity: 100,
@@ -110,6 +130,7 @@ export default {
                 end: 100
               },
               {
+                id: 3,
                 vessel: "DDD",
                 voyage: "12EF",
                 quantity: 180,
@@ -123,6 +144,7 @@ export default {
             ],
             three: [
               {
+                id: 4,
                 vessel: "EEE",
                 voyage: "12EF",
                 quantity: 100,
@@ -134,6 +156,7 @@ export default {
                 end: 100
               },
               {
+                id: 5,
                 vessel: "FFF",
                 voyage: "12EF",
                 quantity: 180,
@@ -148,6 +171,21 @@ export default {
           }
         };
       }
+    }
+  },
+  methods: {
+    linkTo(ret) {
+      debugger
+      this.slide = ret.id;
+      this.$emit("linkTo", ret);
+    }
+  },
+  mounted() {
+    let vessels = this.data.vessels;
+    for (let i in vessels) {
+      vessels[i].forEach(item => {
+        this.Slides.push(item);
+      });
     }
   }
 };

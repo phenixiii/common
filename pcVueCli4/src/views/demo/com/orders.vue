@@ -23,7 +23,7 @@ export default {
       if( this.dataList.length >= 5)
         return;
       this.dataList.push({
-        orderNo: "12123123",
+        orderNo: new Date().getTime(),
         orderTm: "2019-11-28 11:11:11",
         orderQc: "Q801"
       });

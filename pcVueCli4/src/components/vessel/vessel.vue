@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-popover placement="top-start" title="详细信息" width="250" trigger="hover">
+    <!-- <el-popover placement="top-start" title="详细信息" width="250" trigger="hover">
       <div class="aui-flex-col">
         <div class="aui-flex-item-5">船名：</div>
         <div class="aui-flex-auto aui-text-right">{{data.vessel}}</div>
@@ -21,19 +21,23 @@
         <div class="aui-flex-item-5">开始时间：</div>
         <div class="aui-flex-auto aui-text-right">{{data.startDt}}</div>
       </div>
-      <div
-        slot="reference"
-        :class="data.direction == 'L'? 'cur_bg_img_l':'cur_bg_img_r'"
-        @click="changeDir"
-      ></div>
-    </el-popover>
+     
+    </el-popover> -->
 
-    <div class="aui-flex-col aui-padded-5">
+     <div slot="reference" :class="select == data.id ? 'selected':''">
+      <div class="icon-pos">
+        <i class="cur-icon" :class="data.direction== 'L'? 'el-icon-turn-off':'el-icon-open'" @click="changeDir"></i>
+      </div>
+      
+      <div :class="data.direction == 'L'? 'cur_bg_img_l':'cur_bg_img_r'" @click="linkTo"></div>
+      </div>
+
+    <!-- <div class="aui-flex-col aui-padded-5">
       <span>作业进度：</span>
       <div class="aui-flex-auto">
         <el-progress :percentage="per" :format="format"></el-progress>
       </div>
-    </div>
+    </div> -->
 
     <div class="aui-flex-col aui-padded-5">
       <el-tag  v-for="(item,index) in data.qcArray"
@@ -45,7 +49,9 @@
 <script>
 export default {
   data() {
-      return{}
+      return{
+       
+      }
   },
   computed: {
     per() {
@@ -57,6 +63,7 @@ export default {
       type: Object,
       default: () => {
         return {
+          id : 0,
           vessel: "ABC",
           voyage: "12EF",
           quantity: 100,
@@ -64,10 +71,12 @@ export default {
           qcArray: ["Q801", "Q802", "Q803"],
           direction: "L",
           startDt:'2019-11-27 12:12:12',
-
-
         };
       }
+    },
+    select:{
+      type:Number,
+      default:0,
     }
   },
   methods: {
@@ -87,12 +96,21 @@ export default {
           jsTools.Element.msgTip(this, "修改失败！", "error");
         }
       );
+    },
+    linkTo(){
+      this.$emit('linkTo',this.data);
     }
   }
 };
 </script>
 
 <style scoped>
+.selected{
+border: #67c23a dashed 1px;
+  border-radius: 5px;
+  /* box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.2); */
+}
+
 .cur_bg_img_l {
   width: 100%;
   height: 50px;
@@ -106,6 +124,19 @@ export default {
   height: 50px;
   background: url(../../assets/images/ship/blue_r.png) no-repeat;
   background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.icon-pos{
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+
+.cur-icon{
+  font-size: 1.5rem;
+  font-weight: bold;
+    color:#6b93cf;
   cursor: pointer;
 }
 </style>

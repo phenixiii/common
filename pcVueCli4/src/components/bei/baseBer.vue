@@ -14,7 +14,7 @@
             <div class="cur-size-title">{{i}}</div>
             <div
               class="cur-size-wei"
-              :class="currentSeat == item.key + ':' + i +':' + j?'aui-bg-danger':''"
+              :class="getBgClass(item.key + ':' + i +':'+j)"
               v-for="j in item.topData.hTitle"
               @click="selectSeat(i,j)"
               :key="j"
@@ -37,7 +37,7 @@
             <div class="cur-size-title">{{i}}</div>
             <div
               class="cur-size-wei"
-              :class="currentSeat == item.key + ':' + i +':' + j?'aui-bg-danger':''"
+              :class="getBgClass(item.key + ':' + i +':'+j)"
               v-for="j in item.bottomData.hTitle"
               @click="selectSeat(i,j)"
               :key="j"
@@ -61,6 +61,9 @@ export default {
        this.currentSeat = val;
     }
   },
+  filters:{
+    
+  },
   props: {
     //当前位置，可由父组件传入，如初始化、修改列表等
     seat:{
@@ -81,19 +84,35 @@ export default {
           bottomData: {
             vTitle: ["08", "06", "04", "02"],
             hTitle: ["06", "04", "02", "00", "01", "03", "05"]
-          }
+          },
+          existData:['16:84:03','16:06:05'],
         };
       }
     }
   },
   methods: {
+    getBgClass(ret){
+      if(this.currentSeat == ret){
+        
+        return 'aui-bg-danger';
+      }
+      else if(this.item.existData == null){
+        
+        return '';
+      }        
+      else if(this.item.existData.indexOf(ret) >= 0){
+        return 'cur-bg-exist';
+      }
+
+      return '';
+    },
     selectSeat: function(i, j) {
       if(this.currentSeat == this.item.key + ':' + i + ":" + j)
         this.currentSeat = null;
       else
         this.currentSeat = this.item.key + ':' + i + ":" + j;
 
-      this.$emit("click", this.currentSeat);    
+      this.$emit("toSeat", this.currentSeat);    
     }
   },
   mounted: function() {
@@ -135,5 +154,9 @@ export default {
 input {
   text-align: center;
   padding: 0 3px !important;
+}
+
+.cur-bg-exist{
+  background: #67c23a;
 }
 </style>

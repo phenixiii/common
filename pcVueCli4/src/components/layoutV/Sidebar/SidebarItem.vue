@@ -98,3 +98,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.nest-menu{
+  height: 51px;
+}
+</style>

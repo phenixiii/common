@@ -1,6 +1,6 @@
 <template>
   <div>
-    <base-ber :item="ber" :seat='seat' @click='getSeat'></base-ber>
+    <base-ber :item="ber" :seat='seat' @toSeat='getSeat'></base-ber>
 
     <div class="aui-flex-col aui-flex-center">
       <el-pagination

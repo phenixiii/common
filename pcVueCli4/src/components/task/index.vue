@@ -2,6 +2,10 @@
   <div class="cur-base">
     <div class="aui-flex-col aui-margin-15 aui-border-b">
        <div class="aui-flex-item-12 aui-margin-b-15">
+        <span>指令时间：</span>
+        <span class="cur-bold">{{data.orderTm}}</span>
+      </div>
+       <div class="aui-flex-item-12 aui-margin-b-15">
         <span>指令编号：</span>
         <span class="cur-bold">{{data.orderNo}}</span>
       </div>
@@ -141,7 +145,7 @@
       </div>
 
       <div class="aui-flex-item-12">
-        <el-button style="width:100%" type="primary" :loading="false" @click="send">发送</el-button>
+        <el-button style="width:100%" type="primary" size="medium" :loading="false" @click="send">发送</el-button>
       </div>
     </div>
   </div>
@@ -154,7 +158,7 @@ export default {
       ctnModelList: ["20'", "40'", "45'"],
       ctnTypeList: ["空箱", "重箱"],
       typeList: ["有", "无", "看不清"],
-      size:'mini'
+      size:'normal'
     };
   },
   computed: {},
@@ -163,6 +167,7 @@ export default {
       type: Object,
       default: () => {
         return {
+          orderTm:'2019-12-12 11:11:11',
           orderNo:'1111',
           vessel: "海洋之星",
           voyage: "1219B",

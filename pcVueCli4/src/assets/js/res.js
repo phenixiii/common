@@ -390,9 +390,6 @@ const jsRes = {
 				name: '单表2',
 				href: 'single2',
 			},{
-				name: '多表',
-				href: 'muliti',
-			},{
 				name: '外部页面',
 				href: 'wllh.html',
 			}
@@ -420,6 +417,16 @@ const jsRes = {
 			},{
 				name: '桥吊',
 				href: 'qcs',
+			}
+		]
+	},{
+		dir: 'case',
+		name: '案例',
+		icon: 'el-icon-sugar',
+		childIcon: 'el-icon-star-on',
+		list: [{
+				name: '公告发布',
+				href: 'upload',
 			},{
 				name: '面板',
 				href: 'panels',

@@ -15,12 +15,12 @@
       >
         <template v-for="item in routes">
           <template v-if="item.isShow">
-            <!-- <el-menu-item v-if="item.children == null" :index="item.path" :key="item.path">
+            <!-- <el-menu-item v-if="item.children.length == 1" :index="item.path" :key="item.path">
               <template slot="title" v-if="item.meta">
                 <i class="aui-margin-r-20" :class="item.meta && item.meta.icon"></i>
                 <span class="d-tit" slot="title">{{item.meta.title}}</span>
               </template>
-            </el-menu-item>-->
+            </el-menu-item> -->
 
             <el-submenu :key="item.path" :index="item.path" class="submenu-title-noDropdown">
               <template slot="title" v-if="item.meta">
@@ -49,7 +49,7 @@
           </template>
         </template>
 
-        <el-menu-item key="logout" index="logout" class="el-menu-item" @click="logout">
+        <el-menu-item key="logout" index="logout" @click="logout">
           <template slot="title">
             
              <span class="aui-margin-r-10" slot="title">{{loginUserName}}</span>

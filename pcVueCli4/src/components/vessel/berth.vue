@@ -71,12 +71,14 @@ export default {
 <style scoped>
 .cur_border {
   float: left;
+  position: relative;
 }
 
 .cur_line_s {
   border-left: 1px solid #aaaaaa;
   height: 5px;
   margin-top: -5px;
+  position: absolute;
 }
 .cur_line {
   border-top: 1px solid #aaaaaa;
@@ -88,7 +90,8 @@ export default {
   border-left: 1px solid #aaaaaa;
   height: 5px;
   margin-top: -5px;
-  margin-left: -1px;
+  right: 0px;
+  position: absolute;
 }
 
 .cur_tag_s {

@@ -1,15 +1,18 @@
 <template>
   <div>
-    <vessel ></vessel>
+    <div class="aui-padded-15">
+      <vessel></vessel>
+    </div>
   </div>
 </template>
 
 <script>
-import vessel from "@/components/vessel"
+import vessel from "@/components/vessel";
+
 
 export default {
   components: {
-    vessel
+    vessel,
   }
 };
 </script>

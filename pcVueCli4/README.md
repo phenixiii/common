@@ -4,6 +4,9 @@
     
     本项目中的案例是对外理管控平台部分页面的重构
 
+    http://localhost:8080/index.html ==> demo 页面
+    http://localhost:8080/wllh.html ===> 外轮理货 页面
+
 ## Build Setup
 
 ``` bash
@@ -43,6 +46,14 @@ npm run build
 ## 需熟悉vue-cli vuex router element webpack es6等
 
 * 更新内容 
+
+    ### 2019-12-05：
+        1.  增加机械组件
+        2.  增加指令组件
+        3.  增加任务组件
+        4.  增加面板组件
+        5.  增加船舶数据滚动组件
+        6.  增加TOS操作页面
 
     ### 2019-11-28：
         1.  增加倍位组件

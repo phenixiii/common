@@ -45,7 +45,7 @@ export default {
             require("../../../public/Images/exp/1.jpg"),
             require("../../../public/Images/exp/1.jpg"),
             require("../../../public/Images/exp/2.jpg"),
-            require("../../../public/Images/exp/1.jpg"),
+            require("../../../public/Images/exp/1.jpg")
           ]
         };
       }
@@ -56,7 +56,6 @@ export default {
 </script>
 
 <style scoped>
-
 .cur-base {
   position: relative;
   /* border-radius: 5px;
@@ -67,8 +66,14 @@ export default {
   min-width: 300px;
 }
 
+img{
+    border-radius: 5px;
+    box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.2);
+}
+
 .cur-height {
-  height: 100px;
+  height: 130px;
+
 }
 .cur-font {
   font-size: 20px;
@@ -79,9 +84,9 @@ export default {
   cursor: pointer;
 }
 
-@media (min-width:1900px){
+@media (min-width: 1900px) {
   .cur-height {
-  height: 180px;
-}
+    height: 180px;
+  }
 }
 </style>

@@ -233,3 +233,13 @@
     }
   }
 }
+
+
+// when menu collapsed
+.el-menu.el-menu--popup {
+  .el-menu-item {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 20px;
+  }
+}
