@@ -6,13 +6,19 @@ Vue.use(Router)
 
 const routePath = [{
     path: '/',
-    redirect: '/demo'
+    redirect: '/login'
   },
   {
     path: '/demo',
     name: 'demo',
     component: () => import('@/views/demo'),
   },
+  {
+    path: '/login',
+    name: 'dloginemo',
+    component: () => import('@/views/login'),
+  },
+
   {
     path: '/404',
     name: '404',

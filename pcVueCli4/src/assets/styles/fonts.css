@@ -1,0 +1,124 @@
+/*存放字体,文字大小等相关CSS*/
+.hb-font-normal{ 
+	font-weight: normal;
+}
+
+.hb-font-bold{ 
+	font-weight: bold;
+} 
+
+.hb-font-italic {
+	font-style: italic;
+}
+
+/*定义无大写字母，仅有小写字母*/
+.hb-text-lowercase{
+	text-transform: lowercase;
+}
+
+/*定义仅有大写字母*/
+.hb-text-uppercase{
+	text-transform: uppercase;
+}
+
+/*每个单词以大写字母开头*/
+.hb-text-capitalize{
+	text-transform: capitalize;
+}
+
+.hb-text-underline{
+	text-decoration: underline !important;
+}
+
+.hb-font-30{ 
+	font-size: 2.8rem !important;
+}
+
+.hb-font-29{ 
+	font-size: 2.7rem !important;
+}
+
+.hb-font-28{ 
+	font-size: 2.6rem !important;
+}
+
+.hb-font-27{ 
+	font-size: 2.5rem !important;
+}
+
+.hb-font-26{ 
+	font-size: 2.4rem !important;
+}
+
+.hb-font-25{ 
+	font-size: 2.3rem !important;
+}
+
+.hb-font-24{ 
+	font-size: 2.2rem !important;
+}
+
+.hb-font-23{ 
+	font-size: 2.1rem !important;
+}
+
+.hb-font-22{ 
+	font-size: 2rem !important;
+}
+
+.hb-font-21{ 
+	font-size: 1.9rem !important;
+}
+
+.hb-font-20{ 
+	font-size: 1.8rem !important;
+}
+
+.hb-font-19{ 
+	font-size: 1.7rem !important;
+}
+
+.hb-font-18{ 
+	font-size: 1.6rem !important;
+}
+
+.hb-font-17{ 
+	font-size: 1.5rem !important;
+}
+
+.hb-font-16{ 
+	font-size: 1.4rem !important;
+}
+
+.hb-font-15{ 
+	font-size: 1.3rem !important;
+}
+
+.hb-font-14{ 
+	font-size: 1.2rem !important;
+}
+
+.hb-font-13{ 
+	font-size: 1.1rem !important;
+}
+
+.hb-font-12{ 
+	font-size: 1rem !important;
+}
+
+.hb-ellipsis-1 {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.hb-ellipsis {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	word-break: break-all;
+	white-space: normal !important;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}

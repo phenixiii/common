@@ -39,13 +39,13 @@ export default {
         return {
           title: "单箱",
           imgs: [
-            require("../../../public/Images/exp/2.jpg"),
-            require("../../../public/Images/exp/1.jpg"),
-            require("../../../public/Images/exp/2.jpg"),
-            require("../../../public/Images/exp/1.jpg"),
-            require("../../../public/Images/exp/1.jpg"),
-            require("../../../public/Images/exp/2.jpg"),
-            require("../../../public/Images/exp/1.jpg")
+            require("@/assets/images/exp/2.jpg"),
+            require("@/assets/images/exp/1.jpg"),
+            require("@/assets/images/exp/2.jpg"),
+            require("@/assets/images/exp/1.jpg"),
+            require("@/assets/images/exp/1.jpg"),
+            require("@/assets/images/exp/2.jpg"),
+            require("@/assets/images/exp/1.jpg")
           ]
         };
       }

@@ -1,0 +1,650 @@
+/*存放尺寸,padded,margin等相关CSS*/
+.hb-width-100{
+	width: 100%;
+}
+
+.hb-width-90{
+	width: 90%;
+}
+
+.hb-width-80{
+	width: 80%;
+}
+
+.hb-width-70{
+	width: 70%;
+}
+
+.hb-width-60{
+	width: 60%;
+}
+
+.hb-width-50{
+	width: 50%;
+}
+
+.hb-width-40{
+	width: 40%;
+}
+
+.hb-width-30{
+	width: 30%;
+}
+
+.hb-width-20{
+	width: 20%;
+}
+
+.hb-width-10{
+	width: 10%;
+}
+
+.hb-height-100{
+	height: 100%;
+}
+
+.hb-height-95{
+	height: 95%;
+}
+
+.hb-height-90{
+	height: 90%;
+}
+
+.hb-height-85{
+	height: 85%;
+}
+
+.hb-height-80{
+	height: 80%;
+}
+
+.hb-height-75{
+	height: 75%;
+}
+
+.hb-height-70{
+	height: 70%;
+}
+
+.hb-height-65{
+	height: 65%;
+}
+
+.hb-height-60{
+	height: 60%;
+}
+
+.hb-height-55{
+	height: 55%;
+}
+
+.hb-height-50{
+	height: 50%;
+}
+
+.hb-height-45{
+	height: 45%;
+}
+
+.hb-height-40{
+	height: 40%;
+}
+
+.hb-height-35{
+	height: 35%;
+}
+
+.hb-height-30{
+	height: 30%;
+}
+
+.hb-height-25{
+	height: 25%;
+}
+
+.hb-height-20{
+	height: 20%;
+}
+
+.hb-height-10{
+	height: 10%;
+}
+
+.hb-padded-0 {
+	padding: 0 !important;
+}
+
+.hb-padded-5 {
+	padding: 0.25rem !important;
+}
+
+.hb-padded-10 {
+	padding: 0.5rem !important;
+}
+
+.hb-padded-15 {
+	padding: 0.75rem !important;
+}
+
+.hb-padded-20 {
+	padding: 1rem !important;
+}
+
+.hb-padded-25 {
+	padding: 1.25rem !important;
+}
+
+.hb-padded-30 {
+	padding: 1.5rem !important;
+}
+
+.hb-padded-35 {
+	padding: 1.75rem !important;
+}
+
+.hb-padded-40 {
+	padding: 2rem !important;
+}
+
+.hb-padded-45 {
+	padding: 2.25rem !important;
+}
+
+.hb-padded-50 {
+	padding: 2.5rem !important;
+}
+
+.hb-padded-55 {
+	padding: 2.75rem !important;
+}
+
+.hb-padded-60 {
+	padding: 3rem !important;
+}
+
+.hb-padded-t-0 {
+	padding-top: 0 !important;
+}
+
+.hb-padded-t-5 {
+	padding-top: 0.25rem !important;
+}
+
+.hb-padded-t-10 {
+	padding-top: 0.5rem !important;
+}
+
+.hb-padded-t-15 {
+	padding-top: 0.75rem !important;
+}
+
+.hb-padded-t-20 {
+	padding-top: 1rem !important;
+}
+
+.hb-padded-t-25 {
+	padding-top: 1.25rem !important;
+}
+
+.hb-padded-t-30 {
+	padding-top: 1.5rem !important;
+}
+
+.hb-padded-t-35 {
+	padding-top: 1.75rem !important;
+}
+
+.hb-padded-t-40 {
+	padding-top: 2rem !important;
+}
+
+.hb-padded-t-45 {
+	padding-top: 2.25rem !important;
+}
+
+.hb-padded-t-50 {
+	padding-top: 2.5rem !important;
+}
+
+.hb-padded-t-55 {
+	padding-top: 2.75rem !important;
+}
+
+.hb-padded-t-60 {
+	padding-top: 3rem !important;
+}
+
+.hb-padded-b-0 {
+	padding-bottom: 0 !important;
+}
+
+.hb-padded-b-5 {
+	padding-bottom: 0.25rem !important;
+}
+
+.hb-padded-b-10 {
+	padding-bottom: 0.5rem !important;
+}
+
+.hb-padded-b-15 {
+	padding-bottom: 0.75rem !important;
+}
+
+.hb-padded-b-20 {
+	padding-bottom: 1rem !important;
+}
+
+.hb-padded-b-25 {
+	padding-bottom: 1.25rem !important;
+}
+
+.hb-padded-b-30 {
+	padding-bottom: 1.5rem !important;
+}
+
+.hb-padded-b-35 {
+	padding-bottom: 1.75rem !important;
+}
+
+.hb-padded-b-40 {
+	padding-bottom: 2rem !important;
+}
+
+.hb-padded-b-45 {
+	padding-bottom: 2.25rem !important;
+}
+
+.hb-padded-b-50 {
+	padding-bottom: 2.5rem !important;
+}
+
+.hb-padded-b-55 {
+	padding-bottom: 2.75rem !important;
+}
+
+.hb-padded-b-60 {
+	padding-bottom: 3rem !important;
+}
+
+.hb-padded-l-0 {
+	padding-left: 0 !important;
+}
+
+.hb-padded-l-5 {
+	padding-left: 0.25rem !important;
+}
+
+.hb-padded-l-10 {
+	padding-left: 0.5rem !important;
+}
+
+.hb-padded-l-15 {
+	padding-left: 0.75rem !important;
+}
+
+.hb-padded-l-20 {
+	padding-left: 1rem !important;
+}
+
+.hb-padded-l-25 {
+	padding-left: 1.25rem !important;
+}
+
+.hb-padded-l-30 {
+	padding-left: 1.5rem !important;
+}
+
+.hb-padded-l-35 {
+	padding-left: 1.75rem !important;
+}
+
+.hb-padded-l-40 {
+	padding-left: 2rem !important;
+}
+
+.hb-padded-l-45 {
+	padding-left: 2.25rem !important;
+}
+
+.hb-padded-l-50 {
+	padding-left: 2.5rem !important;
+}
+
+.hb-padded-l-55 {
+	padding-left: 2.75rem !important;
+}
+
+.hb-padded-l-60 {
+	padding-left: 3rem !important;
+}
+
+.hb-padded-r-0 {
+	padding-right: 0 !important;
+}
+
+.hb-padded-r-5 {
+	padding-right: 0.25rem !important;
+}
+
+.hb-padded-r-10 {
+	padding-right: 0.5rem !important;
+}
+
+.hb-padded-r-15 {
+	padding-right: 0.75rem !important;
+}
+
+.hb-padded-r-20 {
+	padding-right: 1rem !important;
+}
+
+.hb-padded-r-25 {
+	padding-right: 1.25rem !important;
+}
+
+.hb-padded-r-30 {
+	padding-right: 1.5rem !important;
+}
+
+.hb-padded-r-35 {
+	padding-right: 1.75rem !important;
+}
+
+.hb-padded-r-40 {
+	padding-right: 2rem !important;
+}
+
+.hb-padded-r-45 {
+	padding-right: 2.25rem !important;
+}
+
+.hb-padded-r-50 {
+	padding-right: 2.5rem !important;
+}
+
+.hb-padded-r-55 {
+	padding-right: 2.75rem !important;
+}
+
+.hb-padded-r-60 {
+	padding-right: 3rem !important;
+}
+
+.hb-margin-auto {
+	margin: 0 auto;
+}
+
+.hb-margin-0 {
+	margin: 0 !important;
+}
+
+.hb-margin-5 {
+	margin: 0.25rem !important;
+}
+
+.hb-margin-10 {
+	margin: 0.5rem !important;
+}
+
+.hb-margin-15 {
+	margin: 0.75rem !important;
+}
+
+.hb-margin-20 {
+	margin: 1rem !important;
+}
+
+.hb-margin-25 {
+	margin: 1.25rem !important;
+}
+
+.hb-margin-30 {
+	margin: 1.5rem !important;
+}
+
+.hb-margin-35 {
+	margin: 1.75rem !important;
+}
+
+.hb-margin-40 {
+	margin: 2rem !important;
+}
+
+.hb-margin-t-0 {
+	margin-top: 0 !important;
+}
+
+.hb-margin-t-5 {
+	margin-top: 0.25rem !important;
+}
+
+.hb-margin-t-10 {
+	margin-top: 0.5rem !important;
+}
+
+.hb-margin-t-15 {
+	margin-top: 0.75rem !important;
+}
+
+.hb-margin-t-20 {
+	margin-top: 1rem !important;
+}
+
+.hb-margin-t-25 {
+	margin-top: 1.25rem !important;
+}
+
+.hb-margin-t-30 {
+	margin-top: 1.5rem !important;
+}
+
+.hb-margin-t-35 {
+	margin-top: 1.75rem !important;
+}
+
+.hb-margin-t-40 {
+	margin-top: 2rem !important;
+}
+
+.hb-margin-b-0 {
+	margin-bottom: 0 !important;
+}
+
+.hb-margin-b-5 {
+	margin-bottom: 0.25rem !important;
+}
+
+.hb-margin-b-10 {
+	margin-bottom: 0.5rem !important;
+}
+
+.hb-margin-b-15 {
+	margin-bottom: 0.75rem !important;
+}
+
+.hb-margin-b-20 {
+	margin-bottom: 1rem !important;
+}
+
+.hb-margin-b-25 {
+	margin-bottom: 1.25rem !important;
+}
+
+.hb-margin-b-30 {
+	margin-bottom: 1.5rem !important;
+}
+
+.hb-margin-b-35 {
+	margin-bottom: 1.75rem !important;
+}
+
+.hb-margin-b-40 {
+	margin-bottom: 2rem !important;
+}
+
+.hb-margin-b-45 {
+	margin-bottom: 2.25rem !important;
+}
+
+.hb-margin-b-50 {
+	margin-bottom: 2.5rem !important;
+}
+
+.hb-margin-b-55 {
+	margin-bottom: 2.75rem !important;
+}
+
+.hb-margin-b-60 {
+	margin-bottom: 3rem !important;
+}
+
+.hb-margin-l-0 {
+	margin-left: 0 !important;
+}
+
+.hb-margin-l-5 {
+	margin-left: 0.25rem !important;
+}
+
+.hb-margin-l-10 {
+	margin-left: 0.5rem !important;
+}
+
+.hb-margin-l-15 {
+	margin-left: 0.75rem !important;
+}
+
+.hb-margin-l-20 {
+	margin-left: 1rem !important;
+}
+
+.hb-margin-l-25 {
+	margin-left: 1.25rem !important;
+}
+
+.hb-margin-l-30 {
+	margin-left: 1.5rem !important;
+}
+
+.hb-margin-l-35 {
+	margin-left: 1.75rem !important;
+}
+
+.hb-margin-l-40 {
+	margin-left: 2rem !important;
+}
+
+.hb-margin-l-50 {
+	margin-left: 2.25rem !important;
+}
+
+.hb-margin-l-55 {
+	margin-left: 2.5rem !important;
+}
+
+.hb-margin-l-60 {
+	margin-left: 2.75rem !important;
+}
+
+.hb-margin-l-65 {
+	margin-left: 3rem !important;
+}
+
+.hb-margin-r-0 {
+	margin-right: 0 !important;
+}
+
+.hb-margin-r-5 {
+	margin-right: 0.25rem !important;
+}
+
+.hb-margin-r-10 {
+	margin-right: 0.5rem !important;
+}
+
+.hb-margin-r-15 {
+	margin-right: 0.75rem !important;
+}
+
+.hb-margin-r-20 {
+	margin-right: 1rem !important;
+}
+
+.hb-margin-r-25 {
+	margin-right: 1.25rem !important;
+}
+
+.hb-margin-r-30 {
+	margin-right: 1.5rem !important;
+}
+
+.hb-margin-r-35 {
+	margin-right: 1.75rem !important;
+}
+
+.hb-margin-r-40 {
+	margin-right: 2rem !important;
+}
+
+
+.hb-radio-size-14{ 
+	width: 1.4rem; 
+	height: 1.4rem;
+	cursor: pointer;
+}
+
+.hb-radio-size-15{ 
+	width: 1.5rem; 
+	height: 1.5rem;
+	cursor: pointer;
+}
+
+.hb-radio-size-16{ 
+	width: 1.6rem; 
+	height: 1.6rem;
+	cursor: pointer;
+}
+
+.hb-radio-size-18{ 
+	width: 1.8rem; 
+	height: 1.8rem;
+	cursor: pointer;
+}
+
+.hb-radio-size-20{ 
+	width: 2rem; 
+	height: 2rem;
+	cursor: pointer;
+}
+
+.hb-border-radius-0{ 
+	border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+.hb-border-radius-100{
+	border-radius: 100%;
+	-webkit-border-radius: 100%;
+}
+
+.hb-size-1 {
+	 width: 6rem;
+	 height: 6rem;
+	 line-height: 6rem;
+	 text-align: center;
+}
+
+.hb-size-2 {
+	 width: 8rem;
+	 height: 8rem;
+	 line-height: 8rem;
+	 text-align: center;
+}
+
+
+
+
+
+
+

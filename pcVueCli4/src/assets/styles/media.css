@@ -1,0 +1,186 @@
+/*适配*/
+@media (min-width:768px) {
+	body{
+		font-size: 12px !important;
+	}
+}
+
+@media (min-width:1024px) {
+	body{
+		font-size: 12px !important;
+	}
+	
+	.hb-nav .el-submenu__title,.hb-menu-home .el-menu-item .d-tit{
+		font-size: 16px !important;
+	}
+}
+
+@media (min-width:1200px) {
+	body,html{
+		font-size: 14px !important;
+	} 
+	
+	.hb-nav .el-submenu__title,.hb-menu-home .el-menu-item .d-tit{
+		font-size: 16px !important;
+	}
+
+	.hb-headTop *,.hb-index-news .hb-mark span{
+		font-size: 13px !important;
+	}
+	
+	.hb-label{
+	  	font-size: 16px !important;
+	}
+	
+	.iconfont{
+		font-size: 1.8rem;
+	}
+	
+	.el-dialog__wrapper{
+		overflow: hidden !important;
+	}
+	
+	.el-dialog__body{
+		max-height: 350px;
+		overflow: auto !important;
+	}
+	 
+	.hb-forgetHeight .hb-stepsBox{
+		padding: 0 3rem;
+	}
+	
+	/************首页***********/
+	.hb-bannerArea,.hb-imgBox .el-image{
+		width: 1200px;
+	}
+}
+
+@media (min-width:1900px) {
+	body,html,btn,*{
+		font-size: 14px !important;
+	}
+	
+	.hb-nav .el-submenu__title,.hb-menu-home .el-menu-item .d-tit{
+		font-size: 16px !important;
+	}
+	
+	.hb-label{
+	  font-size: 16px !important;
+	}
+	
+	.hb-footLogin{
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+ 	
+ 	.hb-popover{
+		max-height: 600px;
+	}
+	
+	.hb-companyPurpose .hb-tit{
+		font-size: 18px;
+	}
+	
+	/************首页***********/
+	.hb-bannerArea,.hb-imgBox .el-image{
+		width: 1920px;
+	}
+	/*
+	.hb-defineTit .hb-suffix{
+		 font-size: 16px !important;
+	}
+	
+	.hb-defineTit strong{
+		font-size: 1.4rem !important;
+	}*/
+} 
+
+@media (min-width:2500px) {
+	body,html,btn,*{
+		font-size: 16px !important;
+	}
+	
+	.hb-nav .el-submenu__title,.hb-menu-home .el-menu-item .d-tit{
+		font-size: 17px !important;
+	}
+	
+	.hb-label{
+	  font-size: 18px !important;
+	}
+	
+	.el-button--medium{
+		padding-top: 15px !important;
+		padding-bottom: 15px !important;
+	}
+	
+	.el-button--medium span{
+		font-size: 18px !important;
+	}
+	
+	.el-input__inner,.el-form-item__label{
+		height: 50px !important;
+		line-height: 50px !important;
+	}
+
+	.el-input__icon{
+		font-size: 1.2rem !important;
+		padding-right: 5px;
+	}
+	
+	/************首页***********/
+	.hb-bannerArea,.hb-imgBox .el-image{
+		width: 1920px;
+	}
+	/*
+	.hb-defineTit .hb-suffix{
+		font-size: 16px !important;
+	}
+	
+	.hb-defineTit strong{
+		font-size: 1.4rem !important;
+	}*/
+	
+	/************登录***********/
+	.hb-login{
+		bottom: 9.5rem;
+	}
+	
+	.hb-footLogin{
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+	
+	/************注册***********/
+	.hb-registerBody .el-input__icon{
+		line-height: 50px;
+	}
+	
+	.hb-registerBody .hb-regHeight,.hb-forgetHeight{
+	    display: flex;
+    	flex-direction: column;
+    	justify-content: center;
+	}
+	
+	.hb-registerBody .hb-regHeight{
+		min-height: 50rem;
+	}
+	
+	.hb-registerCon .el-form-item__label{
+		font-size: 18px !important;
+	}
+	
+	.hb-registerCon .el-button--medium span{
+		font-size: 18px !important;
+	}
+	
+	.hb-popover{
+		max-height: 800px;
+	}
+
+
+	/************忘记密码***********/
+	.hb-forgetHeight{
+		min-height: 40rem;
+	}
+	
+}	

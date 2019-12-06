@@ -1,0 +1,78 @@
+/*存放布局相关CSS*/
+
+.hb-position-static {
+	position: static;
+}
+
+.hb-position-relative {
+	position: relative;
+}
+
+.hb-position-absolute {
+	position: absolute;
+}
+
+.hb-position-fixed {
+	position: fixed;
+}
+
+.hb-block{
+	display: block;
+}
+
+.hb-inline{
+	display: inline;
+}
+
+.hb-inline-block{
+	display: inline-block;
+}
+
+.hb-table{
+	display: table;
+}
+
+.hb-table-cell{
+	display: table-cell;
+}
+
+.hb-table-row{
+	display: table-row;
+}
+
+/*表格单元格平分*/
+.hb-table-avg{
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;    
+}
+
+.hb-clear{
+	clear: both;
+}
+
+.hb-z-index-999{
+	z-index: 999;
+}
+
+.hb-z-index-2{
+	z-index: 2;
+}
+
+.hb-img-response{
+	width: 100%;
+	max-width: 100%;
+	display: block;
+	vertical-align: middle;
+}
+
+
+.hb-container{
+	min-width: 20rem;
+	width: 1280px;
+	margin: 0 auto;
+}
+ 
+
+
+

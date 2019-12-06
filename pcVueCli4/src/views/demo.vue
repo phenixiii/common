@@ -4,9 +4,7 @@
       <div class="wrap">
         <div class="d-login-bg">&nbsp;</div>
         <div class="content">
-          <h3>
-            <img src="../../public/Images/logo/logo_login.png" alt="登录图片" class="d-login-logo" />
-          </h3>
+         
           <div>
             <div class="d-warning">
               <p class="warning" v-cloak>

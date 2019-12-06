@@ -63,7 +63,7 @@ export default {
 .cur-image {
   width: 100px;
   height: 100px;
-  background: url(../../../public/Images/exp/qc.jpg) no-repeat;
+  background: url(../../assets/images/machine/qc.jpg) no-repeat;
   background-size: 100% 100%;
   border-radius: 5px;
 }

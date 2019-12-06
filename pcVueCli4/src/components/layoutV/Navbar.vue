@@ -6,7 +6,7 @@
 
     <div class="right-menu aui-margin-r-30" style="cursor: pointer" @click="logout">
       {{userInfo.name}}
-      <i class="iconfont icon-signout"></i>
+      <i class="el-icon-switch-button"></i>
     </div>
   </div>
 </template>

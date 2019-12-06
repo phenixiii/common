@@ -1,0 +1,176 @@
+/*存放颜色相关CSS*/
+.hb-background-primary{ 
+	background: #069fdf;
+}
+
+.hb-background-info{ 
+	background: #889683;
+} 
+
+.hb-background-success{ 
+	background: #5CB87A;
+}
+
+.hb-background-warning{ 
+	background: #E6A23C;
+}
+
+.hb-background-danger{ 
+	background: #F56C6C;
+}
+
+.hb-background-transparent{ 
+	background: transparent;
+}
+
+.hb-background-white{ 
+	background: #fff;
+}
+
+.hb-background-gray{ 
+	background: #ddd;
+}
+
+.hb-background-greyBlue{ 
+	background: #ddd;
+}
+
+.hb-background-secondary{ 
+	background: #6c757d;
+}
+
+.hb-background-dark{ 
+	background: #353C42;
+}
+
+.hb-text-body{
+	color: #555;
+}
+
+.hb-text-primary{ 
+	color: #069fdf;
+}
+
+.hb-text-info{ 
+	color: #889683;
+} 
+
+.hb-text-success{ 
+	color: #5CB87A;
+}
+
+.hb-text-warning{ 
+	color: #E6A23C;
+}
+
+.hb-text-danger{ 
+	color: #e70b06;
+}
+
+.hb-text-white{ 
+	color: #fff;
+}
+
+.hb-text-gray{ 
+	color: #ddd;
+}
+
+.hb-text-secondary{ 
+	color: #6c757d;
+}
+
+.hb-text-dark{ 
+	color: #353C42;
+}
+
+.hb-text-black{ 
+	color: #000;
+}
+
+.hb-border-primary{ 
+	border: 1px solid #069fdf;
+}
+
+.hb-border-info{ 
+	border: 1px solid #889683;
+}
+
+.hb-border-success{ 
+	border: 1px solid #5CB87A;
+}
+
+.hb-border-warning{ 
+	border: 1px solid #E6A23C;
+}
+
+.hb-border-danger{ 
+	border: 1px solid #F56C6C;
+}
+
+.hb-border-white{ 
+	border: 1px solid #fff;
+}
+
+.hb-border-gray{ 
+	border: 1px solid #ddd;
+}
+
+.hb-border-t-gray{
+	border-top: 1px solid #ddd;
+}
+
+.hb-border-secondary{ 
+	border: 1px solid #6c757d;
+}
+
+.hb-border-dark{ 
+	border: 1px solid #353C42;
+}
+
+.hb-border-dashed-primary{ 
+	border-color: #069fdf;
+	border-style: dashed;
+}
+
+.hb-border-dashed-info{ 
+	border-color: #889683;
+	border-style: dashed;
+} 
+
+.hb-border-dashed-success{ 
+	border-color: #5CB87A;
+	border-style: dashed;
+}
+
+.hb-border-dashed-warning{ 
+	border-color: #E6A23C;
+	border-style: dashed;
+}
+
+.hb-border-dashed-danger{ 
+	border-color: #F56C6C;
+	border-style: dashed;
+}
+
+.hb-border-dashed-white{ 
+	border-color: #fff;
+	border-style: dashed;
+}
+
+.hb-border-dashed-gray{ 
+	border-color: #ddd;
+	border-style: dashed;
+}
+
+.hb-border-dashed-secondary{ 
+	border-color: #6c757d;
+	border-style: dashed;
+}
+
+.hb-border-dashed-dark{ 
+	border-color: #353C42;
+	border-style: dashed;
+}
+ 
+
+ 

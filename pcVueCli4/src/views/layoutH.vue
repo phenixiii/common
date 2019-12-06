@@ -14,8 +14,7 @@
 
 <script>
 
-import '@/styles/index.scss' // global css  
-// import '@/styles/blue.scss'
+// import '@/styles/index.scss' // global css  
 import { Navbar, Sidebar, AppMain,TagsView } from '@/components/layoutH'
 
 export default {
@@ -57,11 +56,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import "~@/styles/mixin.scss";
+
   @import "~@/styles/variables.scss";
 
   .app-wrapper {
-    @include clearfix;
+
     position: relative;
     height: 100%;
     width: 100%;

@@ -53,7 +53,7 @@
           <template slot="title">
             
              <span class="aui-margin-r-10" slot="title">{{loginUserName}}</span>
-            <i class="iconfont icon-signout"></i>
+            <i class="el-icon-switch-button"></i>
           </template>
         </el-menu-item>
       </el-menu>

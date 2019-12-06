@@ -38,7 +38,7 @@
     <div class="aui-flex-col aui-margin-15">
       <div class="aui-flex-col aui-flex-middle aui-flex-item-6 aui-margin-b-15">
         <div class="aui-flex-item-4">
-          <span>横坐标：</span>
+          <span>X轴：</span>
         </div>
         <div class="aui-flex-item-8">
           <el-input v-model="data.x" :size="size"></el-input>
@@ -46,7 +46,7 @@
       </div>
       <div class="aui-flex-col aui-flex-middle aui-flex-item-6 aui-margin-b-15">
         <div class="aui-flex-item-4">
-          <span>纵坐标：</span>
+          <span>Y轴：</span>
         </div>
         <div class="aui-flex-item-8">
           <el-input v-model="data.y" :size="size"></el-input>
@@ -78,7 +78,7 @@
       </div>
       <div class="aui-flex-col aui-flex-middle aui-flex-item-6 aui-margin-b-15">
         <div class="aui-flex-item-4">
-          <span>箱类型：</span>
+          <span>类型：</span>
         </div>
         <div class="aui-flex-item-8">
           <el-select v-model="data.ctnType" :size="size" placeholder="请选择">

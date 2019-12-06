@@ -1,80 +1,107 @@
 <template>
-  <div class="d-height-100">
-    <div class="d-login">
-      <div class="wrap">
-        <div class="d-login-bg">&nbsp;</div>
-        <div class="content">
-          <h3>
-            <img src="../../public/Images/logo/logo_login.png" alt="登录图片" class="d-login-logo" />
-          </h3>
-          <div>
-            <div class="d-warning">
-              <p class="warning" v-cloak>
-                <span v-show="isComplete">{{warningText}}</span>
-              </p>
-            </div>
-            <div class="d-input">
-              <label for="loginusername">
-                <i class="iconfont icon-login-user"></i>
-              </label>
-              <input
-                placeholder="用户名"
-                @keyup.enter="next(1)"
-                type="text"
-                id="loginusername"
-                v-model="loginusername"
-              />
-            </div>
-            <div class="d-input">
-              <label for="loginpassword">
-                <i class="iconfont icon-login-pwd"></i>
-              </label>
-              <input
-                placeholder="密码"
-                @keyup.enter="next(2)"
-                type="password"
-                id="loginpassword"
-                v-model="loginpassword"
-              />
-            </div>
+  <div style="height:100%">
+    <div class="titleDiv aui-flex-col aui-flex-middle">
+        
+        <div>后台管理系统</div>
+    </div>
+    <div style="height:100%" class="aui-flex-col aui-flex-middle aui-flex-right loginPage">
+      <div class="aui-flex-offset-4 aui-flex-item-4 loginDiv">
+        <h3 class="aui-text-center">用户登录</h3>
 
-            <div class="d-input">
-              <el-button type="primary" style="width:100%" @click="login">登录</el-button>
-              <!-- <div class="assign" @click="login">登录</div> -->
-            </div>
-          </div>
-        </div>
+        <el-form ref="loginForm" label-width="80px" class auto-complete="on" label-position="left">
+          <el-form-item label="用户名">
+            <el-input
+              ref="username"
+              v-model="loginusername"
+              placeholder="Username"
+              name="username"
+              type="text"
+              tabindex="1"
+              auto-complete="on"
+              clearable
+            ></el-input>
+          </el-form-item>
+
+          <el-form-item label="密码">
+            <el-input
+              :key="passwordType"
+              ref="password"
+              v-model="loginpassword"
+              type="password"
+              placeholder="Password"
+              name="password"
+              tabindex="2"
+              auto-complete="on"
+              show-password
+            ></el-input>
+          </el-form-item>
+
+          <el-form-item label="菜单类型">
+            <el-radio v-model="menuPos" label="H" style="background:transparent">水平菜单</el-radio>
+            <el-radio v-model="menuPos" label="V" style="background:transparent">垂直菜单</el-radio>
+          </el-form-item>
+
+          <el-form-item label="页面类型" v-if="menuPos == 'V' || menuPos == 'H'">
+            <el-radio v-model="mode" label="page" style="background:transparent">page</el-radio>
+            <el-radio v-model="mode" label="tab" style="background:transparent">tab</el-radio>
+          </el-form-item>
+
+          <el-button
+            :loading="loading"
+            type="primary"
+            style="width:100%;margin-bottom:30px;"
+            @click.native.prevent="login"
+          >登录</el-button>
+        </el-form>
       </div>
     </div>
   </div>
-</template> 
+</template>
 
 <script>
 import { mapGetters } from "vuex";
-import { resetRouter } from "@/router/wllh.js";
+import { resetRouter } from "@/router/index.js";
 
 export default {
-  name: "login",
-
+  name: "Login",
   data() {
     return {
       loginusername: "LHB",
       loginpassword: "LHB",
       warningText: "",
-      isComplete: false
+
+      loading: false,
+      passwordType: "password",
+      redirect: undefined
     };
   },
   computed: {
-    
+    menuPos: {
+      get() {
+        return this.$store.state.app.menuPos;
+      },
+      set(val) {
+        // this.$store.state.app.menuPos = val;
+        this.$store.dispatch("app/changeMenuPos", { menuPos: val });
+      }
+    },
+    mode: {
+      get() {
+        return this.$store.state.app.mode;
+      },
+      set(val) {
+        this.$store.dispatch("app/changeMode", { mode: val });
+      }
+    }
   },
-  mounted(){
-    this.$store.dispatch('app/changeMenuPos', { menuPos: 'D' });
+  mounted() {
+    this.$store.dispatch("app/changeMenuPos", { menuPos: "H" });
   },
   methods: {
     login: function() {
       var that = this;
-      
-      jsTools.initConfig('192.18.28.235','80');
+
+      jsTools.initConfig("192.18.28.235", "80");
 
       if (!this.loginusername) {
         this.isComplete = true;
@@ -85,101 +112,45 @@ export default {
         this.warningText = "请输入密码";
         return;
       }
-
+      jsTools.SessionStorage.setVal(jsTools.Res.userNumber, this.loginusername);
       resetRouter(this.$store.state.app.menuPos);
-
-      //登录
-      //that.$router.push('main');
-      phAjax.logOn(this.loginusername, this.loginpassword, xmlHttpRequest => {
-        if (xmlHttpRequest.status === 200) {
-          jsTools.SessionStorage.setVal(
-            jsTools.Res.userNumber,
-            that.loginusername
-          );
-          this.getUserInfo(() => {
-            that.$router.push("/notice/noticeInfo");
-          });
-        } else {
-          jsTools.onErrorFunc(xmlHttpRequest);
+      // that.$router.push("/base/dialog");
+      that.$router.push({
+        path: "/base/dialog",
+        query: {
+          name: "test"
         }
-      });
-    },
-    next: function(num) {
-      if (num == 1) {
-        $("#loginpassword").focus();
-        return;
-      }
-      this.login();
-    },
-    getUserInfo(callback) {
-      var userData = {
-        data: {
-          Parameter: null,
-          ResultModel: {}
-        },
-        serviceName: jsRes.Server.GetUserInfoService
-      };
-      jsTools.ajax(userData, function(result) {
-        var userInfo = result;
-
-        //获取部门列表
-        var dat = {
-          serviceName: jsRes.Server.GetBaseDataService,
-          data: {
-            Parameter: 0
-          }
-        };
-
-        jsTools.ajax(dat, function(result) {
-          //增加部门列表
-          userInfo.Deptmentlist = JSON.parse(result);
-          //备份传入部门ID
-          userInfo.Department.DP_ID_ORA = userInfo.Department.DP_ID;
-
-          //判断当前选中部门是否在下拉列表中
-          var dp = Enumerable.From(userInfo.Deptmentlist).FirstOrDefault(
-            null,
-            "x=>x.DP_ID == " + userInfo.Department.DP_ID
-          );
-          if (dp == null) {
-            userInfo.Department.DP_ID = "";
-          }
-
-          //是否是全部权限
-          var deptDisable = false;
-          if (
-            userInfo.Department.DP_ID != "" &&
-            !jsTools.Res.Debug &&
-            !userInfo.Department.InHeadQuarters
-          ) {
-            deptDisable = true;
-          } else {
-            deptDisable = false;
-          }
-          userInfo.isGlobal = !deptDisable;
-
-          if (userInfo.Department.DP_ID == "") {
-            //如果部门为空，则初始化部门为第一个
-            userInfo.Department.DP_ID = userInfo.Deptmentlist[0].DP_ID;
-          }
-
-          jsTools.SessionStorage.setVal("loginUser", userInfo);
-
-          callback();
-        });
       });
     }
   }
 };
 </script>
 
-<style>
-html,
-body,
-#app {
-  height: 100%;
+<style scoped>
+.titleDiv {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  padding-left: 40px;
+  font-size: 1.4rem;
+
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
 }
-</style>>
 
+.loginPage {
+  background: url(../assets/images/login/login.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 
-
+.loginDiv {
+  width: 380px;
+  border: solid 1px #d6d6d6;
+  padding: 20px 50px;
+  margin-right: 100px;
+  border-radius: 0.3rem;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
+}
+</style>
