@@ -36,16 +36,16 @@
             ></el-input>
           </el-form-item>
 
-          <el-form-item label="菜单类型">
-            <el-radio v-model="menuPos" label="H" style="background:transparent">水平菜单</el-radio>
-            <el-radio v-model="menuPos" label="V" style="background:transparent">垂直菜单</el-radio>
-          </el-form-item>
+            <el-form-item label="菜单类型">
+              <el-radio v-model="menuPos" label="H" style="background:transparent">水平菜单</el-radio>
+              <el-radio v-model="menuPos" label="V" style="background:transparent">垂直菜单</el-radio>
+            </el-form-item>
 
-          <el-form-item label="页面类型" v-if="menuPos == 'V' || menuPos == 'H'">
-            <el-radio v-model="mode" label="page" style="background:transparent">page</el-radio>
-            <el-radio v-model="mode" label="tab" style="background:transparent">tab</el-radio>
-          </el-form-item>
-
+            <el-form-item label="页面类型" v-if="menuPos == 'V' || menuPos == 'H'">
+              <el-radio v-model="mode" label="page" style="background:transparent">page</el-radio>
+              <el-radio v-model="mode" label="tab" style="background:transparent">tab</el-radio>
+            </el-form-item>
+   
           <el-button
             :loading="loading"
             type="primary"
@@ -95,7 +95,8 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch("app/changeMenuPos", { menuPos: "H" });
+    this.$store.dispatch("app/changeMenuPos", { menuPos: "V" });
+     this.$store.dispatch("app/changeMode", { mode: 'tab' });
   },
   methods: {
     login: function() {
@@ -134,7 +135,7 @@ export default {
   padding-left: 40px;
   font-size: 1.4rem;
 
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   color: #ffffff;
 }
 
@@ -150,7 +151,7 @@ export default {
   padding: 20px 50px;
   margin-right: 100px;
   border-radius: 0.3rem;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
 }
 </style>
