@@ -4,8 +4,6 @@
     
     本项目中的案例是对外理管控平台部分页面的重构
 
-    http://localhost:8080/index.html ==> demo 页面
-    http://localhost:8080/wllh.html ===> 外轮理货 页面
 
 ## Build Setup
 
