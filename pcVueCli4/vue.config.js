@@ -6,13 +6,6 @@ module.exports = {
     index:{
       entry: 'src/index.js',
     },
-    wllh:{
-      entry: 'src/wllh.js',
-    },
-    test:{
-      entry: 'src/template/test.js',
-      template:'public/template/test.html',
-      filename: 'test.html',
-    }
+   
   }
 }
